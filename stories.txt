@@ -1,0 +1,93 @@
+Al-Jazira Capital Journey
+-------------------------
+first achievement for me there which was the reason i was offered the job to transfer from eBSEG, is that we had a trading website built with jquery that used to crash on launch for the better half of a year, then it was my turn to be the on-site resource for ajc (Aljazira Capital) from eBSEG (e-Business solutions enabling group).
+it was a 3-month on-site business trip.
+in the first month i finished all the layout/UI requirements & backend integrations
+in the second month we discovered the memory crash problem and i fixed it in two weeks and moved to pilot environment, which was like a dream come true to AJC dev & bus. departments
+then in the third month we actually launched it to live trading environment.
+
+then i was asked to join AJC to maintain and fix production bugs, and ofcourse after I switched to being an AJC employee, i was asked to enhance it more and more as the business kept on dreaming...
+
+After a few months I was introduced to the backend service (single .Net Framework service) accompanied with asp.net classic pages for logic and database ops, and Oracle database structure & PL/SQL programming.
+
+Then slowly i became responsible for backend and database procedures,tables, and views updates completely.
+
+Then i was asked to build an internal system for the security team to help with some internal tasks of them. I created that using angular and .net Framework v4.7. and it was a huge success.
+
+After a couple of years, I kept nagging on the business and dev head to upgrade from asp classic, jquery, and .net framework, and replace them with new tech stack (.net core & react) [i did try to introduce Meteor.js but the bank environment security banned it]
+
+Then we had this project requirement for online onboarding.
+I fought my ranking colleagues and direct manager to introduce ReactJS and to use it for the frontend.
+They were fighting the idea due to their lack of knowledge of the technology, and because i'll be the single-resource who can support it.
+
+Thankfully, my team was interested in learning the new tech, but not strong enough to fight our manager, but it still gave me a chance to win the fight.
+
+so i did win the fight by working day and night to introduce a working demo for the new website within a week.
+and we moved on with what i've built. of course the manager was happy that we were ahead of schedule regarding the frontend.
+Then we integrated with a vendor who was responsible for providing Oracle's BMS for onboarding automation across multiple departments.
+I had a huge influence in the design phase meetings with the vendor architecting the flow charts, modifying looping logic, finding missing connections between the systems on error/failure scenarios ..etc.
+
+Then we crated the .net framework service that integrated with the BMS system using SOAP/SVC (which is missing in the tech list under ajc in the portfolio)
+Due to the booming success of this system, React was finally approved and apraised in our arsenal.
+
+After that I proactively was trying to find a solution to our RSA/Entrust dependency problem.
+They cost too much, and their system is a blackbox with minimum to no modification capabilities from our side, and they charged a lot for any change request.
+Their authentication process was horrible and a pain for integration as they depended on .net's VIEWSTATE between multiple pages (creds, 2fa, reset,...etc.)
+So I've decided to create a .net core v2 service to memic the authentication process maintaining the VIEWSTATE and cookies containers to create the authentication micro service, which is only responsible for authentication action (login/reset pwd, forgot pwd, force reset pwd)
+
+For the POC I had to monitor and reject concurrent sessions as it was a regulatory rule from CMA not to allow concurrent sessions.
+So i handled it both in the UI (through cookie & auth headers) and the backend + DB records
+
+I successfully deployed a POC and created the first micro service we had (introducing the idea and injecting it into our arsenal).
+
+After that the business finally got back to my ever nagging request of creating a new customer portal with new services architecture which we concluded them to be micro-services architecture with mobile-friendly ReactJS frontend which would later on be merged with the onboarding website.
+
+I summerized and listed every single service we had (with the help of my friends, but under my leadership and heavy involvement)
+We devided the list of 200+ endpoints into their respective domains like Accounts (for cash accounts and transfers), Portfolios (which held the cusotmer assets), Profiles (customer information, KYC, custom settings/preferences), and so on... and we added multiple interface micro services to communicate with legacy or integral systems like T24-Temenos, BPM, Gov. integrations, ..etc. each with their own micro-service to handle auth, communication, and/or non-json req/res to be consumed by our major micro-services in json format.
+
+Then I introduced Ocelot .net gateway to make the client/frontend contact a single endpoint base url rather than consuming the micro-services (ms) directly and to add a layer of security protecting direct access to ms and only expose the gateway to the public internet.
+
+Then a team mate introduced a logging system called SeqLog which we included in each backend service with log levels and meaningful logs for easier debugging and to help system support team in troubleshooting live issues
+
+Then we all worked heavily on estimating the effort / time / and perfect resource to implement each and every task on Microsoft Project (which again is not mentioned in the cv/portfolio)
+
+I was the team lead even though i was the youngest and the least senior amongst my team mates.
+
+After discussing the timeline with the management and business, they decided to split the project into two phases with the most essential services in phase one, and the remaining less impacting services in phase 2.
+
+We worked through the corona virus outbreak form home, going ahead of schedule most of the time, and delivered phase one 3 weeks ahead of schedule.
+Then we moved on to phase 2 before we finally launch the live/production version in total 1.5m ahead of schedule.
+
+Then the business team decided to hire a designing firm to revamp the ui and integrate the trading platform frontend and backend into the new revamped portal.
+
+I was the only one attending from the dev team, and was considered invaluable in the discussion, research, feasibility and acception meetings with the designing firm sometimes more than the business team themselves, which was the project that introduced me to Figma designs (not mentioned in cv/portfolio)
+
+After that i was 100% responsible for planning and implementing the new site. Then I had the support of multiple junior outsourced team members to help.
+I was responsible of doing interviews; decide on the candidates; onboard them; teach them my code style, folder structure, acceptance criteria, code review, and needless to say the domain knowledge as they had zero brokerage experience.
+
+After the successful launch and maintainance of this new revamped portal I was the go-to person for any ambigous production cases that logs couldn't uncover.
+
+Then we had a huge project/service to add to the portal, so I decided to apply the Agile methodology in task managements and resource allocation as well as task estimations
+We didn't use an Agile software like Xira, instead we used gitlab project canban for PBL, SBL, under-development, done-dev, ready-for-testing, pass-UAT, deployed UAT, deployed staging, done (deployed prod)
+Thankfully gitlab project provided drawdowns, heatmaps, and milestones which I was responsible to discuss with the PMO.
+
+Later I was less involved in the code moving to a more managerial role to architect, design, collaborate with any vendor integrating with us, assign tasks to team members, and provide needed support in both code, logic, or business inquiries by my team.
+
+Besides my routine work, I was always looking for ways to enhance our system.
+
+I collaborated with my JAVA-oriented colleague to re-design the old design we used LightStreamer from sending comma-separated string to rigid database tables with rigid configurations which resulted in a dynamic structure for subscribing to publication, dynamic support for any table/view we have in our database, pushing ONLY updated fields/records as they occur instead of pushing a full snapshot of the updated records, gzipped JSON formatted messages intead of the rigid strings. 
+After performing the stress-test on the new architecture, we enhaned the server capacity from serving 400 users to 1300 user before the server's memory overloads.
+
+I tried multiple times to replace Entrust completely and work on our in-house authentication system, but my manager won this fight by convincing everyone up to the COO that this is a very risky project that would open us to regulatory and cyber-security hell hole.
+
+Then I decied to add multiple missing features in our trading UI to calculate and estimate profit/loss per trade as user is entering the trade parameters, as well as enhanced reports answering all types of questions about trading orders profits, position valuations, and other reports.
+
+Then I worked on implementing Price Alerts, which involved learning oracle's Advanced queuing not to affect high-frequent price update threads
+I managed to create the POC while learning the vendor's PL/SQL code, logic, and sequence to inject my code.
+Again it was negated by my manager due to lack of vision and his zero-risk mentality.
+
+I then created a parallel system to the price updates to receive and process prices directly from the market to completely avoid modifying vendor's code using JAVA due to the lack of support of dotnet on the UNIX server recieving the prices.
+Again it was negated by my manager.
+
+Then I created a system to implement conditinal orders which would trigger upon price updates. With a successful POC and real thorough research and development, it was considered an out of this world achievement!
+After this initiative too was killed too by my manager, I quit!

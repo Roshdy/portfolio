@@ -29,8 +29,8 @@
   <meta name="twitter:image" content="https://roshdydev.netlify.app/profile.png" />
 
   <!-- Favicon (SVG inline — no file needed) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236c63ff'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Inter,sans-serif' font-weight='900' font-size='52' fill='white'%3ER%3C/text%3E%3C/svg%3E" />
-  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236c63ff'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Inter,sans-serif' font-weight='900' font-size='52' fill='white'%3ER%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236c63ff'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Inter,sans-serif' font-weight='900' font-size='38' fill='white'%3ERK%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236c63ff'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Inter,sans-serif' font-weight='900' font-size='38' fill='white'%3ERK%3C/text%3E%3C/svg%3E" />
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -58,6 +58,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <style>
     /* ─── CSS VARIABLES ─────────────────────────────────────────────── */
     :root {
@@ -612,6 +613,7 @@
       max-width: 480px;
       line-height: 1.75;
       margin-bottom: 1.75rem;
+      text-align: justify;
     }
 
     .hero-ctas {
@@ -957,6 +959,20 @@
       border-radius: 10px
     }
 
+    .logo-fallback {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      color: var(--accent);
+    }
+
+    .logo-fallback svg.lucide {
+      width: 26px;
+      height: 26px;
+    }
+
     .exp-meta {
       flex: 1
     }
@@ -1023,6 +1039,17 @@
       border: 1px solid rgba(255, 100, 100, .3)
     }
 
+    .exp-summary {
+      font-size: .875rem;
+      color: var(--text2);
+      line-height: 1.75;
+      padding: .65rem 1rem;
+      margin-bottom: 1rem;
+      background: var(--bg3);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+    }
+
     .exp-bullets {
       list-style: none;
       display: flex;
@@ -1062,6 +1089,16 @@
       padding: .2rem .6rem;
       border-radius: 5px;
       transition: background .2s, transform .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+    }
+
+    .tech-tag i[class*="devicon"],
+    .skill-chip i[class*="devicon"] {
+      font-size: 13px;
+      line-height: 1;
+      flex-shrink: 0;
     }
 
     .tech-tag:hover {
@@ -1232,6 +1269,9 @@
       border-radius: 8px;
       cursor: default;
       transition: border-color .2s, background .2s, transform .2s, color .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
     }
 
     .skill-chip:hover {
@@ -1319,7 +1359,7 @@
     /* ─── CERTIFICATIONS ────────────────────────────────────────────── */
     .certs-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
     }
 
@@ -1332,6 +1372,9 @@
       gap: 1rem;
       align-items: flex-start;
       transition: border-color .3s, box-shadow .3s, transform .3s;
+      position: relative;
+      color: inherit;
+      text-decoration: none;
     }
 
     .cert-card:hover {
@@ -1339,6 +1382,19 @@
       box-shadow: 0 6px 24px var(--accent2-glow);
       transform: translateY(-3px);
     }
+
+    a.cert-card { cursor: pointer; }
+
+    .cert-ext-link {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: var(--text3);
+      transition: color .2s;
+      line-height: 1;
+    }
+    .cert-ext-link svg.lucide { width: 13px; height: 13px; }
+    a.cert-card:hover .cert-ext-link { color: var(--accent2); }
 
     .cert-icon {
       width: 44px;
@@ -1361,6 +1417,12 @@
     .cert-info p {
       font-size: .8rem;
       color: var(--accent2)
+    }
+
+    .cert-date {
+      font-size: .75rem;
+      color: var(--text2) !important;
+      margin-top: .4rem
     }
 
     /* ─── WORK SAMPLES ──────────────────────────────────────────────── */
@@ -1457,11 +1519,19 @@
       height: 48px;
       border-radius: 12px;
       flex-shrink: 0;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      background: white;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
+      overflow: hidden;
+    }
+
+    .edu-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 10px;
     }
 
     .edu-info h4 {
@@ -1547,7 +1617,7 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
       max-width: 700px;
       margin: 0 auto 3rem;
@@ -1692,7 +1762,145 @@
         grid-template-columns: 1fr
       }
     }
+
+
+
+    /* ─── FULL STORY ────────────────────────────────────────────────── */
+    .exp-story-toggle {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      background: none;
+      border: 1px solid var(--card-border);
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 600;
+      padding: .45rem .9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: .85rem;
+      transition: border-color .2s, background .2s;
+      letter-spacing: .04em;
+      width: fit-content;
+    }
+    .exp-story-toggle:hover { background: var(--bg3); border-color: var(--accent); }
+    .exp-story-toggle svg.lucide { width: 13px; height: 13px; }
+    .story-chevron { transition: transform .35s ease; margin-left: .25rem; }
+    .exp-story-toggle.open .story-chevron { transform: rotate(180deg); }
+
+    .exp-story {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .65s cubic-bezier(.4,0,.2,1);
+    }
+    .exp-story.open { max-height: 4000px; }
+
+    .exp-story-inner {
+      margin-top: 1.25rem;
+      padding: 1.5rem 1.5rem 1.25rem;
+      background: var(--bg2);
+      border-radius: 12px;
+      border-left: 3px solid var(--accent);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .exp-story-chapter h5 {
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--accent);
+      margin-bottom: .5rem;
+    }
+    .exp-story-chapter p {
+      font-size: .875rem;
+      color: var(--text2);
+      line-height: 1.85;
+    }
+
+    /* ─── LUCIDE ICON SIZES ─────────────────────────────────────────── */
+    svg.lucide {
+      display: inline-block;
+      vertical-align: text-top;
+      flex-shrink: 0;
+    }
+
+    .achievement-icon svg.lucide,
+    .contact-icon svg.lucide,
+    .cert-icon svg.lucide {
+      width: 22px;
+      height: 22px;
+      color: #fff;
+    }
+
+    .edu-icon svg.lucide {
+      width: 24px;
+      height: 24px;
+      color: #fff;
+    }
+
+    .work-sample-preview svg.lucide {
+      width: 44px;
+      height: 44px;
+      color: var(--accent);
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-link svg.lucide {
+      width: 18px;
+      height: 18px;
+    }
+
+    .soft-skill-icon svg.lucide {
+      width: 17px;
+      height: 17px;
+    }
+
+    .badge svg.lucide {
+      width: 13px;
+      height: 13px;
+    }
+
+    .mobile-nav-link svg.lucide {
+      width: 16px;
+      height: 16px;
+    }
+
+    #theme-toggle svg.lucide {
+      width: 18px;
+      height: 18px;
+      display: block;
+    }
+
+    .exp-period svg.lucide,
+    .edu-info p svg.lucide,
+    .cert-info p svg.lucide {
+      width: 13px;
+      height: 13px;
+    }
+
+    .project-period svg.lucide {
+      width: 13px;
+      height: 13px;
+    }
+
+    .btn-large svg.lucide {
+      width: 18px;
+      height: 18px;
+    }
+
+    footer svg.lucide {
+      width: 14px;
+      height: 14px;
+      color: #e25555;
+    }
   </style>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="./cv.js"></script>
+  <script src="./tech-icons.js"></script>
 </head>
 
 <body>
@@ -1714,8 +1922,8 @@
         <a href="#contact" class="nav-link" data-section="contact">Contact</a>
       </div>
       <div class="nav-actions">
-        <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
-        <a href="./roshdy-kamel-cv.pdf" download class="btn-cv" title="Download CV">
+        <button id="theme-toggle" aria-label="Toggle theme"><span class="icon-moon"><i data-lucide="moon"></i></span><span class="icon-sun" style="display:none"><i data-lucide="sun"></i></span></button>
+        <a href="#" onclick="generateAndDownloadCV();return false;" class="btn-cv" title="Download CV">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
             <polyline points="7 10 12 15 17 10" />
@@ -1733,13 +1941,13 @@
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobile-menu">
-    <a href="#hero" class="mobile-nav-link">🏠 Home</a>
-    <a href="#about" class="mobile-nav-link">👤 About</a>
-    <a href="#experience" class="mobile-nav-link">💼 Experience</a>
-    <a href="#projects" class="mobile-nav-link">🚀 Projects</a>
-    <a href="#skills" class="mobile-nav-link">⚡ Skills</a>
-    <a href="#education" class="mobile-nav-link">🎓 Education</a>
-    <a href="#contact" class="mobile-nav-link">📬 Contact</a>
+    <a href="#hero" class="mobile-nav-link"><i data-lucide="home"></i> Home</a>
+    <a href="#about" class="mobile-nav-link"><i data-lucide="user"></i> About</a>
+    <a href="#experience" class="mobile-nav-link"><i data-lucide="briefcase"></i> Experience</a>
+    <a href="#projects" class="mobile-nav-link"><i data-lucide="rocket"></i> Projects</a>
+    <a href="#skills" class="mobile-nav-link"><i data-lucide="zap"></i> Skills</a>
+    <a href="#education" class="mobile-nav-link"><i data-lucide="graduation-cap"></i> Education</a>
+    <a href="#contact" class="mobile-nav-link"><i data-lucide="mail"></i> Contact</a>
   </div>
 
   <!-- ─── SIDE NAV DOTS ─────────────────────────────────────────────── -->
@@ -1764,19 +1972,20 @@
           <h1 class="hero-name">M. Roshdy<br><span class="gradient-text">Kamel</span></h1>
           <p class="hero-title">Lead Software Engineer</p>
           <p class="hero-summary">
-            15+ years engineering trading platforms, fintech apps, and scalable systems.
-            CTO, co-founder, team leader — I build products that scale and teams that thrive.
+            Lead Software Engineer / Tech Lead with 15+ years of experience delivering web, mobile, and trading platforms across fintech 
+            and enterprise systems. Specialized in C#, .NET, React, Node.js, microservices, AWS, and team leadership, with proven impact 
+            in product launches, performance optimization, and cross-functional delivery.
           </p>
           <div class="hero-ctas">
             <a href="#contact" class="btn-primary">Get In Touch</a>
-            <a href="#experience" class="btn-secondary">View My Work</a>
+            <a href="#experience" class="btn-secondary"><span class="gradient-text">View My Work</span></a>
           </div>
           <div class="hero-badges">
-            <span class="badge">📍 Riyadh, KSA</span>
-            <span class="badge">🏦 FinTech Expert</span>
-            <span class="badge">⚛️ React / React-Native</span>
-            <span class="badge">☁️ AWS / Cloud</span>
-            <span class="badge">🧑‍💻 MERN Stack</span>
+            <span class="badge"><i data-lucide="map-pin"></i>  Riyadh, KSA</span>
+            <span class="badge"><i data-lucide="landmark"></i> FinTech Expert</span>
+            <span class="badge"><i data-lucide="atom"></i> React / React-Native</span>
+            <span class="badge"><i data-lucide="cloud"></i> AWS / Cloud</span>
+            <span class="badge"><i data-lucide="terminal"></i> MERN Stack</span>
           </div>
           <div class="stats-row">
             <div class="stat-card">
@@ -1808,18 +2017,16 @@
 <span class="code-key">const</span> engineer = {
   name:     <span class="code-str">"M. Roshdy Kamel"</span>,
   role:     <span class="code-str">"Lead Software Engineer"</span>,
-  exp:      <span class="code-num">13</span>,          <span class="code-comment">// years</span>
+  exp:      <span class="code-num">15</span>,          <span class="code-comment">// years</span>
   location: <span class="code-str">"Riyadh, KSA"</span>,
 
   stack: [
     <span class="code-str">"React"</span>, <span class="code-str">"React-Native"</span>,
-    <span class="code-str">"Node.js"</span>, <span class="code-str">"Meteor.js"</span>,
-    <span class="code-str">"C#/.NET"</span>, <span class="code-str">"Java"</span>,
+    <span class="code-str">"Node.js"</span>, <span class="code-str">"C#/.NET"</span>,
     <span class="code-str">"MongoDB"</span>, <span class="code-str">"Oracle"</span>,
   ],
 
-  superpower: <span class="code-str">"Building products</span>
-<span class="code-str">              that scale"</span>,
+  superpower: <span class="code-str">"Building products that scale"</span>,
 
   open: <span class="code-key">true</span> <span class="code-comment">// to new roles</span>
 };<span class="typing-cursor"></span></code></pre>
@@ -1857,28 +2064,28 @@
           <p class="section-label" style="margin-bottom:1rem;">Key Achievements</p>
           <div class="achievements-list">
             <div class="achievement-card">
-              <div class="achievement-icon">🚀</div>
+              <div class="achievement-icon"><i data-lucide="rocket"></i></div>
               <div class="achievement-text">
                 <h4>Successful App Launch</h4>
                 <p>Achieved 60,000+ downloads within the first month of launch.</p>
               </div>
             </div>
             <div class="achievement-card">
-              <div class="achievement-icon">👥</div>
+              <div class="achievement-icon"><i data-lucide="users"></i></div>
               <div class="achievement-text">
                 <h4>Project Leadership</h4>
                 <p>Led a team of 5 engineers to develop full-featured trading platforms.</p>
               </div>
             </div>
             <div class="achievement-card">
-              <div class="achievement-icon">⚡</div>
+              <div class="achievement-icon"><i data-lucide="zap"></i></div>
               <div class="achievement-text">
                 <h4>Performance Enhancement</h4>
                 <p>Increased app performance by 80% through deep optimization work.</p>
               </div>
             </div>
             <div class="achievement-card">
-              <div class="achievement-icon">🏦</div>
+              <div class="achievement-icon"><i data-lucide="landmark"></i></div>
               <div class="achievement-text">
                 <h4>Regulatory Approval</h4>
                 <p>Led fintech product through SAMA approval and NCA cybersecurity audit.</p>
@@ -1911,32 +2118,77 @@
             <div class="exp-header">
               <div style="display:flex;align-items:flex-start;gap:1rem;flex:1">
                 <div class="exp-logo" title="Al-Jazira Capital">
-                  <img src="https://logo.clearbit.com/aljazira.com.sa" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=aljazira.com.sa&sz=64'" alt="Al-Jazira Capital logo" loading="lazy" />
+                  <img src="./img/ajc.webp" alt="Al-Jazira Capital logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                  <span class="logo-fallback"><i data-lucide="building-2"></i></span>
                 </div>
                 <div class="exp-meta">
                   <div class="exp-role">Senior Associate Software Team Lead</div>
                   <div class="exp-company">Al-Jazira Capital</div>
                   <div class="exp-period">
-                    <span>📅 08/2016 – 08/2025</span>
-                    <span>📍 Riyadh, Saudi Arabia</span>
+                    <span><i data-lucide="calendar"></i> 08/2016 – 08/2025</span>
+                    <span><i data-lucide="map-pin"></i> Riyadh, Saudi Arabia</span>
                   </div>
                 </div>
               </div>
               <span class="exp-badge badge-lead">Team Lead</span>
             </div>
+            <p class="exp-summary">Joined as an on-site contractor to rescue a trading platform that had crashed on every launch for over a year — diagnosed and resolved the root cause in 2 weeks, delivered the live launch in 3 months, and was immediately recruited by Al-Jazira Capital. Grew from frontend developer to full-stack team lead, architecting a microservices platform from scratch, championing modern technologies against internal resistance, and consistently delivering ahead of schedule.</p>
             <ul class="exp-bullets">
-              <li>Project analysis, planning, and management for enterprise trading platforms</li>
-              <li>Led and trained a team of developers building web and mobile solutions</li>
-              <li>Developed web and mobile trading platforms for Saudi stocks market (Tadawul)</li>
-              <li>Software enhancements, upgrades, and performance optimization</li>
-              <li>Third-party application integrations; served as primary vendor focal point</li>
+              <li>Resolved a year-long production crash in a live Tadawul trading platform within 2 weeks during a 3-month on-site engagement — enabling the company's first-ever successful live launch</li>
+              <li>Championed ReactJS adoption by single-handedly building a working frontend demo in one week against stakeholder resistance — establishing React as the approved standard across the organisation</li>
+              <li>Architected a full microservices platform decomposing 200+ legacy endpoints into business domains (Accounts, Portfolios, Profiles, Market Data) fronted by an Ocelot API gateway with JWT security</li>
+              <li>Delivered the new customer portal Phase 1 three weeks ahead of schedule and Phase 2 1.5 months early through Microsoft Project planning and Agile execution tracked via GitLab Kanban boards</li>
+              <li>Built a .NET Core authentication microservice abstracting RSA/Entrust dependency, enforcing CMA-mandated concurrent-session rules at both API and database layers</li>
+              <li>Co-redesigned LightStreamer's real-time data layer from static comma-separated strings to dynamic gzipped JSON — tripling server capacity from 400 to 1,300 concurrent users</li>
+              <li>Led full hiring and onboarding lifecycle for junior team members — interviews, code standards, brokerage domain knowledge transfer, code reviews, and UAT acceptance criteria</li>
+              <li>Proactively built POCs for conditional orders, price alerts via Oracle Advanced Queuing, and a Java-based parallel market price processor — continuously pushing platform capabilities beyond assigned scope</li>
             </ul>
             <div class="exp-tech">
-              <span class="tech-tag">.NET</span><span class="tech-tag">C#</span><span class="tech-tag">Java</span>
-              <span class="tech-tag">Oracle</span><span class="tech-tag">React</span><span class="tech-tag">React-Native</span>
-              <span class="tech-tag">Microservices</span><span class="tech-tag">Ocelot GW</span>
-              <span class="tech-tag">JWT</span><span class="tech-tag">IIS</span><span class="tech-tag">LightStreamer</span>
-              <span class="tech-tag">MS SQL</span>
+              <span class="tech-tag">React</span><span class="tech-tag">React-Native</span><span class="tech-tag">Angular</span>
+              <span class="tech-tag">.NET Core</span><span class="tech-tag">.NET Framework</span><span class="tech-tag">ASP.NET</span><span class="tech-tag">C#</span>
+              <span class="tech-tag">Java</span><span class="tech-tag">SOAP / WCF</span><span class="tech-tag">Microservices</span><span class="tech-tag">Ocelot GW</span><span class="tech-tag">JWT</span>
+              <span class="tech-tag">Oracle</span><span class="tech-tag">PL/SQL</span><span class="tech-tag">MS SQL</span>
+              <span class="tech-tag">LightStreamer</span><span class="tech-tag">GitLab</span><span class="tech-tag">Figma</span><span class="tech-tag">MS Project</span><span class="tech-tag">IIS</span>
+            </div>
+            <button class="exp-story-toggle" onclick="toggleStory(this)">
+              <i data-lucide="book-open"></i>
+              <span class="story-toggle-label">Read the full story</span>
+              <i data-lucide="chevron-down" class="story-chevron"></i>
+            </button>
+            <div class="exp-story">
+              <div class="exp-story-inner">
+
+                <div class="exp-story-chapter">
+                  <h5>The Rescue Mission</h5>
+                  <p>In 2016, Al-Jazira Capital had a trading platform built on jQuery that had crashed on every single launch for the better part of a year. I was deployed as an on-site resource from E-Business Solutions for a 3-month assignment. By the end of month one, every UI requirement was completed and all backend integrations were live. In month two, we finally identified the root cause — a deep memory leak — and I resolved it within two weeks. The platform moved to pilot, and the reaction from both the development and business departments was extraordinary. Month three: live trading on Tadawul. Mission accomplished.</p>
+                </div>
+
+                <div class="exp-story-chapter">
+                  <h5>Earning a Seat at the Table</h5>
+                  <p>Al-Jazira Capital offered me a full-time role to stay and maintain the platform. What started as bug fixing and production support quickly evolved. Within months I was introduced to the full backend: a .NET Framework service, classic ASP.NET pages, and an Oracle database with PL/SQL I'd eventually own entirely. The business had vision and ambition — and I was determined to meet it. One of my early highlights was building a dedicated internal management system for the security team using Angular and .NET Framework 4.7, which became one of the most adopted internal tools in the department.</p>
+                </div>
+
+                <div class="exp-story-chapter">
+                  <h5>The Week I Won the React Debate</h5>
+                  <p>I had been advocating for a technology stack upgrade for over two years — pushing to replace classic ASP and jQuery with React and .NET Core. The opportunity arrived with an online onboarding project. There was significant internal resistance: the team was unfamiliar with React, and concerns were raised about single-resource dependency. So I went home and spent a week building a fully working React frontend demo from scratch. I walked back in with a working product. The team moved forward with what I had built — and we were ahead of schedule on the frontend before the project formally kicked off. React had a permanent home at Al-Jazira Capital.</p>
+                </div>
+
+                <div class="exp-story-chapter">
+                  <h5>Designing from 200 Endpoints Up</h5>
+                  <p>The onboarding project brought an integration with Oracle's BMS platform for multi-department onboarding automation. I was deeply involved in the design sessions with the vendor — challenging flow logic, identifying missing failure paths, and shaping the integration architecture. The SOAP/WCF service we built on top of it was a success, and it gave React the final endorsement it needed across the organisation. From there, the business agreed to a full platform rebuild. We catalogued over 200 legacy endpoints and organised them into business domains: Accounts, Portfolios, Profiles, Market Data, and a set of interface services for legacy systems including T24-Temenos and BPM. I introduced Ocelot as the API gateway — a single secure entry point to the frontend — and we embedded SeqLog across every service for meaningful, level-structured logging. Then we planned every task, estimated every hour, and assigned every resource in Microsoft Project. I was the youngest on the team. I was also the team lead.</p>
+                </div>
+
+                <div class="exp-story-chapter">
+                  <h5>Delivered. Twice. Ahead of Schedule.</h5>
+                  <p>We executed through the COVID-19 outbreak — fully remote, fully focused. Phase 1 of the new customer portal was delivered three weeks ahead of schedule. Phase 2 followed at 1.5 months early. Agile principles were embedded throughout using GitLab Kanban boards with burndowns, heatmaps, and milestone tracking that I reported directly to the PMO. The business then commissioned a design firm to revamp the entire platform UI. I was the only developer in those rooms — contributing to feasibility assessments, vendor integration architecture, and Figma design reviews, often becoming a key voice alongside — and sometimes ahead of — the business team themselves.</p>
+                </div>
+
+                <div class="exp-story-chapter">
+                  <h5>Building What I Believed In</h5>
+                  <p>Some of the work I'm most proud of at Al-Jazira Capital never made it to production — not for technical reasons, but due to the organisation's conservative risk culture at the time. I built a .NET Core authentication microservice that abstracted our costly RSA/Entrust dependency and enforced CMA-mandated concurrent session rules at both the API and database layers. I collaborated with a Java-oriented colleague to redesign LightStreamer's real-time data layer — moving from rigid comma-separated strings to dynamic gzipped JSON subscriptions — tripling server capacity from 400 to 1,300 concurrent users. That one shipped. I also built POCs for price alerts using Oracle Advanced Queuing, a conditional orders engine with a full research and implementation cycle, and a Java-based parallel market price processor running directly from the exchange feed. Each was a technically sound initiative; each was shelved. After years of pushing the ceiling, I decided it was time to find an environment where the pace of innovation matched my own.</p>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
@@ -1948,19 +2200,21 @@
             <div class="exp-header">
               <div style="display:flex;align-items:flex-start;gap:1rem;flex:1">
                 <div class="exp-logo" title="E-Business Solutions Enabling Group">
-                  <img src="data:image/svg+xml,<svg%20xmlns%3D%27http://www.w3.org/2000/svg%27%20viewBox%3D%270%200%2052%2052%27><rect%20width%3D%2752%27%20height%3D%2752%27%20rx%3D%2710%27%20fill%3D%27%231a1a28%27/><text%20x%3D%2726%27%20y%3D%2734%27%20text-anchor%3D%27middle%27%20font-family%3D%27Inter,sans-serif%27%20font-weight%3D%27900%27%20font-size%3D%2714%27%20fill%3D%27%2300d4aa%27>EBS</text></svg>" alt="E-Business Solutions logo" loading="lazy" />
+                  <img src="./img/ebseg.jpeg" alt="E-Business Solutions logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                  <span class="logo-fallback"><i data-lucide="building-2"></i></span>
                 </div>
                 <div class="exp-meta">
                   <div class="exp-role">Senior Software Engineer</div>
                   <div class="exp-company">E-Business Solutions Enabling Group</div>
                   <div class="exp-period">
-                    <span>📅 12/2014 – 07/2016</span>
-                    <span>📍 Cairo, Egypt</span>
+                    <span><i data-lucide="calendar"></i> 12/2014 – 07/2016</span>
+                    <span><i data-lucide="map-pin"></i> Cairo, Egypt</span>
                   </div>
                 </div>
               </div>
               <span class="exp-badge badge-senior">Senior</span>
             </div>
+            <p class="exp-summary">Delivered enterprise web and mobile solutions using JavaScript, HTML5, CSS, and native iOS; owned client communication, solution decisions, and on-site deployments across international projects.</p>
             <ul class="exp-bullets">
               <li>Developed and deployed enterprise solutions for corporate clients</li>
               <li>Built hybrid mobile applications with JavaScript, HTML5, and CSS</li>
@@ -1982,19 +2236,21 @@
             <div class="exp-header">
               <div style="display:flex;align-items:flex-start;gap:1rem;flex:1">
                 <div class="exp-logo" title="Al-Joman for Economic Consultancy">
-                  <img src="data:image/svg+xml,<svg%20xmlns%3D%27http://www.w3.org/2000/svg%27%20viewBox%3D%270%200%2052%2052%27><rect%20width%3D%2752%27%20height%3D%2752%27%20rx%3D%2710%27%20fill%3D%27%231a1a28%27/><text%20x%3D%2726%27%20y%3D%2734%27%20text-anchor%3D%27middle%27%20font-family%3D%27Inter,sans-serif%27%20font-weight%3D%27900%27%20font-size%3D%2714%27%20fill%3D%27%23f0a500%27>AJM</text></svg>" alt="Al-Joman logo" loading="lazy" />
+                  <img src="./img/aljoman.jpg" alt="Al-Joman logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                  <span class="logo-fallback"><i data-lucide="building-2"></i></span>
                 </div>
                 <div class="exp-meta">
                   <div class="exp-role">IT Admin / Developer</div>
                   <div class="exp-company">Al-Joman for Economic Consultancy</div>
                   <div class="exp-period">
-                    <span>📅 12/2013 – 06/2014</span>
-                    <span>📍 Kuwait City, Kuwait</span>
+                    <span><i data-lucide="calendar"></i> 12/2013 – 06/2014</span>
+                    <span><i data-lucide="map-pin"></i> Kuwait City, Kuwait</span>
                   </div>
                 </div>
               </div>
               <span class="exp-badge badge-senior">Developer</span>
             </div>
+            <p class="exp-summary">Combined system administration with application development, building Windows desktop and hybrid mobile applications in VB, C#, SQL, and Cordova while maintaining domain and infrastructure stability.</p>
             <ul class="exp-bullets">
               <li>Domain admin, system maintenance, and network administration</li>
               <li>Developed Windows desktop applications in VB and C#</li>
@@ -2015,19 +2271,21 @@
             <div class="exp-header">
               <div style="display:flex;align-items:flex-start;gap:1rem;flex:1">
                 <div class="exp-logo" title="United Interactive Group">
-                  <img src="data:image/svg+xml,<svg%20xmlns%3D%27http://www.w3.org/2000/svg%27%20viewBox%3D%270%200%2052%2052%27><rect%20width%3D%2752%27%20height%3D%2752%27%20rx%3D%2710%27%20fill%3D%27%231a1a28%27/><text%20x%3D%2726%27%20y%3D%2734%27%20text-anchor%3D%27middle%27%20font-family%3D%27Inter,sans-serif%27%20font-weight%3D%27900%27%20font-size%3D%2714%27%20fill%3D%27%23ff6464%27>UIG</text></svg>" alt="United Interactive Group logo" loading="lazy" />
+                  <img src="./img/uig.webp" alt="United Interactive Group logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                  <span class="logo-fallback"><i data-lucide="building-2"></i></span>
                 </div>
                 <div class="exp-meta">
                   <div class="exp-role">PHP Developer</div>
                   <div class="exp-company">United Interactive Group</div>
                   <div class="exp-period">
-                    <span>📅 10/2013 – 12/2013</span>
-                    <span>📍 Kuwait City, Kuwait</span>
+                    <span><i data-lucide="calendar"></i> 10/2013 – 12/2013</span>
+                    <span><i data-lucide="map-pin"></i> Kuwait City, Kuwait</span>
                   </div>
                 </div>
               </div>
               <span class="exp-badge badge-freelance">PHP Dev</span>
             </div>
+            <p class="exp-summary">Designed and developed responsive websites and a mobile site for a digital media agency, working across the full frontend stack with PHP, HTML5, CSS3, and jQuery.</p>
             <ul class="exp-bullets">
               <li>Designed and developed multiple websites using PHP, HTML5, CSS3, and jQuery</li>
               <li>Designed and developed a mobile website for UIG</li>
@@ -2046,19 +2304,21 @@
             <div class="exp-header">
               <div style="display:flex;align-items:flex-start;gap:1rem;flex:1">
                 <div class="exp-logo" title="Egyptian Army">
-                  <img src="data:image/svg+xml,<svg%20xmlns%3D%27http://www.w3.org/2000/svg%27%20viewBox%3D%270%200%2052%2052%27><rect%20width%3D%2752%27%20height%3D%2752%27%20rx%3D%2710%27%20fill%3D%27%231a1a28%27/><text%20x%3D%2726%27%20y%3D%2734%27%20text-anchor%3D%27middle%27%20font-family%3D%27Inter,sans-serif%27%20font-weight%3D%27900%27%20font-size%3D%2714%27%20fill%3D%27%23ccaa44%27>EGY</text></svg>" alt="Egyptian Army" loading="lazy" />
+                  <img src="./img/army.png" alt="Egyptian Army" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                  <span class="logo-fallback"><i data-lucide="shield"></i></span>
                 </div>
                 <div class="exp-meta">
                   <div class="exp-role">VB Developer</div>
                   <div class="exp-company">Egyptian Army</div>
                   <div class="exp-period">
-                    <span>📅 03/2012 – 03/2013</span>
-                    <span>📍 Cairo, Egypt</span>
+                    <span><i data-lucide="calendar"></i> 03/2012 – 03/2013</span>
+                    <span><i data-lucide="map-pin"></i> Cairo, Egypt</span>
                   </div>
                 </div>
               </div>
               <span class="exp-badge badge-freelance">National Service</span>
             </div>
+            <p class="exp-summary">Served as a software developer during mandatory national service, building internal reporting and management tools in C# and VB while supporting day-to-day IT operations and network administration.</p>
             <ul class="exp-bullets">
               <li>Developed and modified Excel-based applications for reporting</li>
               <li>System maintenance and network administration</li>
@@ -2077,19 +2337,21 @@
             <div class="exp-header">
               <div style="display:flex;align-items:flex-start;gap:1rem;flex:1">
                 <div class="exp-logo" title="E-Business Solutions Enabling Group">
-                  <img src="data:image/svg+xml,<svg%20xmlns%3D%27http://www.w3.org/2000/svg%27%20viewBox%3D%270%200%2052%2052%27><rect%20width%3D%2752%27%20height%3D%2752%27%20rx%3D%2710%27%20fill%3D%27%231a1a28%27/><text%20x%3D%2726%27%20y%3D%2734%27%20text-anchor%3D%27middle%27%20font-family%3D%27Inter,sans-serif%27%20font-weight%3D%27900%27%20font-size%3D%2714%27%20fill%3D%27%2300d4aa%27>EBS</text></svg>" alt="E-Business Solutions logo" loading="lazy" />
+                  <img src="./img/ebseg.jpeg" alt="E-Business Solutions logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                  <span class="logo-fallback"><i data-lucide="building-2"></i></span>
                 </div>
                 <div class="exp-meta">
                   <div class="exp-role">Developer</div>
                   <div class="exp-company">E-Business Solutions Enabling Group</div>
                   <div class="exp-period">
-                    <span>📅 07/2011 – 01/2012</span>
-                    <span>📍 Cairo, Egypt</span>
+                    <span><i data-lucide="calendar"></i> 07/2011 – 01/2012</span>
+                    <span><i data-lucide="map-pin"></i> Cairo, Egypt</span>
                   </div>
                 </div>
               </div>
               <span class="exp-badge badge-senior">Developer</span>
             </div>
+            <p class="exp-summary">First professional role — contributed to an enterprise software team building iOS applications with C# and Xcode alongside ASP.Net web development, establishing a foundation in both mobile and web engineering.</p>
             <ul class="exp-bullets">
               <li>iOS application development using C# and Xcode</li>
               <li>Web development using VB and ASP.Net</li>
@@ -2124,16 +2386,17 @@
         <div class="project-card fade-in">
           <div class="project-header">
             <div class="project-logo">
-              <img src="https://logo.clearbit.com/malfintech.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=malfintech.com&sz=64'" alt="Mal Fintech logo" loading="lazy" />
+              <img src="https://logo.clearbit.com/malfintech.com" onerror="this.onerror=function(){this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'};this.src='https://www.google.com/s2/favicons?domain=malfintech.com&sz=64'" alt="Mal Fintech logo" loading="lazy" />
+              <span class="logo-fallback"><i data-lucide="building-2"></i></span>
             </div>
             <div class="project-links">
-              <a href="https://www.malfintech.com" target="_blank" rel="noopener" class="project-link" title="Visit website">🔗</a>
+              <a href="https://www.malfintech.com" target="_blank" rel="noopener" class="project-link" title="Visit website"><i data-lucide="external-link"></i></a>
             </div>
           </div>
           <div>
             <div class="project-title">Mal Fintech</div>
             <div class="project-role">Full-Stack Developer (Part-Time)</div>
-            <div class="project-period">📅 12/2021 – 04/2024 · Jeddah, Saudi Arabia</div>
+            <div class="project-period"><i data-lucide="calendar"></i> 12/2021 – 04/2024 · <i data-lucide="map-pin"></i> Jeddah, Saudi Arabia</div>
             <div class="project-desc">
               Designed and implemented the full Malfintech system. Published on both app stores.
               Audited by NCA for cybersecurity and approved by SAMA — a significant regulatory milestone.
@@ -2151,16 +2414,17 @@
         <div class="project-card fade-in">
           <div class="project-header">
             <div class="project-logo">
-              <img src="https://logo.clearbit.com/viboapp.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=viboapp.com&sz=64'" alt="VIBO logo" loading="lazy" />
+              <img src="https://logo.clearbit.com/viboapp.com" onerror="this.onerror=function(){this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'};this.src='https://www.google.com/s2/favicons?domain=viboapp.com&sz=64'" alt="VIBO logo" loading="lazy" />
+              <span class="logo-fallback"><i data-lucide="building-2"></i></span>
             </div>
             <div class="project-links">
-              <a href="https://www.viboapp.com" target="_blank" rel="noopener" class="project-link" title="Visit website">🔗</a>
+              <a href="https://www.viboapp.com" target="_blank" rel="noopener" class="project-link" title="Visit website"><i data-lucide="external-link"></i></a>
             </div>
           </div>
           <div>
             <div class="project-title">VIBO</div>
             <div class="project-role">CTO & Co-Founder (Startup)</div>
-            <div class="project-period">📅 06/2019 – 08/2025 · Cairo, Egypt</div>
+            <div class="project-period"><i data-lucide="calendar"></i> 06/2019 – 08/2025 · <i data-lucide="map-pin"></i> Cairo, Egypt</div>
             <div class="project-desc">
               Co-founded and served as CTO. Designed and implemented M2M-EG mobile and web app.
               Published on both stores. Integrated MasterCard, e-payment gateways, maps, and video features.
@@ -2177,16 +2441,16 @@
         <div class="project-card fade-in">
           <div class="project-header">
             <div class="project-logo">
-              <img src="data:image/svg+xml,<svg%20xmlns%3D%27http://www.w3.org/2000/svg%27%20viewBox%3D%270%200%2052%2052%27><rect%20width%3D%2752%27%20height%3D%2752%27%20rx%3D%2710%27%20fill%3D%27%231a1a28%27/><text%20x%3D%2726%27%20y%3D%2734%27%20text-anchor%3D%27middle%27%20font-family%3D%27Inter,sans-serif%27%20font-weight%3D%27900%27%20font-size%3D%2718%27%20fill%3D%27%23f0a500%27>SK</text></svg>" alt="SuperKoshk logo" loading="lazy" />
+              <img src="./img/superkoshk.png" alt="SuperKoshk logo" loading="lazy" />
             </div>
             <div class="project-links">
-              <a href="https://www.superkoshk.com" target="_blank" rel="noopener" class="project-link" title="Visit website">🔗</a>
+              <a href="https://www.superkoshk.com" target="_blank" rel="noopener" class="project-link" title="Visit website"><i data-lucide="external-link"></i></a>
             </div>
           </div>
           <div>
             <div class="project-title">SuperKoshk</div>
             <div class="project-role">CTO & Co-Founder (Startup)</div>
-            <div class="project-period">📅 03/2017 – 03/2018 · Cairo, Egypt</div>
+            <div class="project-period"><i data-lucide="calendar"></i> 03/2017 – 03/2018 · <i data-lucide="map-pin"></i> Cairo, Egypt</div>
             <div class="project-desc">
               Designed and implemented the SuperKoshk mobile and web applications. Published on
               both Apple App Store and Google Play Store. Developed the company website end-to-end.
@@ -2203,16 +2467,17 @@
         <div class="project-card fade-in">
           <div class="project-header">
             <div class="project-logo">
-              <img src="https://logo.clearbit.com/albawardi.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=albawardi.com&sz=64'" alt="Albawardi logo" loading="lazy" />
+              <img src="https://logo.clearbit.com/albawardi.com" onerror="this.onerror=function(){this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'};this.src='https://www.google.com/s2/favicons?domain=albawardi.com&sz=64'" alt="Albawardi logo" loading="lazy" />
+              <span class="logo-fallback"><i data-lucide="building-2"></i></span>
             </div>
             <div class="project-links">
-              <a href="https://www.albuwardi.com" target="_blank" rel="noopener" class="project-link" title="Visit website">🔗</a>
+              <a href="https://www.albuwardi.com" target="_blank" rel="noopener" class="project-link" title="Visit website"><i data-lucide="external-link"></i></a>
             </div>
           </div>
           <div>
             <div class="project-title">Albawardi</div>
             <div class="project-role">Frontend Web Developer (Freelance)</div>
-            <div class="project-period">📅 02/2014 – 05/2014 · Kuwait City, Kuwait</div>
+            <div class="project-period"><i data-lucide="calendar"></i> 02/2014 – 05/2014 · <i data-lucide="map-pin"></i> Kuwait City, Kuwait</div>
             <div class="project-desc">
               Designed and implemented the Albawardi corporate website from the ground up,
               with a fully responsive frontend using Bootstrap 3 and jQuery.
@@ -2229,16 +2494,16 @@
         <div class="project-card fade-in">
           <div class="project-header">
             <div class="project-logo">
-              <img src="data:image/svg+xml,<svg%20xmlns%3D%27http://www.w3.org/2000/svg%27%20viewBox%3D%270%200%2052%2052%27><rect%20width%3D%2752%27%20height%3D%2752%27%20rx%3D%2710%27%20fill%3D%27%231a1a28%27/><text%20x%3D%2726%27%20y%3D%2734%27%20text-anchor%3D%27middle%27%20font-family%3D%27Inter,sans-serif%27%20font-weight%3D%27900%27%20font-size%3D%2714%27%20fill%3D%27%239c27b0%27>BRD</text></svg>" alt="Barada logo" loading="lazy" />
+              <img src="./img/barada.jpeg" alt="Barada logo" loading="lazy" />
             </div>
             <div class="project-links">
-              <a href="https://www.barada.com" target="_blank" rel="noopener" class="project-link" title="Visit website">🔗</a>
+              <a href="https://www.barada.com" target="_blank" rel="noopener" class="project-link" title="Visit website"><i data-lucide="external-link"></i></a>
             </div>
           </div>
           <div>
             <div class="project-title">Barada</div>
             <div class="project-role">Frontend Web Developer (Freelance)</div>
-            <div class="project-period">📅 10/2013 – 03/2014 · Kuwait City, Kuwait</div>
+            <div class="project-period"><i data-lucide="calendar"></i> 10/2013 – 03/2014 · <i data-lucide="map-pin"></i> Kuwait City, Kuwait</div>
             <div class="project-desc">
               Designed and implemented the full Barada website with a responsive, cross-browser
               compatible frontend using Bootstrap 3, jQuery, PHP and MS-SQL.
@@ -2255,13 +2520,14 @@
         <div class="project-card fade-in">
           <div class="project-header">
             <div class="project-logo">
-              <img src="https://logo.clearbit.com/keeactionsports.com" onerror="this.onerror=null;this.src='https://www.google.com/s2/favicons?domain=keeactionsports.com&sz=64'" alt="KEE Action Sports logo" loading="lazy" />
+              <img src="./img/kee.jpeg" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" alt="KEE Action Sports logo" loading="lazy" />
+              <span class="logo-fallback"><i data-lucide="building-2"></i></span>
             </div>
           </div>
           <div>
             <div class="project-title">KEE Action Sports</div>
             <div class="project-role">Database Designer (Freelance)</div>
-            <div class="project-period">📅 08/2009 – 03/2010 · Cairo, Egypt</div>
+            <div class="project-period"><i data-lucide="calendar"></i> 08/2009 – 03/2010 · <i data-lucide="map-pin"></i> Cairo, Egypt</div>
             <div class="project-desc">
               Designed and implemented the complete database system for the company's Egypt office.
               Schema design, normalization, and data modeling from scratch.
@@ -2292,12 +2558,23 @@
         <div class="skills-categories fade-in">
 
           <div class="skill-category">
-            <h3>Frontend & Mobile</h3>
+            <h3>Languages</h3>
+            <div class="skill-chips">
+              <span class="skill-chip highlight">C#</span>
+              <span class="skill-chip highlight">JavaScript</span>
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">PHP</span>
+              <span class="skill-chip">VB</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Frontend</h3>
             <div class="skill-chips">
               <span class="skill-chip highlight">React</span>
-              <span class="skill-chip highlight">React-Native</span>
+              <span class="skill-chip highlight">React Native</span>
               <span class="skill-chip">Redux</span>
-              <span class="skill-chip">JavaScript</span>
               <span class="skill-chip">HTML5</span>
               <span class="skill-chip">CSS3</span>
               <span class="skill-chip">jQuery</span>
@@ -2306,16 +2583,12 @@
           </div>
 
           <div class="skill-category">
-            <h3>Backend & Runtimes</h3>
+            <h3>Backend & API</h3>
             <div class="skill-chips">
               <span class="skill-chip highlight">Node.js</span>
               <span class="skill-chip highlight">Meteor.js</span>
-              <span class="skill-chip">C# / .NET</span>
-              <span class="skill-chip">ASP.NET</span>
-              <span class="skill-chip">Java</span>
-              <span class="skill-chip">PHP</span>
-              <span class="skill-chip">Python</span>
-              <span class="skill-chip">VB</span>
+              <span class="skill-chip">.NET / ASP.NET</span>
+              <span class="skill-chip">MVC</span>
               <span class="skill-chip">REST</span>
               <span class="skill-chip">SOAP / WCF</span>
               <span class="skill-chip">Microservices</span>
@@ -2323,29 +2596,37 @@
           </div>
 
           <div class="skill-category">
-            <h3>Databases & Cloud</h3>
+            <h3>Cloud & DevOps</h3>
+            <div class="skill-chips">
+              <span class="skill-chip highlight">AWS</span>
+              <span class="skill-chip">Google Cloud</span>
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">GitHub Actions</span>
+              <span class="skill-chip">CI/CD</span>
+            </div>
+          </div>
+
+          <div class="skill-category">
+            <h3>Databases</h3>
             <div class="skill-chips">
               <span class="skill-chip highlight">MongoDB</span>
               <span class="skill-chip">SQL Server</span>
               <span class="skill-chip">Oracle</span>
               <span class="skill-chip">MySQL</span>
-              <span class="skill-chip">AWS</span>
-              <span class="skill-chip">Google Cloud</span>
-              <span class="skill-chip">Galaxy (Meteor)</span>
             </div>
           </div>
 
           <div class="skill-category">
-            <h3>Soft Skills</h3>
+            <h3>Leadership</h3>
             <div class="soft-skills-grid">
-              <div class="soft-skill"><span class="soft-skill-icon">🧩</span>Problem Solving</div>
-              <div class="soft-skill"><span class="soft-skill-icon">💡</span>Creative Thinking</div>
-              <div class="soft-skill"><span class="soft-skill-icon">🏗️</span>Software Architecture</div>
-              <div class="soft-skill"><span class="soft-skill-icon">📋</span>Technical Docs</div>
-              <div class="soft-skill"><span class="soft-skill-icon">🤝</span>Client Relations</div>
-              <div class="soft-skill"><span class="soft-skill-icon">🔗</span>System Integrations</div>
-              <div class="soft-skill"><span class="soft-skill-icon">🗺️</span>Project Planning</div>
-              <div class="soft-skill"><span class="soft-skill-icon">👑</span>Team Leadership</div>
+              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="crown"></i></span>Tech Leadership</div>
+              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="briefcase"></i></span>Project Management</div>
+              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="refresh-cw"></i></span>Scrum / Agile</div>
+              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="clipboard"></i></span>Requirements Gathering</div>
+              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="layers"></i></span>Software Architecture</div>
+              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="link"></i></span>System Integrations</div>
+              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="handshake"></i></span>Client Relations</div>
+              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="file-text"></i></span>Technical Docs</div>
             </div>
           </div>
         </div>
@@ -2390,21 +2671,15 @@
             </div>
           </div>
           <div class="skill-bar-item">
-            <div class="skill-bar-header"><span>Java</span><span>80%</span></div>
+            <div class="skill-bar-header"><span>Java</span><span>50%</span></div>
             <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="80"></div>
+              <div class="skill-bar-fill" data-width="50"></div>
             </div>
           </div>
           <div class="skill-bar-item">
-            <div class="skill-bar-header"><span>Python</span><span>70%</span></div>
+            <div class="skill-bar-header"><span>Python</span><span>60%</span></div>
             <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="70"></div>
-            </div>
-          </div>
-          <div class="skill-bar-item">
-            <div class="skill-bar-header"><span>Team Leadership</span><span>92%</span></div>
-            <div class="skill-bar-track">
-              <div class="skill-bar-fill" data-width="92"></div>
+              <div class="skill-bar-fill" data-width="60"></div>
             </div>
           </div>
         </div>
@@ -2428,21 +2703,28 @@
         <p class="section-label" style="margin-bottom:1rem;">Education</p>
         <div class="edu-grid fade-in">
           <div class="edu-card">
-            <div class="edu-icon">🎓</div>
+            <div class="edu-icon">
+              <img src="./img/miu.png" alt="Misr International University logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <span class="logo-fallback"><i data-lucide="graduation-cap"></i></span>
+            </div>
             <div class="edu-info">
               <h4>BSc in Computer Science</h4>
               <div class="edu-school">Misr International University</div>
-              <p>2007 – 2011 · Cairo, Egypt</p>
-              <p style="margin-top:.4rem;">GPA: 3.25 — Very Good. Excellent in final year and graduation project.</p>
+              <p><i data-lucide="calendar"></i> 2007 – 2011 · <i data-lucide="map-pin"></i> Cairo, Egypt</p>
+              <p style="margin-top:.4rem;">GPA: 3.25 — Very Good.</p>
+              <p style="margin-top:.4rem;">Excellent in Graduation Project.</p>
               <p style="margin-top:.3rem;font-size:.8rem;color:var(--accent2);">Graduation Project: Smart Vehicle Monitoring System (SVMS) — Android app controlling GPS/GSM microcontroller.</p>
             </div>
           </div>
           <div class="edu-card">
-            <div class="edu-icon">🏫</div>
+            <div class="edu-icon">
+              <img src="./img/najat.jpeg" alt="Al-Najat School logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <span class="logo-fallback"><i data-lucide="graduation-cap"></i></span>
+            </div>
             <div class="edu-info">
               <h4>High School</h4>
               <div class="edu-school">Al-Najat School</div>
-              <p>2007 · Kuwait</p>
+              <p><i data-lucide="calendar"></i> 2007 · <i data-lucide="map-pin"></i> Kuwait</p>
               <p style="margin-top:.4rem;">Grade: Very Good</p>
             </div>
           </div>
@@ -2452,32 +2734,50 @@
       <div style="margin-bottom:2.5rem;">
         <p class="section-label" style="margin-bottom:1rem;">Certifications</p>
         <div class="certs-grid fade-in">
-          <div class="cert-card">
-            <div class="cert-icon">🤖</div>
-            <div class="cert-info">
-              <h4>AI and Data Science</h4>
-              <p>MIT</p>
+          <a class="cert-card" href="https://credentials.professional.mit.edu/cf6a60ce-fdeb-4f75-90ca-87e3a14456b9#acc.JGCUqE4c" target="_blank" rel="noopener">
+            <span class="cert-ext-link"><i data-lucide="external-link"></i></span>
+            <div class="project-logo">
+              <img src="https://logo.clearbit.com/mit.edu" onerror="this.onerror=function(){this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'};this.src='https://www.google.com/s2/favicons?domain=mit.edu&sz=64'" alt="MIT logo" loading="lazy" />
+              <span class="logo-fallback"><i data-lucide="building-2"></i></span>
             </div>
-          </div>
-          <div class="cert-card">
-            <div class="cert-icon">🔄</div>
+            <div class="cert-info">
+              <h4>Applied Data Science Program (AI/ML)</h4>
+              <p>MIT</p>
+              <p class="cert-date"><i data-lucide="calendar"></i> Apr 2025</p>
+            </div>
+          </a>
+          <a class="cert-card" href="https://www.credly.com/badges/adb8106b-c3ef-4cd9-aa6a-5c84b5c6d861?source=linked_in_profile" target="_blank" rel="noopener">
+            <span class="cert-ext-link"><i data-lucide="external-link"></i></span>
+            <div class="project-logo">
+              <img src="./img/PSM.png" onerror="this.onerror=function(){this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'};" alt="PSM logo" loading="lazy" />
+              <span class="logo-fallback"><i data-lucide="refresh-cw"></i></span>
+            </div>
             <div class="cert-info">
               <h4>Professional Scrum Master 1</h4>
-              <p>Scrum.org (PSM I)</p>
+              <p>Scrum.org</p>
+              <p class="cert-date"><i data-lucide="calendar"></i> Mar 2022</p>
             </div>
-          </div>
+          </a>
           <div class="cert-card">
-            <div class="cert-icon">🐘</div>
+            <div class="project-logo">
+              <img src="https://logo.clearbit.com/php.net" onerror="this.onerror=function(){this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'};this.src='https://www.google.com/s2/favicons?domain=php.net&sz=64'" alt="PHP logo" loading="lazy" />
+              <span class="logo-fallback"><i data-lucide="code-2"></i></span>
+            </div>
             <div class="cert-info">
               <h4>PHP Programming</h4>
               <p>Training / Course</p>
+              <p class="cert-date"><i data-lucide="calendar"></i> August 2009</p>
             </div>
           </div>
           <div class="cert-card">
-            <div class="cert-icon">🔐</div>
+            <div class="project-logo">
+              <img src="./img/ethical.jpg" onerror="this.onerror=function(){this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'};" alt="VIBO logo" loading="lazy" />
+              <span class="logo-fallback"><i data-lucide="shield-check"></i></span>
+            </div>
             <div class="cert-info">
               <h4>Ethical Hacking</h4>
               <p>Training / Course</p>
+              <p class="cert-date"><i data-lucide="calendar"></i> August 2012</p>
             </div>
           </div>
         </div>
@@ -2512,39 +2812,39 @@
       </div>
 
       <!-- Work Samples -->
-      <div>
+      <!-- <div>
         <p class="section-label" style="margin-bottom:1rem;">Work Samples</p>
         <div class="work-samples-grid fade-in">
           <div class="work-sample-card">
-            <div class="work-sample-preview">🏦</div>
+            <div class="work-sample-preview"><i data-lucide="landmark"></i></div>
             <div class="work-sample-body">
               <h4>Aljazira Tadawul</h4>
               <a href="https://www.aljaziratadawul.com" target="_blank" rel="noopener">aljaziratadawul.com</a>
             </div>
           </div>
           <div class="work-sample-card">
-            <div class="work-sample-preview">📈</div>
+            <div class="work-sample-preview"><i data-lucide="trending-up"></i></div>
             <div class="work-sample-body">
               <h4>Tadawul Com</h4>
               <a href="https://www.tadawulcom.com.sa" target="_blank" rel="noopener">tadawulcom.com.sa</a>
             </div>
           </div>
           <div class="work-sample-card">
-            <div class="work-sample-preview">💹</div>
+            <div class="work-sample-preview"><i data-lucide="candlestick-chart"></i></div>
             <div class="work-sample-body">
               <h4>iTradeX</h4>
               <a href="https://www.itradex.co" target="_blank" rel="noopener">itradex.co</a>
             </div>
           </div>
           <div class="work-sample-card">
-            <div class="work-sample-preview">📱</div>
+            <div class="work-sample-preview"><i data-lucide="smartphone"></i></div>
             <div class="work-sample-body">
               <h4>Vibo App</h4>
               <a href="https://www.viboapp.com" target="_blank" rel="noopener">viboapp.com</a>
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </section>
 
@@ -2563,22 +2863,22 @@
 
       <div class="contact-grid fade-in">
         <div class="contact-item">
-          <div class="contact-icon">📧</div>
+          <div class="contact-icon"><i data-lucide="mail"></i></div>
           <h4>Email</h4>
           <a href="mailto:roshdy89@gmail.com">roshdy89@gmail.com</a>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">📞</div>
+          <div class="contact-icon"><i data-lucide="phone"></i></div>
           <h4>Phone</h4>
           <a href="tel:+966562406698">+966 562 406 698</a>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">💼</div>
+          <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
           <h4>LinkedIn</h4>
           <a href="https://www.linkedin.com/in/roshdy-kamel" target="_blank" rel="noopener">roshdy-kamel</a>
         </div>
         <div class="contact-item">
-          <div class="contact-icon">📍</div>
+          <div class="contact-icon"><i data-lucide="map-pin"></i> </div>
           <h4>Location</h4>
           <span>Riyadh, Saudi Arabia</span>
         </div>
@@ -2587,7 +2887,7 @@
       <div class="fade-in">
         <p class="contact-cta">Ready to build something great together?</p>
         <a href="mailto:roshdy89@gmail.com" class="btn-large">
-          <span>✉️</span> Send Me a Message
+          <i data-lucide="send"></i> Send Me a Message
         </a>
       </div>
     </div>
@@ -2595,7 +2895,7 @@
 
   <!-- ─── FOOTER ─────────────────────────────────────────────────── -->
   <footer>
-    <p>Built with ❤️ · <span>M. Roshdy Kamel</span> © 2025 · Lead Software Engineer</p>
+    <p>Built with <i data-lucide="heart"></i> · <span>M. Roshdy Kamel</span> © 2025 · Lead Software Engineer</p>
   </footer>
 
   <!-- ═══════════════════════════════════════════════════════════════ -->
@@ -2664,11 +2964,14 @@
     /* ── Theme Toggle ─────────────────────────────────────────────── */
     const html = document.documentElement;
     const themeBtn = document.getElementById('theme-toggle');
+    const moonIcon = themeBtn.querySelector('.icon-moon');
+    const sunIcon = themeBtn.querySelector('.icon-sun');
     let dark = true;
     themeBtn.addEventListener('click', () => {
       dark = !dark;
       html.setAttribute('data-theme', dark ? 'dark' : 'light');
-      themeBtn.textContent = dark ? '🌙' : '☀️';
+      moonIcon.style.display = dark ? '' : 'none';
+      sunIcon.style.display = dark ? 'none' : '';
     });
 
     /* ── Hamburger / Mobile Menu ──────────────────────────────────── */
@@ -2771,6 +3074,18 @@
     }, { threshold: 0.2 });
     const skillSection = document.getElementById('skills');
     if (skillSection) skillObserver.observe(skillSection);
+
+    /* ── Full Story Toggle ──────────────────────────────────────────── */
+    function toggleStory(btn) {
+      var story = btn.nextElementSibling;
+      var isOpen = story.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.querySelector('.story-toggle-label').textContent = isOpen ? 'Close the story' : 'Read the full story';
+    }
+
+    /* ── Lucide Icons ────────────────────────────────────────────── */
+    lucide.createIcons();
+    applyTechIcons();
   </script>
 </body>
 
