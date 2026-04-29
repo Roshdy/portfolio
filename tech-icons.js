@@ -1,12 +1,20 @@
+// Icon sources:
+//   string value  → Devicon CSS class (font icon)
+//   { si: slug }  → Simple Icons CDN  (https://cdn.simpleicons.org/slug)
+//   { img: url }  → Direct image URL
+
 const TECH_ICONS = {
-  // Languages
+
+  /* ── Languages ──────────────────────────────────────────────────── */
   'C#':             'devicon-csharp-plain colored',
   'JavaScript':     'devicon-javascript-plain colored',
   'Java':           'devicon-java-plain colored',
   'Python':         'devicon-python-plain colored',
   'PHP':            'devicon-php-plain colored',
+  'VB':             { img: 'https://img.icons8.com/plasticine/48/microsoft-visual-basic-6.png' },
+  'VB Script':      { img: 'https://img.icons8.com/plasticine/48/microsoft-visual-basic-6.png' },
 
-  // Frontend
+  /* ── Frontend ───────────────────────────────────────────────────── */
   'React':          'devicon-react-original colored',
   'React.js':       'devicon-react-original colored',
   'React Native':   'devicon-react-original colored',
@@ -19,48 +27,78 @@ const TECH_ICONS = {
   'jQuery':         'devicon-jquery-plain colored',
   'Bootstrap':      'devicon-bootstrap-plain colored',
   'ES6+':           'devicon-javascript-plain colored',
-
-  // Frontend (additional)
   'Angular':        'devicon-angularjs-plain colored',
 
-  // Backend & Runtimes
+  /* ── .NET family (Simple Icons — official .NET logo) ────────────── */
+  '.NET':               { si: 'dotnet' },
+  '.NET Core':          { si: 'dotnet' },
+  '.NET Framework':     { si: 'dotnet' },
+  '.NET / ASP.NET':     { si: 'dotnet' },
+  'ASP.NET':            { si: 'dotnet' },
+  'ASP.Net':            { si: 'dotnet' },
+  'MVC':                { si: 'dotnet' },
+  'MVC .Net':           { si: 'dotnet' },
+
+  /* ── Backend & Runtimes ─────────────────────────────────────────── */
   'Node.js':        'devicon-nodejs-plain colored',
   'Meteor.js':      'devicon-meteor-plain colored',
-  '.NET':           'devicon-dotnetcore-plain colored',
-  '.NET / ASP.NET': 'devicon-dotnetcore-plain colored',
-  'ASP.NET':        'devicon-dotnetcore-plain colored',
-  'ASP.Net':        'devicon-dotnetcore-plain colored',
-  'MVC':            'devicon-dotnetcore-plain colored',
-  'MVC .Net':       'devicon-dotnetcore-plain colored',
 
-  // Tools & Platforms
-  'GitLab':         'devicon-gitlab-plain colored',
-  'Figma':          'devicon-figma-plain colored',
-  'MS Project':     'devicon-windows8-original colored',
+  /* ── Auth & API ─────────────────────────────────────────────────── */
+  'JWT':            { si: 'jsonwebtokens' },
+  'REST':           { img: 'https://api.iconify.design/mdi/api.svg?color=%236c63ff' },
+  'CI/CD':          { img: 'https://api.iconify.design/carbon/continuous-integration.svg?color=%236c63ff' },
+  'SOAP / WCF':     { img: 'https://symbols.getvecta.com/stencil_25/79_soapui.5113237b76.svg' },
+  'Microservices':  { img: 'https://img.icons8.com/color/48/network.png' },
+  'Ocelot GW':      { img: 'https://raw.githubusercontent.com/ThreeMammals/Ocelot/refs/heads/assets/images/ocelot_logo.png' },
+  'Nafath':         { img: 'https://www.google.com/s2/favicons?domain=nafath.gov.sa&sz=64' },
+  'MasterCard':     { img: 'https://api.iconify.design/logos/mastercard.svg' },
+  'Microsoft Access': { img: 'https://api.iconify.design/vscode-icons/file-type-access.svg' },
 
-  // Cloud & DevOps
+  /* ── Cloud & DevOps ─────────────────────────────────────────────── */
   'AWS':            'devicon-amazonwebservices-plain-wordmark colored',
   'Google Cloud':   'devicon-googlecloud-plain colored',
   'Docker':         'devicon-docker-plain colored',
   'GitHub Actions': 'devicon-githubactions-plain colored',
+  'GitLab':         'devicon-gitlab-plain colored',
+  'Figma':          'devicon-figma-plain colored',
 
-  // Databases
+  /* ── Databases ──────────────────────────────────────────────────── */
   'MongoDB':        'devicon-mongodb-plain colored',
   'MySQL':          'devicon-mysql-plain colored',
   'Oracle':         'devicon-oracle-original colored',
-  'SQL Server':     'devicon-microsoftsqlserver-plain colored',
-  'MS SQL':         'devicon-microsoftsqlserver-plain colored',
-  'MS-SQL':         'devicon-microsoftsqlserver-plain colored',
+  'PL/SQL':         'devicon-oracle-original colored',
+  'SQL Server':     { img: 'https://img.icons8.com/color/48/microsoft-sql-server.png' },
+  'MS SQL':         { img: 'https://img.icons8.com/color/48/microsoft-sql-server.png' },
+  'MS-SQL':         { img: 'https://img.icons8.com/color/48/microsoft-sql-server.png' },
+
+  /* ── Tools & Platforms ──────────────────────────────────────────── */
+  'LightStreamer':  { img: 'https://api.nuget.org/v3-flatcontainer/lightstreamer.dotnetstandard.client/6.2.1/icon' },
+  'MS Project':     { img: 'https://img.icons8.com/color/48/ms-project.png' },
+  'IIS':            { img: 'https://www.deepnetsecurity.com/wp-content/uploads/MFA-for-IIS-Websites.png' },
+  'Xcode':          'devicon-xcode-plain colored',
+  'Cordova':        { si: 'apachecordova' },
 };
+
+const SI_BASE = 'https://cdn.simpleicons.org/';
 
 function applyTechIcons() {
   document.querySelectorAll('.tech-tag, .skill-chip').forEach(function (el) {
-    if (el.querySelector('i[class*="devicon"]')) return; // already applied
+    if (el.querySelector('i[class*="devicon"], img.tech-icon-img')) return;
     var key = el.textContent.trim();
-    var iconClass = TECH_ICONS[key];
-    if (!iconClass) return;
-    var icon = document.createElement('i');
-    icon.className = iconClass;
-    el.insertBefore(icon, el.firstChild);
+    var icon = TECH_ICONS[key];
+    if (!icon) return;
+
+    var node;
+    if (typeof icon === 'string') {
+      node = document.createElement('i');
+      node.className = icon;
+    } else {
+      node = document.createElement('img');
+      node.className = 'tech-icon-img';
+      node.alt = '';
+      node.setAttribute('aria-hidden', 'true');
+      node.src = icon.si ? SI_BASE + icon.si : icon.img;
+    }
+    el.insertBefore(node, el.firstChild);
   });
 }

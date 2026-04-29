@@ -1081,24 +1081,36 @@
     }
 
     .tech-tag {
-      font-size: .72rem;
+      font-size: .68rem;
       font-family: 'JetBrains Mono', monospace;
       background: var(--bg3);
       color: var(--accent2);
       border: 1px solid rgba(0, 212, 170, .2);
-      padding: .2rem .6rem;
-      border-radius: 5px;
+      padding: .55rem .6rem .45rem;
+      border-radius: 8px;
       transition: background .2s, transform .2s;
       display: inline-flex;
+      flex-direction: column;
       align-items: center;
-      gap: .3rem;
+      justify-content: center;
+      gap: .35rem;
+      min-width: 52px;
+      text-align: center;
     }
 
     .tech-tag i[class*="devicon"],
     .skill-chip i[class*="devicon"] {
-      font-size: 13px;
+      font-size: 26px;
       line-height: 1;
       flex-shrink: 0;
+    }
+    .tech-tag .tech-icon-img,
+    .skill-chip .tech-icon-img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      flex-shrink: 0;
+      border-radius: 4px;
     }
 
     .tech-tag:hover {
@@ -1263,15 +1275,19 @@
       background: var(--bg3);
       border: 1px solid var(--card-border);
       color: var(--text);
-      font-size: .82rem;
+      font-size: .75rem;
       font-weight: 500;
-      padding: .4rem .85rem;
+      padding: .6rem .75rem .5rem;
       border-radius: 8px;
       cursor: default;
       transition: border-color .2s, background .2s, transform .2s, color .2s;
       display: inline-flex;
+      flex-direction: column;
       align-items: center;
-      gap: .35rem;
+      justify-content: center;
+      gap: .4rem;
+      min-width: 64px;
+      text-align: center;
     }
 
     .skill-chip:hover {
@@ -2046,7 +2062,7 @@
       <div class="about-grid">
         <div class="fade-in">
           <p class="section-label">About Me</p>
-          <h2 class="section-title">Crafting software that <span class="gradient-text">matters</span></h2>
+          <h2 class="section-title">Crafting software that <span class="gradient-text">Matters</span></h2>
           <p style="color:var(--text2);line-height:1.8;margin-bottom:1.5rem;">
             I'm a passionate software engineer with over 15 years of hands-on experience
             spanning trading platforms, fintech startups, mobile apps, and enterprise systems.
@@ -2132,10 +2148,10 @@
               </div>
               <span class="exp-badge badge-lead">Team Lead</span>
             </div>
-            <p class="exp-summary">Joined as an on-site contractor to rescue a trading platform that had crashed on every launch for over a year — diagnosed and resolved the root cause in 2 weeks, delivered the live launch in 3 months, and was immediately recruited by Al-Jazira Capital. Grew from frontend developer to full-stack team lead, architecting a microservices platform from scratch, championing modern technologies against internal resistance, and consistently delivering ahead of schedule.</p>
+            <p class="exp-summary">Joined as an on-site contractor to rescue a trading platform that had crashed on every launch for over a year — diagnosed and resolved the root cause in 2 weeks, delivered the live launch in 3 months, and was immediately recruited by Al-Jazira Capital. Grew from frontend developer to full-stack team lead, architecting a microservices platform from scratch, championing modern technologies forcing constant growth, and consistently delivering ahead of schedule.</p>
             <ul class="exp-bullets">
               <li>Resolved a year-long production crash in a live Tadawul trading platform within 2 weeks during a 3-month on-site engagement — enabling the company's first-ever successful live launch</li>
-              <li>Championed ReactJS adoption by single-handedly building a working frontend demo in one week against stakeholder resistance — establishing React as the approved standard across the organisation</li>
+              <li>Championed ReactJS adoption by single-handedly building a working frontend demo in one week — establishing React as the approved standard across the organisation</li>
               <li>Architected a full microservices platform decomposing 200+ legacy endpoints into business domains (Accounts, Portfolios, Profiles, Market Data) fronted by an Ocelot API gateway with JWT security</li>
               <li>Delivered the new customer portal Phase 1 three weeks ahead of schedule and Phase 2 1.5 months early through Microsoft Project planning and Agile execution tracked via GitLab Kanban boards</li>
               <li>Built a .NET Core authentication microservice abstracting RSA/Entrust dependency, enforcing CMA-mandated concurrent-session rules at both API and database layers</li>
