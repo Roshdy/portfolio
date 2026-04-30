@@ -29,8 +29,8 @@
   <meta name="twitter:image" content="https://roshdydev.netlify.app/profile.png" />
 
   <!-- Favicon (SVG inline — no file needed) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236c63ff'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Inter,sans-serif' font-weight='900' font-size='38' fill='white'%3ERK%3C/text%3E%3C/svg%3E" />
-  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236c63ff'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Inter,sans-serif' font-weight='900' font-size='38' fill='white'%3ERK%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236c63ff'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Nunito,sans-serif' font-weight='900' font-size='38' fill='white'%3ERK%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%236c63ff'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Nunito,sans-serif' font-weight='900' font-size='38' fill='white'%3ERK%3C/text%3E%3C/svg%3E" />
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -57,7 +57,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <style>
     /* ─── CSS VARIABLES ─────────────────────────────────────────────── */
@@ -94,6 +94,10 @@
     }
 
     /* ─── PROFILE PHOTO ─────────────────────────────────────────────── */
+    .hero-photo-mobile {
+      display: none;
+    }
+
     .hero-photo-ring {
       width: 170px;
       height: 170px;
@@ -107,26 +111,7 @@
     }
 
     .hero-photo-ring::after {
-      content: '';
-      position: absolute;
-      inset: -6px;
-      border-radius: 50%;
-      border: 1px solid var(--card-border);
-      animation: pulse-ring 3s ease-in-out infinite;
-    }
-
-    @keyframes pulse-ring {
-
-      0%,
-      100% {
-        opacity: .4;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: .8;
-        transform: scale(1.03);
-      }
+      display: none;
     }
 
     .hero-photo {
@@ -134,7 +119,6 @@
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid var(--bg);
       display: block;
     }
 
@@ -196,12 +180,16 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Nunito', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
       transition: background .3s, color .3s;
+    }
+
+    html {
+      overflow-x: hidden;
     }
 
     a {
@@ -283,14 +271,16 @@
     /* ─── LAYOUT ────────────────────────────────────────────────────── */
     .container {
       max-width: 1100px;
+      width: 100%;
       margin: 0 auto;
       padding: 0 clamp(1rem, 5vw, 2.5rem);
+      box-sizing: border-box;
       position: relative;
       z-index: 2;
     }
 
     section {
-      padding: clamp(4rem, 10vh, 7rem) 0
+      padding: clamp(2rem, 5vh, 3.5rem) 0
     }
 
     /* ─── TOP NAV ───────────────────────────────────────────────────── */
@@ -547,24 +537,6 @@
       align-items: center;
     }
 
-    @media(max-width:768px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        text-align: center
-      }
-
-      .hero-ctas {
-        justify-content: center !important
-      }
-
-      .hero-badges {
-        justify-content: center !important
-      }
-
-      .hero-right {
-        display: none
-      }
-    }
 
     .hero-greeting {
       font-size: .9rem;
@@ -587,11 +559,6 @@
       border-radius: 2px;
     }
 
-    @media(max-width:768px) {
-      .hero-greeting::before {
-        display: none
-      }
-    }
 
     .hero-name {
       font-size: clamp(2.5rem, 7vw, 5rem);
@@ -766,13 +733,7 @@
       margin-top: 2.5rem;
     }
 
-    @media(max-width:768px) {
-      .stats-row {
-        grid-template-columns: repeat(3, 1fr);
-        gap: .75rem
-      }
-    }
-
+    
     .stat-card {
       background: var(--card);
       border: 1px solid var(--card-border);
@@ -781,7 +742,7 @@
       text-align: center;
       transition: border-color .3s, transform .3s;
     }
-
+    
     .stat-card:hover {
       border-color: var(--accent);
       transform: translateY(-3px)
@@ -795,11 +756,63 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-
+    
     .stat-label {
       font-size: .78rem;
       color: var(--text2);
       margin-top: .2rem
+    }
+
+    @media(max-width:768px) {
+      .stats-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: .5rem;
+        margin-top: 1.5rem;
+      }
+      .stat-card { padding: .75rem 0.5rem; }
+      .stat-num { font-size: 1.2rem; }
+      .stat-label { font-size: .68rem; }
+    }
+
+    @media(max-width:768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center
+      }
+      .hero-greeting::before { display: none; }
+      .hero-right { display: none; }
+      .hero-ctas {
+        justify-content: center !important;
+        gap: .5rem;
+      }
+      .btn-primary, .btn-secondary { padding: .65rem 1.1rem; font-size: .88rem; }
+      .hero-badges { justify-content: center !important }
+      .hero-summary {
+        font-size: .88rem;
+        overflow-wrap: break-word;
+        word-break: break-word;
+      }
+      .hero-photo-mobile {
+        display: flex;
+        justify-content: center;
+        margin: 1.25rem 0;
+      }
+      .hero-photo-mobile-ring {
+        width: 126px;
+        height: 126px;
+        border-radius: 50%;
+        padding: 3px;
+        background: linear-gradient(135deg, var(--accent), var(--accent2));
+        box-shadow: 0 0 30px var(--accent-glow);
+        flex-shrink: 0;
+      }
+      .hero-photo-mobile-ring img {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
+      }
     }
 
     /* ─── SECTION DIVIDER ───────────────────────────────────────────── */
@@ -873,14 +886,15 @@
     /* ─── EXPERIENCE ────────────────────────────────────────────────── */
     .timeline {
       position: relative;
-      padding-left: 2rem
+      padding-left: 1.5rem;
+      margin-top: 1rem;
     }
 
     .timeline::before {
       content: '';
       position: absolute;
-      left: 0;
-      top: 0;
+      left: -2px;
+      top: 1rem;
       bottom: 0;
       width: 2px;
       background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
@@ -895,8 +909,8 @@
 
     .timeline-dot {
       position: absolute;
-      left: -2.5rem;
-      top: .2rem;
+      left: -2rem;
+      top: .4rem;
       width: 14px;
       height: 14px;
       border-radius: 50%;
@@ -1104,6 +1118,7 @@
       line-height: 1;
       flex-shrink: 0;
     }
+
     .tech-tag .tech-icon-img,
     .skill-chip .tech-icon-img {
       width: 26px;
@@ -1399,7 +1414,9 @@
       transform: translateY(-3px);
     }
 
-    a.cert-card { cursor: pointer; }
+    a.cert-card {
+      cursor: pointer;
+    }
 
     .cert-ext-link {
       position: absolute;
@@ -1409,8 +1426,15 @@
       transition: color .2s;
       line-height: 1;
     }
-    .cert-ext-link svg.lucide { width: 13px; height: 13px; }
-    a.cert-card:hover .cert-ext-link { color: var(--accent2); }
+
+    .cert-ext-link svg.lucide {
+      width: 13px;
+      height: 13px;
+    }
+
+    a.cert-card:hover .cert-ext-link {
+      color: var(--accent2);
+    }
 
     .cert-icon {
       width: 44px;
@@ -1510,7 +1534,7 @@
     /* ─── EDUCATION ─────────────────────────────────────────────────── */
     .edu-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
     }
 
@@ -1570,9 +1594,9 @@
 
     /* ─── LANGUAGES ─────────────────────────────────────────────────── */
     .lang-grid {
-      display: flex;
+      display: grid;
       gap: 1.25rem;
-      flex-wrap: wrap
+      grid-template-columns: repeat(4, 1fr);
     }
 
     .lang-card {
@@ -1643,14 +1667,19 @@
       background: var(--card);
       border: 1px solid var(--card-border);
       border-radius: 12px;
-      padding: 1.25rem;
+      padding: 1rem 1.25rem;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      gap: .5rem;
-      text-align: center;
+      gap: 1rem;
+      text-align: left;
       transition: border-color .3s, transform .3s, box-shadow .3s;
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
     }
+
+    .contact-item h4 { display: none; }
 
     .contact-item:hover {
       border-color: var(--accent);
@@ -1705,6 +1734,12 @@
       transform: translateY(-3px);
       box-shadow: 0 12px 36px var(--accent-glow);
       color: #fff
+    }
+
+    @media(max-width:768px) {
+      .contact-grid { grid-template-columns: 1fr; max-width: 100%; }
+      .contact-item { padding: .9rem 1rem; }
+      .contact-icon { flex-shrink: 0; width: 38px; height: 38px; }
     }
 
     /* ─── FOOTER ────────────────────────────────────────────────────── */
@@ -1769,6 +1804,21 @@
       }
     }
 
+    @media(max-width:520px) {
+      .btn-hire {
+        display: none;
+      }
+
+      .btn-cv span {
+        display: none;
+      }
+
+      .btn-cv {
+        padding: .32rem .5rem;
+        min-width: unset;
+      }
+    }
+
     @media(max-width:600px) {
       .projects-grid {
         grid-template-columns: 1fr
@@ -1779,7 +1829,125 @@
       }
     }
 
+    @media(max-width:768px) {
+      .timeline {
+        padding-left: 0;
+      }
 
+      .timeline::before {
+        display: none;
+      }
+
+      .timeline-dot {
+        display: none;
+      }
+    }
+
+
+
+
+    /* ─── LEADERSHIP NEURAL NETWORK ────────────────────────────────── */
+    .leadership-roadmap {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--card-border);
+    }
+
+    .rm-neural-wrap {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 3.5rem;
+      padding: .5rem 0 1rem;
+    }
+
+    .rm-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: visible;
+      z-index: 0;
+    }
+
+    .rm-layer {
+      display: flex;
+      justify-content: space-around;
+      position: relative;
+      z-index: 1;
+    }
+
+    .rm-top .rm-node {
+      flex-direction: column-reverse;
+    }
+
+    .rm-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .7rem;
+      cursor: default;
+      transition: transform .3s;
+    }
+
+    .rm-node:hover {
+      transform: translateY(-6px);
+    }
+
+    .rm-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px var(--accent-glow);
+      transition: box-shadow .3s;
+      flex-shrink: 0;
+    }
+
+    .rm-node:hover .rm-icon {
+      box-shadow: 0 6px 32px var(--accent-glow);
+    }
+
+    .rm-icon svg.lucide {
+      width: 32px;
+      height: 32px;
+      color: #fff;
+    }
+
+    .rm-label {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--text2);
+      text-align: center;
+      max-width: 90px;
+      line-height: 1.35;
+      transition: color .3s;
+    }
+
+    .rm-node:hover .rm-label {
+      color: var(--accent);
+    }
+
+
+
+    .exp-story-inner strong {
+      color: var(--accent2);
+      font-weight: 700;
+    }
+
+    .exp-story-inner em {
+      color: var(--accent2);
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    .exp-story-inner p {
+      margin: 0;
+    }
 
     /* ─── FULL STORY ────────────────────────────────────────────────── */
     .exp-story-toggle {
@@ -1799,17 +1967,35 @@
       letter-spacing: .04em;
       width: fit-content;
     }
-    .exp-story-toggle:hover { background: var(--bg3); border-color: var(--accent); }
-    .exp-story-toggle svg.lucide { width: 13px; height: 13px; }
-    .story-chevron { transition: transform .35s ease; margin-left: .25rem; }
-    .exp-story-toggle.open .story-chevron { transform: rotate(180deg); }
+
+    .exp-story-toggle:hover {
+      background: var(--bg3);
+      border-color: var(--accent);
+    }
+
+    .exp-story-toggle svg.lucide {
+      width: 13px;
+      height: 13px;
+    }
+
+    .story-chevron {
+      transition: transform .35s ease;
+      margin-left: .25rem;
+    }
+
+    .exp-story-toggle.open .story-chevron {
+      transform: rotate(180deg);
+    }
 
     .exp-story {
       max-height: 0;
       overflow: hidden;
-      transition: max-height .65s cubic-bezier(.4,0,.2,1);
+      transition: max-height .65s cubic-bezier(.4, 0, .2, 1);
     }
-    .exp-story.open { max-height: 4000px; }
+
+    .exp-story.open {
+      max-height: 4000px;
+    }
 
     .exp-story-inner {
       margin-top: 1.25rem;
@@ -1821,6 +2007,7 @@
       flex-direction: column;
       gap: 1.25rem;
     }
+
     .exp-story-chapter h5 {
       font-size: .72rem;
       font-weight: 700;
@@ -1829,6 +2016,7 @@
       color: var(--accent);
       margin-bottom: .5rem;
     }
+
     .exp-story-chapter p {
       font-size: .875rem;
       color: var(--text2);
@@ -1914,9 +2102,11 @@
     }
   </style>
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js"></script>
   <script src="./cv.js"></script>
   <script src="./tech-icons.js"></script>
+  <script src="./stories/index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 
 <body>
@@ -1985,19 +2175,24 @@
       <div class="hero-grid">
         <div class="hero-left">
           <p class="hero-greeting">Available for opportunities</p>
+          <div class="hero-photo-mobile">
+            <div class="hero-photo-mobile-ring">
+              <img src="./profile.png" alt="M. Roshdy Kamel" loading="eager" onerror="this.style.display='none'" />
+            </div>
+          </div>
           <h1 class="hero-name">M. Roshdy<br><span class="gradient-text">Kamel</span></h1>
           <p class="hero-title">Lead Software Engineer</p>
           <p class="hero-summary">
-            Lead Software Engineer / Tech Lead with 15+ years of experience delivering web, mobile, and trading platforms across fintech 
-            and enterprise systems. Specialized in C#, .NET, React, Node.js, microservices, AWS, and team leadership, with proven impact 
-            in product launches, performance optimization, and cross-functional delivery.
+            Lead Software Engineer / Tech Lead with 15+ years of experience delivering web, mobile, and trading platforms across fintech
+            and enterprise systems. Specialized in C#, .NET, React, Node.js, microservices, AWS, Oracle and MongoDB.
+            With proven impact in product launches, performance optimization, and cross-functional delivery.
           </p>
           <div class="hero-ctas">
             <a href="#contact" class="btn-primary">Get In Touch</a>
             <a href="#experience" class="btn-secondary"><span class="gradient-text">View My Work</span></a>
           </div>
           <div class="hero-badges">
-            <span class="badge"><i data-lucide="map-pin"></i>  Riyadh, KSA</span>
+            <span class="badge"><i data-lucide="map-pin"></i> Riyadh, KSA</span>
             <span class="badge"><i data-lucide="landmark"></i> FinTech Expert</span>
             <span class="badge"><i data-lucide="atom"></i> React / React-Native</span>
             <span class="badge"><i data-lucide="cloud"></i> AWS / Cloud</span>
@@ -2049,6 +2244,7 @@
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -2080,24 +2276,17 @@
           <p class="section-label" style="margin-bottom:1rem;">Key Achievements</p>
           <div class="achievements-list">
             <div class="achievement-card">
+              <div class="achievement-icon"><i data-lucide="shield-check"></i></div>
+              <div class="achievement-text">
+                <h4>Crisis Rescue → Job Offer</h4>
+                <p>Fixed a year-long production crash in 2 weeks during a 3-month on-site engagement — and was immediately hired.</p>
+              </div>
+            </div>
+            <div class="achievement-card">
               <div class="achievement-icon"><i data-lucide="rocket"></i></div>
               <div class="achievement-text">
                 <h4>Successful App Launch</h4>
                 <p>Achieved 60,000+ downloads within the first month of launch.</p>
-              </div>
-            </div>
-            <div class="achievement-card">
-              <div class="achievement-icon"><i data-lucide="users"></i></div>
-              <div class="achievement-text">
-                <h4>Project Leadership</h4>
-                <p>Led a team of 5 engineers to develop full-featured trading platforms.</p>
-              </div>
-            </div>
-            <div class="achievement-card">
-              <div class="achievement-icon"><i data-lucide="zap"></i></div>
-              <div class="achievement-text">
-                <h4>Performance Enhancement</h4>
-                <p>Increased app performance by 80% through deep optimization work.</p>
               </div>
             </div>
             <div class="achievement-card">
@@ -2125,8 +2314,9 @@
         <h2 class="section-title">Professional <span class="gradient-text">Experience</span></h2>
         <p class="section-subtitle">9 years in Saudi Arabia's financial sector plus global deployments across Egypt, Kuwait, and beyond.</p>
       </div>
-      <div class="timeline">
 
+      <div class="timeline">
+        
         <!-- Al-Jazira Capital -->
         <div class="timeline-item fade-in">
           <div class="timeline-dot"></div>
@@ -2150,14 +2340,14 @@
             </div>
             <p class="exp-summary">Joined as an on-site contractor to rescue a trading platform that had crashed on every launch for over a year — diagnosed and resolved the root cause in 2 weeks, delivered the live launch in 3 months, and was immediately recruited by Al-Jazira Capital. Grew from frontend developer to full-stack team lead, architecting a microservices platform from scratch, championing modern technologies forcing constant growth, and consistently delivering ahead of schedule.</p>
             <ul class="exp-bullets">
-              <li>Resolved a year-long production crash in a live Tadawul trading platform within 2 weeks during a 3-month on-site engagement — enabling the company's first-ever successful live launch</li>
-              <li>Championed ReactJS adoption by single-handedly building a working frontend demo in one week — establishing React as the approved standard across the organisation</li>
-              <li>Architected a full microservices platform decomposing 200+ legacy endpoints into business domains (Accounts, Portfolios, Profiles, Market Data) fronted by an Ocelot API gateway with JWT security</li>
-              <li>Delivered the new customer portal Phase 1 three weeks ahead of schedule and Phase 2 1.5 months early through Microsoft Project planning and Agile execution tracked via GitLab Kanban boards</li>
-              <li>Built a .NET Core authentication microservice abstracting RSA/Entrust dependency, enforcing CMA-mandated concurrent-session rules at both API and database layers</li>
-              <li>Co-redesigned LightStreamer's real-time data layer from static comma-separated strings to dynamic gzipped JSON — tripling server capacity from 400 to 1,300 concurrent users</li>
-              <li>Led full hiring and onboarding lifecycle for junior team members — interviews, code standards, brokerage domain knowledge transfer, code reviews, and UAT acceptance criteria</li>
-              <li>Proactively built POCs for conditional orders, price alerts via Oracle Advanced Queuing, and a Java-based parallel market price processor — continuously pushing platform capabilities beyond assigned scope</li>
+              <li>Diagnosed and resolved a critical production memory leak in a live jQuery-based trading platform within 2 weeks, enabling the first-ever successful launch on Saudi Arabia's Tadawul stock exchange</li>
+              <li>Led ReactJS adoption across the engineering team by delivering a fully functional React frontend prototype in one week; established React as the organisation's approved frontend standard</li>
+              <li>Architected a microservices platform decomposing 200+ legacy endpoints across business domains using .NET Core and C#, secured via an Ocelot API gateway with JWT authentication</li>
+              <li>Managed end-to-end delivery of a customer portal using Agile methodology, GitLab Kanban, and Microsoft Project; delivered Phase 1 three weeks early and Phase 2 six weeks ahead of schedule</li>
+              <li>Designed a .NET Core REST API authentication microservice enforcing concurrent-session regulatory controls at both API and database layers, eliminating a costly third-party vendor dependency</li>
+              <li>Redesigned a LightStreamer real-time data layer using Java and gzipped JSON; increased server capacity by 225% from 400 to 1,300 concurrent users under load</li>
+              <li>Led engineering hiring, technical onboarding, and code review processes for junior team members; defined UAT acceptance criteria and conducted domain knowledge training</li>
+              <li>Developed POCs for Oracle Advanced Queuing-based price alerts, a conditional orders engine, and a Java real-time market data processor, extending platform capabilities beyond project scope</li>
             </ul>
             <div class="exp-tech">
               <span class="tech-tag">React</span><span class="tech-tag">React-Native</span><span class="tech-tag">Angular</span>
@@ -2165,46 +2355,15 @@
               <span class="tech-tag">Java</span><span class="tech-tag">SOAP / WCF</span><span class="tech-tag">Microservices</span><span class="tech-tag">Ocelot GW</span><span class="tech-tag">JWT</span>
               <span class="tech-tag">Oracle</span><span class="tech-tag">PL/SQL</span><span class="tech-tag">MS SQL</span>
               <span class="tech-tag">LightStreamer</span><span class="tech-tag">GitLab</span><span class="tech-tag">Figma</span><span class="tech-tag">MS Project</span><span class="tech-tag">IIS</span>
+              <span class="tech-tag">Nafath</span><span class="tech-tag">AML</span><span class="tech-tag">Simah</span>
             </div>
-            <button class="exp-story-toggle" onclick="toggleStory(this)">
+            <button class="exp-story-toggle" data-story="ajc" onclick="toggleStory(this)">
               <i data-lucide="book-open"></i>
               <span class="story-toggle-label">Read the full story</span>
               <i data-lucide="chevron-down" class="story-chevron"></i>
             </button>
             <div class="exp-story">
-              <div class="exp-story-inner">
-
-                <div class="exp-story-chapter">
-                  <h5>The Rescue Mission</h5>
-                  <p>In 2016, Al-Jazira Capital had a trading platform built on jQuery that had crashed on every single launch for the better part of a year. I was deployed as an on-site resource from E-Business Solutions for a 3-month assignment. By the end of month one, every UI requirement was completed and all backend integrations were live. In month two, we finally identified the root cause — a deep memory leak — and I resolved it within two weeks. The platform moved to pilot, and the reaction from both the development and business departments was extraordinary. Month three: live trading on Tadawul. Mission accomplished.</p>
-                </div>
-
-                <div class="exp-story-chapter">
-                  <h5>Earning a Seat at the Table</h5>
-                  <p>Al-Jazira Capital offered me a full-time role to stay and maintain the platform. What started as bug fixing and production support quickly evolved. Within months I was introduced to the full backend: a .NET Framework service, classic ASP.NET pages, and an Oracle database with PL/SQL I'd eventually own entirely. The business had vision and ambition — and I was determined to meet it. One of my early highlights was building a dedicated internal management system for the security team using Angular and .NET Framework 4.7, which became one of the most adopted internal tools in the department.</p>
-                </div>
-
-                <div class="exp-story-chapter">
-                  <h5>The Week I Won the React Debate</h5>
-                  <p>I had been advocating for a technology stack upgrade for over two years — pushing to replace classic ASP and jQuery with React and .NET Core. The opportunity arrived with an online onboarding project. There was significant internal resistance: the team was unfamiliar with React, and concerns were raised about single-resource dependency. So I went home and spent a week building a fully working React frontend demo from scratch. I walked back in with a working product. The team moved forward with what I had built — and we were ahead of schedule on the frontend before the project formally kicked off. React had a permanent home at Al-Jazira Capital.</p>
-                </div>
-
-                <div class="exp-story-chapter">
-                  <h5>Designing from 200 Endpoints Up</h5>
-                  <p>The onboarding project brought an integration with Oracle's BMS platform for multi-department onboarding automation. I was deeply involved in the design sessions with the vendor — challenging flow logic, identifying missing failure paths, and shaping the integration architecture. The SOAP/WCF service we built on top of it was a success, and it gave React the final endorsement it needed across the organisation. From there, the business agreed to a full platform rebuild. We catalogued over 200 legacy endpoints and organised them into business domains: Accounts, Portfolios, Profiles, Market Data, and a set of interface services for legacy systems including T24-Temenos and BPM. I introduced Ocelot as the API gateway — a single secure entry point to the frontend — and we embedded SeqLog across every service for meaningful, level-structured logging. Then we planned every task, estimated every hour, and assigned every resource in Microsoft Project. I was the youngest on the team. I was also the team lead.</p>
-                </div>
-
-                <div class="exp-story-chapter">
-                  <h5>Delivered. Twice. Ahead of Schedule.</h5>
-                  <p>We executed through the COVID-19 outbreak — fully remote, fully focused. Phase 1 of the new customer portal was delivered three weeks ahead of schedule. Phase 2 followed at 1.5 months early. Agile principles were embedded throughout using GitLab Kanban boards with burndowns, heatmaps, and milestone tracking that I reported directly to the PMO. The business then commissioned a design firm to revamp the entire platform UI. I was the only developer in those rooms — contributing to feasibility assessments, vendor integration architecture, and Figma design reviews, often becoming a key voice alongside — and sometimes ahead of — the business team themselves.</p>
-                </div>
-
-                <div class="exp-story-chapter">
-                  <h5>Building What I Believed In</h5>
-                  <p>Some of the work I'm most proud of at Al-Jazira Capital never made it to production — not for technical reasons, but due to the organisation's conservative risk culture at the time. I built a .NET Core authentication microservice that abstracted our costly RSA/Entrust dependency and enforced CMA-mandated concurrent session rules at both the API and database layers. I collaborated with a Java-oriented colleague to redesign LightStreamer's real-time data layer — moving from rigid comma-separated strings to dynamic gzipped JSON subscriptions — tripling server capacity from 400 to 1,300 concurrent users. That one shipped. I also built POCs for price alerts using Oracle Advanced Queuing, a conditional orders engine with a full research and implementation cycle, and a Java-based parallel market price processor running directly from the exchange feed. Each was a technically sound initiative; each was shelved. After years of pushing the ceiling, I decided it was time to find an environment where the pace of innovation matched my own.</p>
-                </div>
-
-              </div>
+              <div class="exp-story-inner"></div>
             </div>
           </div>
         </div>
@@ -2230,17 +2389,27 @@
               </div>
               <span class="exp-badge badge-senior">Senior</span>
             </div>
-            <p class="exp-summary">Delivered enterprise web and mobile solutions using JavaScript, HTML5, CSS, and native iOS; owned client communication, solution decisions, and on-site deployments across international projects.</p>
+            <p class="exp-summary">Promoted to Senior Engineer within a year by consistently delivering ahead of schedule and at exceptional quality; led junior onboarding, owned client-facing on-site deployments across Saudi Arabia, and operated within an enterprise Omni-Channel platform serving major Saudi banks.</p>
             <ul class="exp-bullets">
-              <li>Developed and deployed enterprise solutions for corporate clients</li>
-              <li>Built hybrid mobile applications with JavaScript, HTML5, and CSS</li>
-              <li>Native iOS development; overseas on-site solution deployments</li>
-              <li>Direct client contact, decision making, and project management</li>
+              <li>Developed 14 responsive UI components in 3 days using JavaScript, jQuery, HTML5, and CSS — 70% ahead of the allotted project timeline</li>
+              <li>Sole engineer responsible for deploying an IBM MQ-based parallel SMS gateway; completed full UAT-ready deployment within a 2-day timeline on first-ever exposure to the system</li>
+              <li>Diagnosed and resolved an IBM MQ character encoding defect during a client queue upgrade, unblocking production go-live outside original project scope</li>
+              <li>Built and maintained enterprise web components across 4 major Saudi banking clients using JavaScript, jQuery, CSS, and MS SQL Server on a dynamic Omni-Channel platform</li>
+              <li>Promoted to Senior Software Engineer within 12 months; led technical onboarding and training for junior engineers in frontend architecture, CSS standards, and jQuery best practices</li>
             </ul>
             <div class="exp-tech">
-              <span class="tech-tag">MySQL</span><span class="tech-tag">C#</span>
-              <span class="tech-tag">jQuery</span><span class="tech-tag">JavaScript</span>
-              <span class="tech-tag">HTML5</span><span class="tech-tag">CSS</span><span class="tech-tag">VB</span>
+              <span class="tech-tag">JavaScript</span><span class="tech-tag">jQuery</span>
+              <span class="tech-tag">HTML5</span><span class="tech-tag">CSS</span>
+              <span class="tech-tag">MS SQL</span><span class="tech-tag">IBM MQ</span>
+              <span class="tech-tag">C#</span><span class="tech-tag">VB</span>
+            </div>
+            <button class="exp-story-toggle" data-story="ebs2014" onclick="toggleStory(this)">
+              <i data-lucide="book-open"></i>
+              <span class="story-toggle-label">Read the full story</span>
+              <i data-lucide="chevron-down" class="story-chevron"></i>
+            </button>
+            <div class="exp-story">
+              <div class="exp-story-inner"></div>
             </div>
           </div>
         </div>
@@ -2341,7 +2510,7 @@
               <li>Developed a Library management Windows application in C#</li>
             </ul>
             <div class="exp-tech">
-              <span class="tech-tag">C#</span><span class="tech-tag">VB</span><span class="tech-tag">VB Script</span>
+              <span class="tech-tag">C#</span><span class="tech-tag">VB</span>
             </div>
           </div>
         </div>
@@ -2421,7 +2590,7 @@
           <div class="project-tech">
             <span class="tech-tag">Meteor.js</span><span class="tech-tag">MongoDB</span>
             <span class="tech-tag">Node.js</span><span class="tech-tag">React Native</span>
-            <span class="tech-tag">React.js</span><span class="tech-tag">AWS</span>
+            <span class="tech-tag">React</span><span class="tech-tag">AWS</span>
             <span class="tech-tag">Nafath</span>
           </div>
         </div>
@@ -2448,8 +2617,9 @@
           </div>
           <div class="project-tech">
             <span class="tech-tag">Meteor.js</span><span class="tech-tag">MongoDB</span>
-            <span class="tech-tag">React Native</span><span class="tech-tag">AWS</span>
-            <span class="tech-tag">MasterCard</span><span class="tech-tag">Google Cloud</span>
+            <span class="tech-tag">React</span><span class="tech-tag">React Native</span>
+            <span class="tech-tag">AWS</span><span class="tech-tag">MasterCard</span>
+            <span class="tech-tag">Google Cloud</span>
           </div>
         </div>
 
@@ -2632,19 +2802,6 @@
             </div>
           </div>
 
-          <div class="skill-category">
-            <h3>Leadership</h3>
-            <div class="soft-skills-grid">
-              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="crown"></i></span>Tech Leadership</div>
-              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="briefcase"></i></span>Project Management</div>
-              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="refresh-cw"></i></span>Scrum / Agile</div>
-              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="clipboard"></i></span>Requirements Gathering</div>
-              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="layers"></i></span>Software Architecture</div>
-              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="link"></i></span>System Integrations</div>
-              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="handshake"></i></span>Client Relations</div>
-              <div class="soft-skill"><span class="soft-skill-icon"><i data-lucide="file-text"></i></span>Technical Docs</div>
-            </div>
-          </div>
         </div>
 
         <div class="skills-visual fade-in">
@@ -2700,6 +2857,43 @@
           </div>
         </div>
       </div>
+
+      <!-- Leadership Neural Network -->
+      <div class="leadership-roadmap fade-in">
+        <p class="section-label" style="text-align:center;margin-bottom:2rem;">Leadership &amp; Soft Skills</p>
+        <div class="rm-neural-wrap">
+          <svg class="rm-svg" aria-hidden="true"></svg>
+          <div class="rm-layer rm-top">
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="crown"></i></div><span class="rm-label">Tech Leadership</span>
+            </div>
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="briefcase"></i></div><span class="rm-label">Project Management</span>
+            </div>
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="refresh-cw"></i></div><span class="rm-label">Scrum / Agile</span>
+            </div>
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="clipboard"></i></div><span class="rm-label">Requirements Gathering</span>
+            </div>
+          </div>
+          <div class="rm-layer rm-bottom">
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="layers"></i></div><span class="rm-label">Software Architecture</span>
+            </div>
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="link"></i></div><span class="rm-label">System Integrations</span>
+            </div>
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="handshake"></i></div><span class="rm-label">Client Relations</span>
+            </div>
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="file-text"></i></div><span class="rm-label">Technical Docs</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -2740,7 +2934,7 @@
             <div class="edu-info">
               <h4>High School</h4>
               <div class="edu-school">Al-Najat School</div>
-              <p><i data-lucide="calendar"></i> 2007 · <i data-lucide="map-pin"></i> Kuwait</p>
+              <p><i data-lucide="calendar"></i> 2004 – 2007 · <i data-lucide="map-pin"></i> Kuwait</p>
               <p style="margin-top:.4rem;">Grade: Very Good</p>
             </div>
           </div>
@@ -2878,23 +3072,27 @@
       </div>
 
       <div class="contact-grid fade-in">
-        <div class="contact-item">
+        <a class="contact-item" href="mailto:roshdy89@gmail.com">
           <div class="contact-icon"><i data-lucide="mail"></i></div>
           <h4>Email</h4>
-          <a href="mailto:roshdy89@gmail.com">roshdy89@gmail.com</a>
-        </div>
-        <div class="contact-item">
+          <span>roshdy89@gmail.com</span>
+        </a>
+        <a class="contact-item" href="tel:+966562406698">
           <div class="contact-icon"><i data-lucide="phone"></i></div>
           <h4>Phone</h4>
-          <a href="tel:+966562406698">+966 562 406 698</a>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></div>
+          <span>+966 562 406 698</span>
+        </a>
+        <a class="contact-item" href="https://www.linkedin.com/in/roshdy-kamel" target="_blank" rel="noopener">
+          <div class="contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+              <rect x="2" y="9" width="4" height="12" />
+              <circle cx="4" cy="4" r="2" />
+            </svg></div>
           <h4>LinkedIn</h4>
-          <a href="https://www.linkedin.com/in/roshdy-kamel" target="_blank" rel="noopener">roshdy-kamel</a>
-        </div>
+          <span>roshdy-kamel</span>
+        </a>
         <div class="contact-item">
-          <div class="contact-icon"><i data-lucide="map-pin"></i> </div>
+          <div class="contact-icon"><i data-lucide="map-pin"></i></div>
           <h4>Location</h4>
           <span>Riyadh, Saudi Arabia</span>
         </div>
@@ -2911,7 +3109,7 @@
 
   <!-- ─── FOOTER ─────────────────────────────────────────────────── -->
   <footer>
-    <p>Built with <i data-lucide="heart"></i> · <span>M. Roshdy Kamel</span> © 2025 · Lead Software Engineer</p>
+    <p>Built with <i data-lucide="heart"></i> · <span>M. Roshdy Kamel</span> © 2026 · Lead Software Engineer</p>
   </footer>
 
   <!-- ═══════════════════════════════════════════════════════════════ -->
@@ -3019,6 +3217,9 @@
     const sideDots = document.querySelectorAll('.sidenav-dot');
 
     function getActiveSection() {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 60) {
+        return sections[sections.length - 1];
+      }
       const scrollY = window.scrollY + 100;
       let active = sections[0];
       sections.forEach(id => {
@@ -3097,11 +3298,89 @@
       var isOpen = story.classList.toggle('open');
       btn.classList.toggle('open', isOpen);
       btn.querySelector('.story-toggle-label').textContent = isOpen ? 'Close the story' : 'Read the full story';
+      if (isOpen) loadStory(btn.dataset.story, story);
     }
+
+    function loadStory(storyId, storyEl) {
+      var inner = storyEl.querySelector('.exp-story-inner');
+      if (!storyId || !window.STORIES || !window.STORIES[storyId] || inner.dataset.loaded) return;
+      inner.innerHTML = '<p style="color:var(--text3);text-align:center;padding:2rem 0;">Loading…</p>';
+      fetch(window.STORIES[storyId])
+        .then(function (r) { return r.text(); })
+        .then(function (md) {
+          var html = typeof marked !== 'undefined' ? marked.parse(md) : '<p>' + md + '</p>';
+          var parser = new DOMParser();
+          var doc = parser.parseFromString(html, 'text/html');
+          var nodes = Array.from(doc.body.childNodes);
+          var chapters = [];
+          var current = null;
+          nodes.forEach(function (node) {
+            if (node.nodeName === 'H5') {
+              if (current) chapters.push(current);
+              current = document.createElement('div');
+              current.className = 'exp-story-chapter';
+              current.appendChild(node.cloneNode(true));
+            } else if (current && node.textContent.trim()) {
+              current.appendChild(node.cloneNode(true));
+            }
+          });
+          if (current) chapters.push(current);
+          inner.innerHTML = '';
+          chapters.forEach(function (ch) { inner.appendChild(ch); });
+          inner.dataset.loaded = '1';
+        })
+        .catch(function () {
+          inner.innerHTML = '<p style="color:var(--text3);text-align:center;padding:2rem 0;">Story unavailable.</p>';
+        });
+    }
+
+
+    /* ── Leadership Neural Network Lines ───────────────────────────── */
+    function drawLeadershipNetwork() {
+      var wrap = document.querySelector('.rm-neural-wrap');
+      var svg = wrap && wrap.querySelector('.rm-svg');
+      if (!wrap || !svg) return;
+      var top = Array.from(wrap.querySelectorAll('.rm-top .rm-node'));
+      var bot = Array.from(wrap.querySelectorAll('.rm-bottom .rm-node'));
+      var wr = wrap.getBoundingClientRect();
+      function center(el) {
+        var r = el.querySelector('.rm-icon').getBoundingClientRect();
+        return { x: r.left - wr.left + r.width / 2, y: r.top - wr.top + r.height / 2 };
+      }
+      // Each top node connects to its neighbour and the two bottom nodes beneath it
+      var pairs = [
+        [top[0], bot[0]], [top[0], bot[1]],
+        [top[1], bot[0]], [top[1], bot[1]], [top[1], bot[2]],
+        [top[2], bot[1]], [top[2], bot[2]], [top[2], bot[3]],
+        [top[3], bot[2]], [top[3], bot[3]],
+      ];
+      svg.innerHTML = '';
+      var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
+      var grad = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
+      grad.id = 'rm-grad'; grad.setAttribute('x1', '0%'); grad.setAttribute('y1', '0%');
+      grad.setAttribute('x2', '0%'); grad.setAttribute('y2', '100%');
+      var s1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+      s1.setAttribute('offset', '0%'); s1.setAttribute('stop-color', '#6c63ff'); s1.setAttribute('stop-opacity', '0.55');
+      var s2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+      s2.setAttribute('offset', '100%'); s2.setAttribute('stop-color', '#00d4aa'); s2.setAttribute('stop-opacity', '0.25');
+      grad.appendChild(s1); grad.appendChild(s2); defs.appendChild(grad); svg.appendChild(defs);
+      pairs.forEach(function (pair) {
+        var a = center(pair[0]), b = center(pair[1]);
+        var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
+        line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
+        line.setAttribute('stroke', 'url(#rm-grad)');
+        line.setAttribute('stroke-width', '1.5');
+        svg.appendChild(line);
+      });
+    }
+
+    window.addEventListener('resize', drawLeadershipNetwork);
 
     /* ── Lucide Icons ────────────────────────────────────────────── */
     lucide.createIcons();
     applyTechIcons();
+    drawLeadershipNetwork();
   </script>
 </body>
 

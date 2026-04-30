@@ -1,0 +1,122 @@
+E-Business Solutions Enabling Group 2014 - 2016 Journey
+--------------------------------------------------------
+
+I re-joined eBS after a tour in kuwait then returning back to Egypt. They hired me because I left a good impression when I worked there as an intern after university before the Army.
+
+I started as a junior level web developer, was working on a web project using jQuery, css, html, javascript. My role was to convert graphic designs into html components while preparing for backend integration using mockup data, variables.
+
+Back then we didn't have Redux or any state management features, we had to sattle for window.globals variable to pass variables between components. The code was modular, zillion files in a very huge folder structure. We had data layers js files to handle API's, setting up the data variables and UI layer to present these data, and to provide CTA's for customer interactions.
+
+It was meant to be responsive supporting Mobile/Tablet/Desktop which required that we use "jQuery Mobile" to make that happen.
+In eBS we had this Omni-Channel system which basically was generating components from MS SQL Server database configurations, which might not be a big deal now, but it was then.
+
+Most projects were the same. Setup configurations in DB, generate the components (UI layer, API layer), then apply the logic required for each component.
+
+I worked on projects for Alrajhi Bank, BSF, SAIB, and eventually AJC.
+
+Then I became a senior after a year that I showed the potential of consistently delivering ahead of schedule and getting things done in a very fast pace and with very high quality almost passing QA team's review without review.
+
+That's when I started being responsible for teaching juniors and new joiners how everything works, how to properly use css & jquery to produce high quality components.
+
+It was my time to join the on-site rotation business trips. I was to travel to work on-site for BSF, which was my first introduction to the project that I haven't worked on beforehand, but I was familiar with the Omni Channel, so it was ok for me.
+It was a two-week trip, i had 14 screens to be completed all in all, and the team leader whom i was accompanying had around 34 screens to complete in this trip.
+They were expecting me to under-deliver, and they told me that it's ok to do so.
+So as it's my habit to exceed expectations, i delivered the 14 screens in 3 days!
+The team leader was shocked and sceptical about the quality of my work, so he reviewed it, and cleared it.
+Then he gave me some future scope that was scheduled to be delivered a month later after we were back as per the project's timeline.
+I kept over delivering and they failed to keep up with me for the rest of the week.
+
+In the next week after the weekend, the CEO of eBS (Azmy) visited us and saw what I was working on, and immidiately asked me to close my screen.
+He had his meeting with the BSF's head of IT who was always keeping an eye on us and answering our questions.
+Then he met we us. And this was the dialogue:
+  Azmy: What the hell are you working on, these screens are not scheduled for another month!
+  Me: I finished all the screens in scope that were assigned to me in 3 days, and I had nothing else to work on
+  Azmy: We have other projects behind schedule, you can work on these
+  Me: How can I work on different project with a contant eye over my shoulder from another bank that could watch me and ask me at any point!
+  Azmy: You can focus and switch screens when he comes near you
+  Me: But this is considered cheating, and I'm not used to that.
+  Azmy: Just stop working on future screens, this hurts the business.
+
+So the next week passed by, I was preparing the future features for the original team without applying it on the UI, and without telling the BSF's IT Head (behind the scenes).
+
+In the last day on-site, I was appraoched by the BSF's Head of IT. He priased my work and told me that he was pissed off when he found out that I was the one who was sent from eBS as he had never heard of me before, but then I proved to him that I was up to the task. He told me that he had sent Azmy a thanks letter acknowledging my outstanding performance.
+
+When we went back to Egypt, Azmy asked me to his office and started discussing the trip with me.
+He told me that what I did there was hurting the business, and that I should not work beyond the scope of a given time period, he didn't praise my work, he didn't thank me, but instead made me feel like shit.
+He told me: I cannot keep up with your pace as your team mates are much slower than you, and we sell our service as per the mandays required to complete the tasks, and if you constantly go ahead of schedule, clients would start asking for pricing adjustments according to the inaccurate estimated effort/time given for each task.
+
+I was completely in disagreement with him as my idea is that we can increase the charge for the mandate as we bring more value vs time.
+However, this is how he ran it.
+
+Moving on to my next trip, it was to SAIB, but it was to deploy an SMS gateway which I had no clue we even had!
+It was a collection of parallel load-balancing IBM queues routing and handling messages from the bank's backend to the Saudi Telecommunication providers like STC, Mobily, and Zain.
+The system architecture was explained to me once by a team leader, and all resources that have been exposed to this system were unavailable to go on-site to deploy the system as they had other engaments.
+
+The story with this SMS gateway is interesting as it was meant to be a 1 week plug-n-play task with verification then come back home...
+However, what happened was way beyond that!!
+I started off my first day on-site having a meeting with the head there and the senior who gave me a very limited access to their system setting down on his own computer having him above my shoulder all the time.
+The outcome of the first meeting was that I'm to deliver the whole deployment in two days on the UAT environment, and then we test all the concurrunt/parallel runs by taking down nodes in the pipeline and check if the message still go through...doing the relevant UAT.
+
+In the first day, they noticed that there were a lot of hickups in the deployment and that I was constantly contacting my team for support.
+By the end of that day, the senior reported to the head of IT, then he came at me...
+He was like, Mr.Roshdy, how many times have you deployed this system before?
+Me: This is the first time
+Him: Ooh I see, I see that you're unable to deliver, and I will report to my superiors how Azmy is treating this bank like a kiosk and he's sending an uncapable resource no-offence, and he was clearly disappointed.
+Me: Mr. X, I look at it completely different. Mr Azmy has sent his best striker to bring this home. He knows for a fact that I'm capable to deliver even if I have no previous experience, and knows he can count on me. As per our agreement this morning, we agreed that this will take two days to be deployed, haven't we?
+Him: Yes we did (answered with a slick smile)
+Me: Did I nullify this agreement?
+Him: No (same slick smile)
+Me: If by end of day tomorrow I don't deliver, you have every right to escilate. Until then, your judgement is premature and misplaced.
+Him: Alright Mr. Roshdy (with a challenging tone), we'll see what happens tomorrow.
+
+I believe that I had done extremely good in that confronting dialogue and I was proud how I handled it, and remember, I was just 2 years experience in corporate world by then.
+Anyway, I went home shaking in my boots making every call I could make to Mr. Azmy, the team leader trying to get as much details about the system as I could to deliver the next day ... The continuous of both the project and my job depended on it!
+
+I went early the next day after requesting a headstart from the SAIB senior to give me access to his machine, armed with information, and ready to go to war!
+I delivered under two hours! I made all my sanity checks while keeping it in the low profile. After verifying everything and the failure scenarios handling, parallel pipelines, fallbacks, and thensome, I contacted Mr. Azmy telling him the news but couldn't reach him as it was super early.
+Anyway I went to Mr.X giving him the news (proud tone). They were busy with other projects, so they scheduled UAT time-slot the day after.
+For the rest of the day I was mostly free as the senior was heavily engaged and couldn't provide monitored access to his machine.
+
+For the rest of the week we conducted successful tests, and I gave him the training their were due to the new system, how to troubleshoot it, and how to link it to other environments.
+
+They requested an extension to my stay for another week as they were upgrading their IBM queuing system and they wanted to make sure it'd have a smooth integration with the SMS GW.
+It took them a couple of days to finish deploying their new queues. After integration we experienced a few hickups with one of the TeleCom companies from their side, as well as choosing the fallback TeleCom provider to send the message through (e.g. an STC number should be primarily sent through STC and fallback to Mobily as this affected the cost of the SMS)
+After fixing the issue from the provider side, I fine tune the fallback parameters and tought them how to do it in the future.
+Then we had a problem with the new queque that it's sending the Arabic characters scrambled.
+I did some trials and mockups and figured out the problem (although it was not mine to fix, it was their new queue's), it was the character encoding of choice performed in the new queuing system.
+I shared my findings with them, they applied it, and with God's blessings, it worked.
+
+They were relieved as they had no clue what the problem was let alone how to fix it!
+We exchausted every testing case we could think of, and finally got the sign-off to go live.
+
+2 days prior to my extensioned stay to be concluded, we deployed the solution to live environment, made the sanity checks, and monitored the performance and executions for the remainig time.
+
+By the end of the journey, I met with SAIB team involved in the project along with Mr.X. I said my piece and made sure there were no questions unanswered regarding the architecture and/or solution execution and troubleshooting.
+Then Mr.X said: Mr. Roshdy, on the first day it seemed like you were over your head with this deployment, and we were bitting on the failure of this project, then you challenged us that you'll deliver -- and you did ahead of schedule!
+Then you fixed a couple of out-of-scope problems and helped us deliver our own upgrade.
+I thank you a lot for your efforts, support, and outstanding job done, and I'll be sending Mr. Azmy a huge thank you email acknowledging your work, and asking for you personally shall we have any future ventures together.
+
+Going back to my home town ... Victorious ... Expecing the next business day to be praised and probably appraised a bonus by Mr. Azmy for the awesome job I did in both my own opinion and the client's.
+I went to Mr. Azmy's office as it's customed to have a post-trip summary meeting, feeling confident and awaiting my reward.
+Before I get to tell the story I was comfronted by Mr. Azmy telling me "Why the hell would you tell the client that this is your first time delivering the system?!"
+The question left me shocked for a few moments. My victorious face was swiftly malformed into an angry and confused face.
+Still in shock, I though it was a silly joke.
+After a few moments I replied: "Is this for real, or you're just giving me a hard time?"
+Him: Why would you say that!
+Me with atmost disappointment: What would you have me say?! This is the truth!
+Him: You could've lied and told him it's your third or forth.
+Me angry: I don't lie! besides what if he asked me about the names of these banks?
+Him: Tell him any three banks in KSA
+Me: What if he was working in one of those banks if he inquired about the deployment dates and it matched with him?
+Him: sighed showing disappointment on my poor judgement and naieve honesty
+Me: Did the client complain on my work?
+Him: No actually he sent a thank you email, but you could've blown the whole project sky high!
+Me: Do you want anything else from me?
+Him: No thanks.
+
+This meeting left me with one decision and one decision only ... I can't work in this place anymore!
+
+For the next couple of months, my perfomance took a deep dive, I wanted to leave so bad but no opportunities had presented themselves.
+Then they told me that I'm scheduled to travel back to KSA to work on Al-Jazira Capital's trading platform which I've been working on its UI for a while.
+
+The end of this journey is mentioned in Al-Jaizra Capital's story...

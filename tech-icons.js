@@ -50,7 +50,9 @@ const TECH_ICONS = {
   'SOAP / WCF':     { img: 'https://symbols.getvecta.com/stencil_25/79_soapui.5113237b76.svg' },
   'Microservices':  { img: 'https://img.icons8.com/color/48/network.png' },
   'Ocelot GW':      { img: 'https://raw.githubusercontent.com/ThreeMammals/Ocelot/refs/heads/assets/images/ocelot_logo.png' },
-  'Nafath':         { img: 'https://www.google.com/s2/favicons?domain=nafath.gov.sa&sz=64' },
+  'Nafath':         { img: './img/nafath.png' },
+  'AML':            { img: 'https://amlksa.com/wp-content/uploads/2022/04/KSA-Logo.png' },
+  'Simah':          { img: './img/simah.png' },
   'MasterCard':     { img: 'https://api.iconify.design/logos/mastercard.svg' },
   'Microsoft Access': { img: 'https://api.iconify.design/vscode-icons/file-type-access.svg' },
 
@@ -70,6 +72,9 @@ const TECH_ICONS = {
   'SQL Server':     { img: 'https://img.icons8.com/color/48/microsoft-sql-server.png' },
   'MS SQL':         { img: 'https://img.icons8.com/color/48/microsoft-sql-server.png' },
   'MS-SQL':         { img: 'https://img.icons8.com/color/48/microsoft-sql-server.png' },
+
+  /* ── Enterprise & Middleware ────────────────────────────────────── */
+  'IBM MQ':         { img: 'https://img.icons8.com/color/48/ibm.png' },
 
   /* ── Tools & Platforms ──────────────────────────────────────────── */
   'LightStreamer':  { img: 'https://api.nuget.org/v3-flatcontainer/lightstreamer.dotnetstandard.client/6.2.1/icon' },
