@@ -5,4 +5,5 @@
 window.STORIES = {
   ajc:     './stories/ajc.md',
   ebs2014: './stories/ebs_2014.md',
+  ebs2011: './stories/ebs_2011.md',
 };

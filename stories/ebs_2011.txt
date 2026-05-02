@@ -1,0 +1,24 @@
+E-Business Solutions Enabling Group 2011 - 2012 Journey
+--------------------------------------------------------
+
+Right after graduating from University with a bachelor of Computer Science, I was recommended by one of my professors to his friend the CEO of eBSEG.
+
+As a fresh grad, I was only exposed to C++ as a programming language at the university and little PHP that I've learnt through a training course back in 2009.
+
+They inteviewed me, started asking me about VB, which I had no clue about. After asking a few questions, the last question I got wrong, which I remember it was "In VB do we compare using = or == like c language?"
+My answer was "==", and based on the reaction of the interviewer, I followed with "But programming is a concept, not a language!"
+He looked up to me showing admiration, and I got accepted in July 2011 as an intern until my Military Enlisting status becomes clear, which was due in December 2011.
+
+I started by watching a lot of introductory videos to their Omni-Channel, it was such a boring stage of my life. After a whole week of watching long videos of things I know very few about, they assigned me to an asp classic (VB) task.
+As an intern, I was not assigned a mentor or senior to teach me, they were busy and threw me to deep waters kinda waiting to see what I'll do, or not caring enough about me altogether.
+It took me around 4 days to do it, and they objected on how long it took me to do it. My response was, I'll do better, but I would need some support to achieve that.
+
+Then the next task was another asp.classic feature implementation, that one was completed in a much faster fashion.
+Then they decided to include me in a native iOS application for tablets using C#.
+It took me a month or so to be considered a productive member of the team.
+
+One major task I made was inverting a native slider control to display and slide in RTL by using dual axis-rotation which put me on the map in the company.
+I had heard of this problem while it was considered above my pay grade, and it was not assigned to me, but I just had the inspiration and decided to do it on my own, and It paid off! 
+
+After that they started giving me harder tasks in that project and I started rising up to the tasks and getting more dependable.
+Sadly, it was cut short as I was enlisted in the Army...

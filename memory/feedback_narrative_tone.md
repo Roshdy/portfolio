@@ -14,3 +14,13 @@ Keep all narrative — summaries, bullets, story chapters — professionally pos
 - Replace manager/leadership friction with organisational context: "within a conservative risk culture" or "navigating approval processes" not "my manager blocked it"
 - When innovation was shelved, frame it as timing/risk appetite, not personal conflict
 - The user's proactivity and results should speak for themselves without needing an antagonist
+
+## Story Chapter Writing — Additional Rules
+
+- Do not quote specific interview questions, technical details of embarrassing moments, or exact dialogue verbatim — summarise the situation professionally instead
+- Stories are a **marketing pitch to recruiters and hiring managers**, not personal anecdotes for friends
+- Third-person or neutral framing works well for moments of personal vulnerability (e.g. "the final question was answered incorrectly" not "I said ==")
+- Keep the voice polished: every sentence should read as something you'd be proud to have a CTO or HR director read
+
+- Avoid detached third-person constructions like "the response was immediate" or "the question was answered incorrectly" — they sound AI-generated and inhuman. Use natural first-person instead: "I got it wrong" not "the question was answered incorrectly"
+- The goal is professional AND human — not clinical neutrality

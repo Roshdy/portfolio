@@ -571,7 +571,6 @@
       font-size: clamp(1.1rem, 3vw, 1.6rem);
       color: var(--accent);
       font-weight: 600;
-      margin-bottom: 1.25rem;
     }
 
     .hero-summary {
@@ -640,6 +639,11 @@
       padding: .35rem .75rem;
       border-radius: 20px;
       transition: border-color .2s, color .2s;
+    }
+
+    .badge.title {
+      display: inline-block;
+      margin-bottom: 1rem;
     }
 
     .badge:hover {
@@ -1014,7 +1018,7 @@
     }
 
     .exp-period span {
-      background: #fcfcfc;
+      background: var(--bg3);
       padding: .15rem .5rem;
       border-radius: 4px;
       border: 1px solid var(--card-border);
@@ -2180,6 +2184,7 @@
           </div>
           <h1 class="hero-name">M. Roshdy<br><span class="gradient-text">Kamel</span></h1>
           <p class="hero-title">Lead Software Engineer</p>
+          <span class="badge title"><i data-lucide="map-pin"></i> Riyadh, KSA</span>
           <p class="hero-summary">
             Lead Software Engineer / Tech Lead with 15+ years of experience delivering web, mobile, and trading platforms across fintech
             and enterprise systems. Specialized in C#, .NET, React, Node.js, microservices, AWS, Oracle and MongoDB.
@@ -2190,11 +2195,11 @@
             <a href="#experience" class="btn-secondary"><span class="gradient-text">View My Work</span></a>
           </div>
           <div class="hero-badges">
-            <span class="badge"><i data-lucide="map-pin"></i> Riyadh, KSA</span>
             <span class="badge"><i data-lucide="landmark"></i> FinTech Expert</span>
-            <span class="badge"><i data-lucide="atom"></i> React / React-Native</span>
+            <span class="badge"><i data-lucide="atom"></i> React / React-Native / Expo</span>
             <span class="badge"><i data-lucide="cloud"></i> AWS / Cloud</span>
             <span class="badge"><i data-lucide="terminal"></i> MERN Stack</span>
+            <span class="badge"><i data-lucide="database"></i> Oracle / MongoDB</span>
           </div>
           <div class="stats-row">
             <div class="stat-card">
@@ -2534,15 +2539,24 @@
               </div>
               <span class="exp-badge badge-senior">Developer</span>
             </div>
-            <p class="exp-summary">First professional role — contributed to an enterprise software team building iOS applications with C# and Xcode alongside ASP.Net web development, establishing a foundation in both mobile and web engineering.</p>
+            <p class="exp-summary">First professional role, joining E-Business Solutions directly from university as an intern; independently mastered VB, ASP Classic, and C# within weeks to become a productive contributor across enterprise web and native iOS development.</p>
             <ul class="exp-bullets">
-              <li>iOS application development using C# and Xcode</li>
-              <li>Web development using VB and ASP.Net</li>
+              <li>Developed ASP Classic (VB) web features independently with no prior VB experience, reaching full productivity within four weeks of joining</li>
+              <li>Contributed to a native iOS tablet application using C# and Xcode as part of a cross-platform enterprise team</li>
+              <li>Independently solved a known RTL slider rendering defect using dual-axis rotation in C# — a problem above the intern scope — earning recognition and more complex assignments</li>
             </ul>
             <div class="exp-tech">
-              <span class="tech-tag">MySQL</span><span class="tech-tag">C#</span>
-              <span class="tech-tag">VB</span><span class="tech-tag">ASP.Net</span>
+              <span class="tech-tag">C#</span><span class="tech-tag">VB</span>
+              <span class="tech-tag">ASP.Net</span><span class="tech-tag">Xcode</span>
               <span class="tech-tag">HTML</span><span class="tech-tag">CSS</span>
+            </div>
+            <button class="exp-story-toggle" data-story="ebs2011" onclick="toggleStory(this)">
+              <i data-lucide="book-open"></i>
+              <span class="story-toggle-label">Read the full story</span>
+              <i data-lucide="chevron-down" class="story-chevron"></i>
+            </button>
+            <div class="exp-story">
+              <div class="exp-story-inner"></div>
             </div>
           </div>
         </div>
