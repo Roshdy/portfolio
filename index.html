@@ -265,7 +265,6 @@
     .section-subtitle {
       font-size: 1rem;
       color: var(--text2);
-      max-width: 520px;
     }
 
     /* ─── LAYOUT ────────────────────────────────────────────────────── */
@@ -737,7 +736,7 @@
       margin-top: 2.5rem;
     }
 
-    
+
     .stat-card {
       background: var(--card);
       border: 1px solid var(--card-border);
@@ -746,7 +745,7 @@
       text-align: center;
       transition: border-color .3s, transform .3s;
     }
-    
+
     .stat-card:hover {
       border-color: var(--accent);
       transform: translateY(-3px)
@@ -760,7 +759,7 @@
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
-    
+
     .stat-label {
       font-size: .78rem;
       color: var(--text2);
@@ -773,9 +772,18 @@
         gap: .5rem;
         margin-top: 1.5rem;
       }
-      .stat-card { padding: .75rem 0.5rem; }
-      .stat-num { font-size: 1.2rem; }
-      .stat-label { font-size: .68rem; }
+
+      .stat-card {
+        padding: .75rem 0.5rem;
+      }
+
+      .stat-num {
+        font-size: 1.2rem;
+      }
+
+      .stat-label {
+        font-size: .68rem;
+      }
     }
 
     @media(max-width:768px) {
@@ -783,24 +791,42 @@
         grid-template-columns: 1fr;
         text-align: center
       }
-      .hero-greeting::before { display: none; }
-      .hero-right { display: none; }
+
+      .hero-greeting::before {
+        display: none;
+      }
+
+      .hero-right {
+        display: none;
+      }
+
       .hero-ctas {
         justify-content: center !important;
         gap: .5rem;
       }
-      .btn-primary, .btn-secondary { padding: .65rem 1.1rem; font-size: .88rem; }
-      .hero-badges { justify-content: center !important }
+
+      .btn-primary,
+      .btn-secondary {
+        padding: .65rem 1.1rem;
+        font-size: .88rem;
+      }
+
+      .hero-badges {
+        justify-content: center !important
+      }
+
       .hero-summary {
         font-size: .88rem;
         overflow-wrap: break-word;
         word-break: break-word;
       }
+
       .hero-photo-mobile {
         display: flex;
         justify-content: center;
         margin: 1.25rem 0;
       }
+
       .hero-photo-mobile-ring {
         width: 126px;
         height: 126px;
@@ -810,6 +836,7 @@
         box-shadow: 0 0 30px var(--accent-glow);
         flex-shrink: 0;
       }
+
       .hero-photo-mobile-ring img {
         width: 100%;
         height: 100%;
@@ -828,6 +855,18 @@
     }
 
     /* ─── ABOUT ─────────────────────────────────────────────────────── */
+    .about-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .about-body p {
+      color: var(--text2);
+      line-height: 1.8;
+      text-align: justify;
+    }
+
     #about .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1227,6 +1266,33 @@
       font-size: 1rem;
       font-weight: 700;
       margin-bottom: .3rem
+    }
+
+    .project-tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: .64rem;
+      font-weight: 700;
+      padding: .18rem .6rem;
+      border-radius: 20px;
+      background: rgba(108, 99, 255, .12);
+      color: var(--accent);
+      border: 1px solid rgba(108, 99, 255, .28);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .project-tag.tag-green {
+      background: rgba(0, 212, 170, .12);
+      color: var(--accent2);
+      border-color: rgba(0, 212, 170, .3);
+    }
+
+    .project-tag.tag-red {
+      background: rgba(255, 100, 100, .12);
+      color: #ff6464;
+      border-color: rgba(255, 100, 100, .3);
     }
 
     .project-role {
@@ -1681,7 +1747,9 @@
       cursor: pointer;
     }
 
-    .contact-item h4 { display: none; }
+    .contact-item h4 {
+      display: none;
+    }
 
     .contact-item:hover {
       border-color: var(--accent);
@@ -1739,9 +1807,20 @@
     }
 
     @media(max-width:768px) {
-      .contact-grid { grid-template-columns: 1fr; max-width: 100%; }
-      .contact-item { padding: .9rem 1rem; }
-      .contact-icon { flex-shrink: 0; width: 38px; height: 38px; }
+      .contact-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+
+      .contact-item {
+        padding: .9rem 1rem;
+      }
+
+      .contact-icon {
+        flex-shrink: 0;
+        width: 38px;
+        height: 38px;
+      }
     }
 
     /* ─── FOOTER ────────────────────────────────────────────────────── */
@@ -1859,8 +1938,33 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      gap: 3.5rem;
+      gap: 2.5rem;
       padding: .5rem 0 1rem;
+    }
+
+    /* stagger individual nodes vertically for organic NN feel */
+    .rm-layer:nth-child(1) .rm-node:nth-child(1) {
+      transform: translateY(14px);
+    }
+
+    .rm-layer:nth-child(2) .rm-node:nth-child(1) {
+      transform: translateY(-8px);
+    }
+
+    .rm-layer:nth-child(2) .rm-node:nth-child(3) {
+      transform: translateY(10px);
+    }
+
+    .rm-layer:nth-child(3) .rm-node:nth-child(2) {
+      transform: translateY(-12px);
+    }
+
+    .rm-layer:nth-child(3) .rm-node:nth-child(4) {
+      transform: translateY(8px);
+    }
+
+    .rm-layer:nth-child(4) .rm-node:nth-child(2) {
+      transform: translateY(-10px);
     }
 
     .rm-svg {
@@ -1898,26 +2002,37 @@
     }
 
     .rm-icon {
-      width: 68px;
-      height: 68px;
+      width: 54px;
+      height: 54px;
       border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.45) 0%, transparent 55%),
+        radial-gradient(circle at 70% 75%, rgba(0, 0, 0, 0.25) 0%, transparent 50%),
+        linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:
+        0 8px 24px var(--accent-glow),
+        inset 0 -5px 14px rgba(0, 0, 0, 0.35),
+        inset 0 3px 8px rgba(255, 255, 255, 0.22);
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 4px 20px var(--accent-glow);
-      transition: box-shadow .3s;
+      transition: box-shadow .3s, transform .3s;
       flex-shrink: 0;
     }
 
     .rm-node:hover .rm-icon {
-      box-shadow: 0 6px 32px var(--accent-glow);
+      box-shadow:
+        0 12px 36px var(--accent-glow),
+        inset 0 -6px 16px rgba(0, 0, 0, 0.4),
+        inset 0 4px 10px rgba(255, 255, 255, 0.28);
+      transform: translateY(-2px) scale(1.06);
     }
 
     .rm-icon svg.lucide {
-      width: 32px;
-      height: 32px;
+      width: 24px;
+      height: 24px;
       color: #fff;
+      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
     }
 
     .rm-label {
@@ -2186,9 +2301,9 @@
           <p class="hero-title">Lead Software Engineer</p>
           <span class="badge title"><i data-lucide="map-pin"></i> Riyadh, KSA</span>
           <p class="hero-summary">
-            Lead Software Engineer / Tech Lead with 15+ years of experience delivering web, mobile, and trading platforms across fintech
-            and enterprise systems. Specialized in C#, .NET, React, Node.js, microservices, AWS, Oracle and MongoDB.
-            With proven impact in product launches, performance optimization, and cross-functional delivery.
+            Lead Software Engineer / Tech Lead / Technical Project Manager with 15+ years of experience delivering fintech, trading,
+            and enterprise platforms across C#/.NET, React, Node.js, microservices, AWS, Oracle, and MongoDB. Proven record of rescuing
+            high-risk launches, leading cross-functional teams, and delivering measurable performance, scale, and delivery improvements.
           </p>
           <div class="hero-ctas">
             <a href="#contact" class="btn-primary">Get In Touch</a>
@@ -2262,18 +2377,20 @@
         <div class="fade-in">
           <p class="section-label">About Me</p>
           <h2 class="section-title">Crafting software that <span class="gradient-text">Matters</span></h2>
-          <p style="color:var(--text2);line-height:1.8;margin-bottom:1.5rem;">
-            I'm a passionate software engineer with over 15 years of hands-on experience
-            spanning trading platforms, fintech startups, mobile apps, and enterprise systems.
-            I've worn many hats — developer, CTO, team lead, and founder — and I thrive at
-            the intersection of technical excellence and product thinking.
-          </p>
-          <p style="color:var(--text2);line-height:1.8;">
-            From architecting microservices for Saudi stock market platforms to building
-            SAMA-approved fintech products from scratch, I bring both depth and breadth.
-            Currently based in Riyadh, open to new challenges that push the boundaries of
-            what software can do.
-          </p>
+          <div class="about-body">
+            <p>
+              I'm a passionate software engineer with over 15 years of hands-on experience
+              spanning trading platforms, fintech startups, mobile apps, and enterprise systems.
+              I've worn many hats — developer, CTO, team lead, and founder — and I thrive at
+              the intersection of technical excellence and product thinking.
+            </p>
+            <p>
+              From architecting microservices for Saudi stock market platforms to building
+              SAMA-approved fintech products from scratch, I bring both depth and breadth.
+              Currently based in Riyadh, open to new challenges that push the boundaries of
+              what software can do.
+            </p>
+          </div>
         </div>
         <div class="fade-in">
           <p class="section-label" style="margin-bottom:1rem;">Key Achievements</p>
@@ -2319,7 +2436,7 @@
       </div>
 
       <div class="timeline">
-        
+
         <!-- Al-Jazira Capital -->
         <div class="timeline-item fade-in">
           <div class="timeline-dot"></div>
@@ -2341,13 +2458,13 @@
               </div>
               <span class="exp-badge badge-lead">Team Lead</span>
             </div>
-            <p class="exp-summary">Joined as an on-site contractor to rescue a trading platform that had crashed on every launch for over a year — diagnosed and resolved the root cause in 2 weeks, delivered the live launch in 3 months, and was immediately recruited by Al-Jazira Capital. Grew from frontend developer to full-stack team lead, architecting a microservices platform from scratch, championing modern technologies forcing constant growth, and consistently delivering ahead of schedule.</p>
+            <p class="exp-summary">Rescued a trading platform that had failed on every launch for 12+ months; identified the root cause and restored production stability in 2 weeks, enabling a successful live launch within 3 months. Progressed from frontend developer to full-stack team lead, where I architected a microservices platform, led delivery, and introduced modern engineering practices.</p>
             <ul class="exp-bullets">
               <li>Diagnosed and resolved a critical production memory leak in a live jQuery-based trading platform within 2 weeks, enabling the first-ever successful launch on Saudi Arabia's Tadawul stock exchange</li>
-              <li>Led ReactJS adoption across the engineering team by delivering a fully functional React frontend prototype in one week; established React as the organisation's approved frontend standard</li>
-              <li>Architected a microservices platform decomposing 200+ legacy endpoints across business domains using .NET Core and C#, secured via an Ocelot API gateway with JWT authentication</li>
-              <li>Managed end-to-end delivery of a customer portal using Agile methodology, GitLab Kanban, and Microsoft Project; delivered Phase 1 three weeks early and Phase 2 six weeks ahead of schedule</li>
-              <li>Designed a .NET Core REST API authentication microservice enforcing concurrent-session regulatory controls at both API and database layers, eliminating a costly third-party vendor dependency</li>
+              <li>Led React adoption by delivering a working frontend prototype in 1 week and standardizing React as the team’s approved frontend framework, improving consistency across new feature development</li>
+              <li>Architected a .NET Core microservices platform that replaced 200+ legacy endpoints across business domains, using C#, Ocelot API Gateway, and JWT authentication to improve maintainability and security</li>
+              <li>Managed end-to-end delivery of a customer portal using Agile, GitLab Kanban, and Microsoft Project, delivering Phase 1 three weeks early and Phase 2 six weeks ahead of schedule</li>
+              <li>Designed a .NET Core REST authentication microservice that enforced concurrent-session regulatory controls at the API and database layers, eliminating a third-party vendor dependency and reducing operational cost</li>
               <li>Redesigned a LightStreamer real-time data layer using Java and gzipped JSON; increased server capacity by 225% from 400 to 1,300 concurrent users under load</li>
               <li>Led engineering hiring, technical onboarding, and code review processes for junior team members; defined UAT acceptance criteria and conducted domain knowledge training</li>
               <li>Developed POCs for Oracle Advanced Queuing-based price alerts, a conditional orders engine, and a Java real-time market data processor, extending platform capabilities beyond project scope</li>
@@ -2588,6 +2705,7 @@
             </div>
             <div class="project-links">
               <a href="https://www.malfintech.com" target="_blank" rel="noopener" class="project-link" title="Visit website"><i data-lucide="external-link"></i></a>
+              <span class="project-tag tag-green">Fintech</span>
             </div>
           </div>
           <div>
@@ -2616,6 +2734,7 @@
             </div>
             <div class="project-links">
               <a href="https://www.viboapp.com" target="_blank" rel="noopener" class="project-link" title="Visit website"><i data-lucide="external-link"></i></a>
+              <span class="project-tag tag-red">Social Media</span>
             </div>
           </div>
           <div>
@@ -2643,6 +2762,7 @@
             </div>
             <div class="project-links">
               <a href="https://www.superkoshk.com" target="_blank" rel="noopener" class="project-link" title="Visit website"><i data-lucide="external-link"></i></a>
+              <span class="project-tag">E-Commerce</span>
             </div>
           </div>
           <div>
@@ -2670,6 +2790,7 @@
             </div>
             <div class="project-links">
               <a href="https://www.albuwardi.com" target="_blank" rel="noopener" class="project-link" title="Visit website"><i data-lucide="external-link"></i></a>
+              <span class="project-tag">E-Commerce</span>
             </div>
           </div>
           <div>
@@ -2696,6 +2817,7 @@
             </div>
             <div class="project-links">
               <a href="https://www.barada.com" target="_blank" rel="noopener" class="project-link" title="Visit website"><i data-lucide="external-link"></i></a>
+              <span class="project-tag">E-Commerce</span>
             </div>
           </div>
           <div>
@@ -2720,6 +2842,9 @@
             <div class="project-logo">
               <img src="./img/kee.jpeg" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" alt="KEE Action Sports logo" loading="lazy" />
               <span class="logo-fallback"><i data-lucide="building-2"></i></span>
+            </div>
+            <div class="project-links">
+              <span class="project-tag">Entertainment</span>
             </div>
           </div>
           <div>
@@ -2772,11 +2897,13 @@
             <div class="skill-chips">
               <span class="skill-chip highlight">React</span>
               <span class="skill-chip highlight">React Native</span>
+              <span class="skill-chip">Angular</span>
               <span class="skill-chip">Redux</span>
               <span class="skill-chip">HTML5</span>
               <span class="skill-chip">CSS3</span>
               <span class="skill-chip">jQuery</span>
               <span class="skill-chip">ES6+</span>
+              <span class="skill-chip">Xcode</span>
             </div>
           </div>
 
@@ -2785,11 +2912,14 @@
             <div class="skill-chips">
               <span class="skill-chip highlight">Node.js</span>
               <span class="skill-chip highlight">Meteor.js</span>
+              <span class="skill-chip">.NET Core</span>
               <span class="skill-chip">.NET / ASP.NET</span>
+              <span class="skill-chip">JWT</span>
               <span class="skill-chip">MVC</span>
               <span class="skill-chip">REST</span>
               <span class="skill-chip">SOAP / WCF</span>
               <span class="skill-chip">Microservices</span>
+              <span class="skill-chip">IBM MQ</span>
             </div>
           </div>
 
@@ -2799,8 +2929,10 @@
               <span class="skill-chip highlight">AWS</span>
               <span class="skill-chip">Google Cloud</span>
               <span class="skill-chip">Docker</span>
+              <span class="skill-chip">GitLab</span>
               <span class="skill-chip">GitHub Actions</span>
               <span class="skill-chip">CI/CD</span>
+              <span class="skill-chip">Figma</span>
             </div>
           </div>
 
@@ -2810,6 +2942,7 @@
               <span class="skill-chip highlight">MongoDB</span>
               <span class="skill-chip">SQL Server</span>
               <span class="skill-chip">Oracle</span>
+              <span class="skill-chip">PL/SQL</span>
               <span class="skill-chip">MySQL</span>
             </div>
           </div>
@@ -2875,32 +3008,48 @@
         <p class="section-label" style="text-align:center;margin-bottom:2rem;">Leadership &amp; Soft Skills</p>
         <div class="rm-neural-wrap">
           <svg class="rm-svg" aria-hidden="true"></svg>
-          <div class="rm-layer rm-top">
+          <div class="rm-layer">
             <div class="rm-node">
-              <div class="rm-icon"><i data-lucide="crown"></i></div><span class="rm-label">Tech Leadership</span>
+              <div class="rm-icon"><i data-lucide="crown"></i></div><span class="rm-label">Technical Leadership</span>
             </div>
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="shield-check"></i></div><span class="rm-label">Security</span>
+            </div>
+          </div>
+          <div class="rm-layer">
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="users"></i></div><span class="rm-label">Team Leadership</span>
+            </div>
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="refresh-cw"></i></div><span class="rm-label">Agile Delivery</span>
+            </div>
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="kanban"></i></div><span class="rm-label">Scrum</span>
+            </div>
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="handshake"></i></div><span class="rm-label">Stakeholder Management</span>
+            </div>
+          </div>
+          <div class="rm-layer">
             <div class="rm-node">
               <div class="rm-icon"><i data-lucide="briefcase"></i></div><span class="rm-label">Project Management</span>
             </div>
             <div class="rm-node">
-              <div class="rm-icon"><i data-lucide="refresh-cw"></i></div><span class="rm-label">Scrum / Agile</span>
-            </div>
-            <div class="rm-node">
-              <div class="rm-icon"><i data-lucide="clipboard"></i></div><span class="rm-label">Requirements Gathering</span>
-            </div>
-          </div>
-          <div class="rm-layer rm-bottom">
-            <div class="rm-node">
               <div class="rm-icon"><i data-lucide="layers"></i></div><span class="rm-label">Software Architecture</span>
             </div>
             <div class="rm-node">
-              <div class="rm-icon"><i data-lucide="link"></i></div><span class="rm-label">System Integrations</span>
+              <div class="rm-icon"><i data-lucide="cpu"></i></div><span class="rm-label">System Design</span>
             </div>
             <div class="rm-node">
-              <div class="rm-icon"><i data-lucide="handshake"></i></div><span class="rm-label">Client Relations</span>
+              <div class="rm-icon"><i data-lucide="code-2"></i></div><span class="rm-label">API Design</span>
+            </div>
+          </div>
+          <div class="rm-layer">
+            <div class="rm-node">
+              <div class="rm-icon"><i data-lucide="share-2"></i></div><span class="rm-label">Distributed Systems</span>
             </div>
             <div class="rm-node">
-              <div class="rm-icon"><i data-lucide="file-text"></i></div><span class="rm-label">Technical Docs</span>
+              <div class="rm-icon"><i data-lucide="gauge"></i></div><span class="rm-label">Performance Optimization</span>
             </div>
           </div>
         </div>
@@ -3348,39 +3497,52 @@
       var wrap = document.querySelector('.rm-neural-wrap');
       var svg = wrap && wrap.querySelector('.rm-svg');
       if (!wrap || !svg) return;
-      var top = Array.from(wrap.querySelectorAll('.rm-top .rm-node'));
-      var bot = Array.from(wrap.querySelectorAll('.rm-bottom .rm-node'));
+      var layers = Array.from(wrap.querySelectorAll('.rm-layer')).map(function (layer) {
+        return Array.from(layer.querySelectorAll('.rm-node'));
+      });
       var wr = wrap.getBoundingClientRect();
       function center(el) {
         var r = el.querySelector('.rm-icon').getBoundingClientRect();
         return { x: r.left - wr.left + r.width / 2, y: r.top - wr.top + r.height / 2 };
       }
-      // Each top node connects to its neighbour and the two bottom nodes beneath it
-      var pairs = [
-        [top[0], bot[0]], [top[0], bot[1]],
-        [top[1], bot[0]], [top[1], bot[1]], [top[1], bot[2]],
-        [top[2], bot[1]], [top[2], bot[2]], [top[2], bot[3]],
-        [top[3], bot[2]], [top[3], bot[3]],
-      ];
       svg.innerHTML = '';
       var defs = document.createElementNS('http://www.w3.org/2000/svg', 'defs');
       var grad = document.createElementNS('http://www.w3.org/2000/svg', 'linearGradient');
       grad.id = 'rm-grad'; grad.setAttribute('x1', '0%'); grad.setAttribute('y1', '0%');
       grad.setAttribute('x2', '0%'); grad.setAttribute('y2', '100%');
       var s1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-      s1.setAttribute('offset', '0%'); s1.setAttribute('stop-color', '#6c63ff'); s1.setAttribute('stop-opacity', '0.55');
+      s1.setAttribute('offset', '0%'); s1.setAttribute('stop-color', '#6c63ff'); s1.setAttribute('stop-opacity', '0.5');
       var s2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-      s2.setAttribute('offset', '100%'); s2.setAttribute('stop-color', '#00d4aa'); s2.setAttribute('stop-opacity', '0.25');
+      s2.setAttribute('offset', '100%'); s2.setAttribute('stop-color', '#00d4aa'); s2.setAttribute('stop-opacity', '0.18');
+      var filter = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
+      filter.id = 'rm-glow';
+      var blur = document.createElementNS('http://www.w3.org/2000/svg', 'feGaussianBlur');
+      blur.setAttribute('stdDeviation', '2.5'); blur.setAttribute('result', 'blur');
+      var merge = document.createElementNS('http://www.w3.org/2000/svg', 'feMerge');
+      var mn1 = document.createElementNS('http://www.w3.org/2000/svg', 'feMergeNode');
+      mn1.setAttribute('in', 'blur');
+      var mn2 = document.createElementNS('http://www.w3.org/2000/svg', 'feMergeNode');
+      mn2.setAttribute('in', 'SourceGraphic');
+      merge.appendChild(mn1); merge.appendChild(mn2);
+      filter.appendChild(blur); filter.appendChild(merge);
+      defs.appendChild(filter);
       grad.appendChild(s1); grad.appendChild(s2); defs.appendChild(grad); svg.appendChild(defs);
-      pairs.forEach(function (pair) {
-        var a = center(pair[0]), b = center(pair[1]);
-        var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
-        line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
-        line.setAttribute('stroke', 'url(#rm-grad)');
-        line.setAttribute('stroke-width', '1.5');
-        svg.appendChild(line);
-      });
+      /* full mesh between every adjacent layer pair */
+      for (var li = 0; li < layers.length - 1; li++) {
+        var fromL = layers[li], toL = layers[li + 1];
+        fromL.forEach(function (from) {
+          toL.forEach(function (to) {
+            var a = center(from), b = center(to);
+            var line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+            line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
+            line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
+            line.setAttribute('stroke', 'url(#rm-grad)');
+            line.setAttribute('stroke-width', '1.2');
+            line.setAttribute('filter', 'url(#rm-glow)');
+            svg.appendChild(line);
+          });
+        });
+      }
     }
 
     window.addEventListener('resize', drawLeadershipNetwork);
