@@ -1997,20 +1997,60 @@
       transition: transform .3s;
     }
 
+    .rm-node-minor .rm-icon {
+      width: 50px;
+      height: 50px;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.45) 0%, transparent 55%),
+        radial-gradient(circle at 70% 75%, rgba(0,0,0,0.25) 0%, transparent 50%),
+        linear-gradient(135deg,#ffcf63, #939423);
+      box-shadow:
+        0 4px 14px rgba(255, 207, 99, 0.45),
+        inset 0 -5px 14px rgba(0,0,0,0.35),
+        inset 0 3px 8px rgba(255,255,255,0.22);
+    }
+    .rm-node-minor:hover .rm-icon {
+      box-shadow:
+        0 6px 20px rgba(255, 207, 99, 0.6),
+        inset 0 -6px 16px rgba(0,0,0,0.4),
+        inset 0 4px 10px rgba(255,255,255,0.28);
+    }
+
+    .rm-node-large { min-width: 90px; }
+    .rm-node-large .rm-icon {
+      width: 65px;
+      height: 65px;
+      background:
+        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.45) 0%, transparent 55%),
+        radial-gradient(circle at 70% 75%, rgba(0,0,0,0.25) 0%, transparent 50%),
+        linear-gradient(135deg, #ff5252, #ff8c42);
+      box-shadow:
+        0 4px 14px rgba(255, 82, 82, 0.45),
+        inset 0 -5px 14px rgba(0,0,0,0.35),
+        inset 0 3px 8px rgba(255,255,255,0.22);
+    }
+    .rm-node-large .rm-icon svg.lucide { width: 30px; height: 30px; }
+    .rm-node-large:hover .rm-icon {
+      box-shadow:
+        0 6px 22px rgba(255, 82, 82, 0.6),
+        inset 0 -6px 16px rgba(0,0,0,0.4),
+        inset 0 4px 10px rgba(255,255,255,0.28);
+    }
+
     .rm-node:hover {
       transform: translateY(-6px);
     }
 
     .rm-icon {
-      width: 54px;
-      height: 54px;
+      width: 56px;
+      height: 56px;
       border-radius: 50%;
       background:
         radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.45) 0%, transparent 55%),
         radial-gradient(circle at 70% 75%, rgba(0, 0, 0, 0.25) 0%, transparent 50%),
-        linear-gradient(135deg, var(--accent), var(--accent2));
+        linear-gradient(135deg, #dbff00, #36935d);
       box-shadow:
-        0 8px 24px var(--accent-glow),
+        0 4px 14px rgba(219, 255, 0, 0.4),
         inset 0 -5px 14px rgba(0, 0, 0, 0.35),
         inset 0 3px 8px rgba(255, 255, 255, 0.22);
       display: flex;
@@ -2022,7 +2062,7 @@
 
     .rm-node:hover .rm-icon {
       box-shadow:
-        0 12px 36px var(--accent-glow),
+        0 6px 20px rgba(219, 255, 0, 0.55),
         inset 0 -6px 16px rgba(0, 0, 0, 0.4),
         inset 0 4px 10px rgba(255, 255, 255, 0.28);
       transform: translateY(-2px) scale(1.06);
@@ -3012,40 +3052,37 @@
             <div class="rm-node">
               <div class="rm-icon"><i data-lucide="crown"></i></div><span class="rm-label">Technical Leadership</span>
             </div>
-            <div class="rm-node">
+            <div class="rm-node rm-node-minor">
               <div class="rm-icon"><i data-lucide="shield-check"></i></div><span class="rm-label">Security</span>
             </div>
           </div>
           <div class="rm-layer">
-            <div class="rm-node">
+            <div class="rm-node rm-node-large">
               <div class="rm-icon"><i data-lucide="users"></i></div><span class="rm-label">Team Leadership</span>
             </div>
-            <div class="rm-node">
-              <div class="rm-icon"><i data-lucide="refresh-cw"></i></div><span class="rm-label">Agile Delivery</span>
-            </div>
-            <div class="rm-node">
+            <div class="rm-node rm-node-minor">
               <div class="rm-icon"><i data-lucide="kanban"></i></div><span class="rm-label">Scrum</span>
             </div>
             <div class="rm-node">
               <div class="rm-icon"><i data-lucide="handshake"></i></div><span class="rm-label">Stakeholder Management</span>
             </div>
+            <div class="rm-node rm-node-large">
+              <div class="rm-icon"><i data-lucide="refresh-cw"></i></div><span class="rm-label">Agile Delivery</span>
+            </div>
           </div>
           <div class="rm-layer">
             <div class="rm-node">
-              <div class="rm-icon"><i data-lucide="briefcase"></i></div><span class="rm-label">Project Management</span>
-            </div>
-            <div class="rm-node">
               <div class="rm-icon"><i data-lucide="layers"></i></div><span class="rm-label">Software Architecture</span>
+            </div>
+            <div class="rm-node rm-node-large">
+              <div class="rm-icon"><i data-lucide="briefcase"></i></div><span class="rm-label">Technical Project Management</span>
             </div>
             <div class="rm-node">
               <div class="rm-icon"><i data-lucide="cpu"></i></div><span class="rm-label">System Design</span>
             </div>
-            <div class="rm-node">
-              <div class="rm-icon"><i data-lucide="code-2"></i></div><span class="rm-label">API Design</span>
-            </div>
           </div>
           <div class="rm-layer">
-            <div class="rm-node">
+            <div class="rm-node rm-node-minor">
               <div class="rm-icon"><i data-lucide="share-2"></i></div><span class="rm-label">Distributed Systems</span>
             </div>
             <div class="rm-node">
@@ -3511,9 +3548,9 @@
       grad.id = 'rm-grad'; grad.setAttribute('x1', '0%'); grad.setAttribute('y1', '0%');
       grad.setAttribute('x2', '0%'); grad.setAttribute('y2', '100%');
       var s1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-      s1.setAttribute('offset', '0%'); s1.setAttribute('stop-color', '#6c63ff'); s1.setAttribute('stop-opacity', '0.5');
+      s1.setAttribute('offset', '0%'); s1.setAttribute('stop-color', '#6c63ff'); s1.setAttribute('stop-opacity', '0.35');
       var s2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
-      s2.setAttribute('offset', '100%'); s2.setAttribute('stop-color', '#00d4aa'); s2.setAttribute('stop-opacity', '0.18');
+      s2.setAttribute('offset', '100%'); s2.setAttribute('stop-color', '#00d4aa'); s2.setAttribute('stop-opacity', '0.13');
       var filter = document.createElementNS('http://www.w3.org/2000/svg', 'filter');
       filter.id = 'rm-glow';
       var blur = document.createElementNS('http://www.w3.org/2000/svg', 'feGaussianBlur');
@@ -3526,10 +3563,68 @@
       merge.appendChild(mn1); merge.appendChild(mn2);
       filter.appendChild(blur); filter.appendChild(merge);
       defs.appendChild(filter);
+      /* radial gradient for inner phantom nodes (3D sphere) */
+      var ig = document.createElementNS('http://www.w3.org/2000/svg', 'radialGradient');
+      ig.id = 'rm-inner'; ig.setAttribute('cx', '35%'); ig.setAttribute('cy', '30%'); ig.setAttribute('r', '65%');
+      var ig1 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+      ig1.setAttribute('offset', '0%'); ig1.setAttribute('stop-color', '#b0acff'); ig1.setAttribute('stop-opacity', '0.22');
+      var ig2 = document.createElementNS('http://www.w3.org/2000/svg', 'stop');
+      ig2.setAttribute('offset', '100%'); ig2.setAttribute('stop-color', '#6c63ff'); ig2.setAttribute('stop-opacity', '0.06');
+      ig.appendChild(ig1); ig.appendChild(ig2); defs.appendChild(ig);
       grad.appendChild(s1); grad.appendChild(s2); defs.appendChild(grad); svg.appendChild(defs);
+
+      var wW = wr.width;
+
+      function layerAvgY(nodes) {
+        var s = 0; nodes.forEach(function (n) { s += center(n).y; }); return s / nodes.length;
+      }
+
+      function layerBottom(nodes) {
+        var max = -Infinity;
+        nodes.forEach(function (n) {
+          var b = n.getBoundingClientRect().bottom - wr.top;
+          if (b > max) max = b;
+        });
+        return max;
+      }
+
+      function layerTop(nodes) {
+        var min = Infinity;
+        nodes.forEach(function (n) {
+          var t = n.getBoundingClientRect().top - wr.top;
+          if (t < min) min = t;
+        });
+        return min;
+      }
+
+      function faintLine(a, b) {
+        var l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        l.setAttribute('x1', a.x); l.setAttribute('y1', a.y);
+        l.setAttribute('x2', b.x); l.setAttribute('y2', b.y);
+        l.setAttribute('stroke', '#6c63ff'); l.setAttribute('stroke-width', '0.8');
+        l.setAttribute('stroke-opacity', '0.2');
+        return l;
+      }
+
+      function innerCircle(x, y, r) {
+        var c = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        c.setAttribute('cx', x); c.setAttribute('cy', y); c.setAttribute('r', r);
+        c.setAttribute('fill', 'url(#rm-inner)'); c.setAttribute('filter', 'url(#rm-glow)');
+        return c;
+      }
+
+      /* fixed phantom node positions between each layer pair [x-fraction, y-offset] */
+      var phantomCfg = [
+        [[0.35, -2]],                      /* between L0-L1: one node */
+        [[0.28, 3], [0.72, -3]],           /* between L1-L2: two nodes */
+        [[0.65,  2]],                      /* between L2-L3: one node */
+      ];
+
       /* full mesh between every adjacent layer pair */
       for (var li = 0; li < layers.length - 1; li++) {
         var fromL = layers[li], toL = layers[li + 1];
+
+        /* main connections */
         fromL.forEach(function (from) {
           toL.forEach(function (to) {
             var a = center(from), b = center(to);
@@ -3537,12 +3632,103 @@
             line.setAttribute('x1', a.x); line.setAttribute('y1', a.y);
             line.setAttribute('x2', b.x); line.setAttribute('y2', b.y);
             line.setAttribute('stroke', 'url(#rm-grad)');
-            line.setAttribute('stroke-width', '1.2');
+            line.setAttribute('stroke-width', '1.0');
             line.setAttribute('filter', 'url(#rm-glow)');
             svg.appendChild(line);
           });
         });
+
+        /* phantom inner nodes — placed in the true visual gap between layers */
+        var midY = (layerBottom(fromL) + layerTop(toL)) / 2;
+        phantomCfg[li].forEach(function (cfg) {
+          var px = wW * cfg[0], py = midY + cfg[1];
+          /* faint connections to both adjacent layers */
+          fromL.forEach(function (n) { svg.appendChild(faintLine(center(n), { x: px, y: py })); });
+          toL.forEach(function (n)   { svg.appendChild(faintLine({ x: px, y: py }, center(n))); });
+          /* draw the phantom node on top */
+          svg.appendChild(innerCircle(px, py, 4));
+        });
       }
+
+      /* ── Outer phantoms: above Layer 0 and below Layer 3 ──────────── */
+      var topL = layers[0], botL = layers[layers.length - 1];
+      var aboveY = layerTop(topL) - 52;
+      var belowY = layerBottom(botL) + 52;
+
+      var outerAbove = [
+        { x: wW * 0.1,  y: aboveY + 12 },
+        { x: wW * 0.38, y: aboveY - 8  },
+        { x: wW * 0.62, y: aboveY + 6  },
+        { x: wW * 0.9,  y: aboveY - 10 },
+      ];
+      var outerBelow = [
+        { x: wW * 0.1,  y: belowY - 10 },
+        { x: wW * 0.38, y: belowY + 8  },
+        { x: wW * 0.62, y: belowY - 6  },
+        { x: wW * 0.9,  y: belowY + 12 },
+      ];
+
+      outerAbove.forEach(function (pt) {
+        topL.forEach(function (n) { svg.appendChild(faintLine(pt, center(n))); });
+        svg.appendChild(innerCircle(pt.x, pt.y, 4));
+      });
+
+      outerBelow.forEach(function (pt) {
+        botL.forEach(function (n) { svg.appendChild(faintLine(center(n), pt)); });
+        svg.appendChild(innerCircle(pt.x, pt.y, 4));
+      });
+
+      /* ── Outer phantoms: left and right scattered (3 per side) ──────── */
+      var leftX = Infinity, rightX = -Infinity;
+      layers.forEach(function (layer) {
+        layer.forEach(function (n) {
+          var r = n.getBoundingClientRect();
+          if (r.left  - wr.left < leftX)  leftX  = r.left  - wr.left;
+          if (r.right - wr.left > rightX) rightX = r.right - wr.left;
+        });
+      });
+      var netTop = layerTop(topL), netBot = layerBottom(botL), netH = netBot - netTop;
+
+      /* 3 scattered phantoms per side — Y at arbitrary fractions, X offset varied */
+      var sidePhantoms = [
+        { lx: leftX  - 55, rx: rightX + 60, yf: 0.14 },
+        { lx: leftX  - 30, rx: rightX + 38, yf: 0.50 },
+        { lx: leftX  - 62, rx: rightX + 52, yf: 0.82 },
+      ];
+      /* slight Y scatter within each row */
+      var sideYJitter = [8, -12, 6];
+
+      sidePhantoms.forEach(function (sp, si) {
+        var py = netTop + netH * sp.yf + sideYJitter[si];
+        var lPt = { x: sp.lx, y: py };
+        var rPt = { x: sp.rx, y: py + (si % 2 === 0 ? 14 : -18) };
+
+        /* connect to nearest visible nodes across all layers */
+        var allNodes = [];
+        layers.forEach(function (l) { l.forEach(function (n) { allNodes.push(n); }); });
+        allNodes.sort(function (a, b) {
+          var ca = center(a), cb = center(b);
+          return Math.abs(ca.y - lPt.y) - Math.abs(cb.y - lPt.y);
+        });
+        allNodes.slice(0, 3).forEach(function (n) { svg.appendChild(faintLine(lPt, center(n))); });
+
+        allNodes.sort(function (a, b) {
+          var ca = center(a), cb = center(b);
+          return Math.abs(ca.y - rPt.y) - Math.abs(cb.y - rPt.y);
+        });
+        allNodes.slice(0, 3).forEach(function (n) { svg.appendChild(faintLine(rPt, center(n))); });
+
+        /* chain to previous side phantom */
+        if (si > 0) {
+          var prev = sidePhantoms[si - 1];
+          var prevPY = netTop + netH * prev.yf + sideYJitter[si - 1];
+          svg.appendChild(faintLine({ x: prev.lx, y: prevPY }, lPt));
+          svg.appendChild(faintLine({ x: prev.rx, y: prevPY + ((si-1) % 2 === 0 ? 14 : -18) }, rPt));
+        }
+
+        svg.appendChild(innerCircle(lPt.x, lPt.y, 4));
+        svg.appendChild(innerCircle(rPt.x, rPt.y, 4));
+      });
     }
 
     window.addEventListener('resize', drawLeadershipNetwork);
