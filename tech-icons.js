@@ -48,6 +48,7 @@ const TECH_ICONS = {
   'REST':           { img: 'https://api.iconify.design/mdi/api.svg?color=%236c63ff' },
   'CI/CD':          { img: 'https://api.iconify.design/carbon/continuous-integration.svg?color=%236c63ff' },
   'SOAP / WCF':     { img: 'https://symbols.getvecta.com/stencil_25/79_soapui.5113237b76.svg' },
+  'SoapUI':         { img: 'https://symbols.getvecta.com/stencil_25/79_soapui.5113237b76.svg' },
   'Microservices':  { img: 'https://img.icons8.com/color/48/network.png' },
   'Ocelot GW':      { img: 'https://raw.githubusercontent.com/ThreeMammals/Ocelot/refs/heads/assets/images/ocelot_logo.png' },
   'Nafath':         { img: './img/nafath.png' },
