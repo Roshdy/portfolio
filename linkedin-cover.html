@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px;
+  }
+
+  /* ── Cover wrapper ──────────────────────────────────────── */
+  .cover {
+    position: relative;
+    width: 1584px;
+    height: 396px;
+    overflow: hidden;
+    background: #06060f;
+    flex-shrink: 0;
+    border-radius: 8px;
+  }
+
+  canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+  /* ── Decorative layers ────────────────────────────────── */
+  .orb {
+    position: absolute; border-radius: 50%;
+    filter: blur(90px); pointer-events: none;
+  }
+  .orb1 { width: 380px; height: 380px; background: rgba(108,99,255,.24); top: -100px; left: -40px; }
+  .orb2 { width: 300px; height: 300px; background: rgba(0,212,170,.15); bottom: -70px; right: 380px; }
+  .orb3 { width: 220px; height: 220px; background: rgba(108,99,255,.12); top: 10px; right: 120px; }
+
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(108,99,255,.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(108,99,255,.045) 1px, transparent 1px);
+    background-size: 52px 52px;
+    pointer-events: none;
+  }
+
+  /* ── Left content — starts ~280px in to clear profile pic ── */
+  .content {
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 290px; right: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 9px;
+  }
+
+  .tag {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 14px;
+    font-weight: 500;
+    color: #00d4aa;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    opacity: .9;
+  }
+
+  .name {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 70px;
+    font-weight: 900;
+    color: #f0f0fa;
+    line-height: 1;
+    letter-spacing: -.025em;
+    white-space: nowrap;
+  }
+
+  .name span {
+    background: linear-gradient(90deg, #6c63ff, #00d4aa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .divider {
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, #6c63ff, #00d4aa);
+    border-radius: 2px;
+    margin: 2px 0;
+  }
+
+  .title {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    font-size: 21px;
+    font-weight: 400;
+    color: #9898b8;
+    letter-spacing: .01em;
+  }
+
+  .url {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 16px;
+    font-weight: 700;
+    color: #6c63ff;
+    letter-spacing: .07em;
+    opacity: .95;
+  }
+
+  /* ── Code card (right) ───────────────────────────────── */
+  .code-card {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(14, 14, 26, 0.88);
+    border: 1px solid rgba(108, 99, 255, .28);
+    border-radius: 14px;
+    padding: 22px 30px;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 17px;
+    line-height: 1.85;
+    color: #9898b8;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 8px 48px rgba(108,99,255,.2), 0 0 0 1px rgba(108,99,255,.1);
+    min-width: 330px;
+  }
+
+  .dots { display: flex; gap: 7px; margin-bottom: 14px; }
+  .dots span { width: 11px; height: 11px; border-radius: 50%; }
+  .dots span:nth-child(1) { background: #ff5f56; }
+  .dots span:nth-child(2) { background: #ffbd2e; }
+  .dots span:nth-child(3) { background: #27c93f; }
+
+  .k { color: #6c63ff; }
+  .s { color: #00d4aa; }
+  .n { color: #f0a500; }
+  .c { color: #4a4a6a; }
+
+  .cursor {
+    display: inline-block; width: 2px; height: 1em;
+    background: #00d4aa; vertical-align: text-bottom;
+    animation: blink .8s step-end infinite;
+  }
+  @keyframes blink { 50% { opacity: 0; } }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <canvas id="c"></canvas>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="grid"></div>
+
+  <div class="content">
+    <div class="tag">// Lead Software Engineer</div>
+    <div class="name">M. Roshdy <span>Kamel</span></div>
+    <div class="divider"></div>
+    <div class="title">15+ yrs · Fintech · Trading Platforms · Team Lead</div>
+    <div class="url">roshdydev.netlify.app</div>
+  </div>
+
+  <div class="code-card">
+    <div class="dots"><span></span><span></span><span></span></div>
+    <span class="k">const</span> engineer = {<br>
+    &nbsp;&nbsp;name:&nbsp; <span class="s">"Roshdy Kamel"</span>,<br>
+    &nbsp;&nbsp;role:&nbsp; <span class="s">"Lead SWE"</span>,<br>
+    &nbsp;&nbsp;exp:&nbsp;&nbsp; <span class="n">15</span>, <span class="c">// years</span><br>
+    &nbsp;&nbsp;stack: [<span class="s">"React"</span>, <span class="s">".NET"</span>],<br>
+    &nbsp;&nbsp;open:&nbsp; <span class="k">true</span> <span class="c">// to roles</span><br>
+    };<span class="cursor"></span>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('c');
+const ctx    = canvas.getContext('2d');
+const W = 1584, H = 396;
+/* render at 2x for crispness */
+canvas.width  = W * 2;
+canvas.height = H * 2;
+ctx.scale(2, 2);
+
+const particles = [];
+for (let i = 0; i < 130; i++) {
+  particles.push({
+    x: Math.random() * W,
+    y: Math.random() * H,
+    r: Math.random() * 1.8 + .4,
+    vx: (Math.random() - .5) * .35,
+    vy: (Math.random() - .5) * .35,
+    alpha: Math.random() * .45 + .1
+  });
+}
+
+function draw() {
+  ctx.clearRect(0, 0, W, H);
+  particles.forEach(p => {
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0 || p.x > W) p.vx *= -1;
+    if (p.y < 0 || p.y > H) p.vy *= -1;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(108,99,255,${p.alpha})`;
+    ctx.fill();
+  });
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const d  = Math.sqrt(dx*dx + dy*dy);
+      if (d < 95) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(108,99,255,${.13 * (1 - d/95)})`;
+        ctx.lineWidth = .5;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+</body>
+</html>
