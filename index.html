@@ -558,7 +558,9 @@
       align-items: start;
     }
 
-    .hero-right { display: none; }
+    .hero-right {
+      display: none;
+    }
 
     /* Photo + name/title side by side */
     .hero-identity {
@@ -568,8 +570,13 @@
       margin-bottom: 1.75rem;
     }
 
-    .hero-identity-text .hero-name { margin-bottom: .25rem; }
-    .hero-identity-text .hero-title { margin-bottom: .5rem; }
+    .hero-identity-text .hero-name {
+      margin-bottom: .25rem;
+    }
+
+    .hero-identity-text .hero-title {
+      margin-bottom: .5rem;
+    }
 
 
     .hero-greeting {
@@ -861,10 +868,10 @@
         gap: 1rem;
       }
 
-      .hero-name{
+      .hero-name {
         justify-content: center;
       }
-    
+
       .hero-summary {
         font-size: .88rem;
         overflow-wrap: break-word;
@@ -904,7 +911,7 @@
     .section-divider {
       border: none;
       height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(212,98,26,.3), transparent);
+      background: linear-gradient(90deg, transparent, rgba(212, 98, 26, .3), transparent);
       margin: 0;
     }
 
@@ -1070,8 +1077,13 @@
       border-radius: 10px
     }
 
-    [data-theme="dark"] .logo-invert-dark { filter: invert(1); }
-    [data-theme="light"] .logo-invert-dark { filter: none; }
+    [data-theme="dark"] .logo-invert-dark {
+      filter: invert(1);
+    }
+
+    [data-theme="light"] .logo-invert-dark {
+      filter: none;
+    }
 
     .logo-fallback {
       display: none;
@@ -2058,40 +2070,49 @@
       width: 50px;
       height: 50px;
       background:
-        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.45) 0%, transparent 55%),
-        radial-gradient(circle at 70% 75%, rgba(0,0,0,0.25) 0%, transparent 50%),
+        radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.45) 0%, transparent 55%),
+        radial-gradient(circle at 70% 75%, rgba(0, 0, 0, 0.25) 0%, transparent 50%),
         linear-gradient(135deg, #E8B84B, #A07820);
       box-shadow:
         0 4px 14px rgba(232, 184, 75, 0.45),
-        inset 0 -5px 14px rgba(0,0,0,0.35),
-        inset 0 3px 8px rgba(255,255,255,0.22);
+        inset 0 -5px 14px rgba(0, 0, 0, 0.35),
+        inset 0 3px 8px rgba(255, 255, 255, 0.22);
     }
+
     .rm-node-minor:hover .rm-icon {
       box-shadow:
         0 6px 20px rgba(232, 184, 75, 0.6),
-        inset 0 -6px 16px rgba(0,0,0,0.4),
-        inset 0 4px 10px rgba(255,255,255,0.28);
+        inset 0 -6px 16px rgba(0, 0, 0, 0.4),
+        inset 0 4px 10px rgba(255, 255, 255, 0.28);
     }
 
-    .rm-node-large { min-width: 90px; }
+    .rm-node-large {
+      min-width: 90px;
+    }
+
     .rm-node-large .rm-icon {
       width: 65px;
       height: 65px;
       background:
-        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.45) 0%, transparent 55%),
-        radial-gradient(circle at 70% 75%, rgba(0,0,0,0.25) 0%, transparent 50%),
+        radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.45) 0%, transparent 55%),
+        radial-gradient(circle at 70% 75%, rgba(0, 0, 0, 0.25) 0%, transparent 50%),
         linear-gradient(135deg, #9A2A1A, #C44A2A);
       box-shadow:
         0 4px 14px rgba(154, 42, 26, 0.45),
-        inset 0 -5px 14px rgba(0,0,0,0.35),
-        inset 0 3px 8px rgba(255,255,255,0.22);
+        inset 0 -5px 14px rgba(0, 0, 0, 0.35),
+        inset 0 3px 8px rgba(255, 255, 255, 0.22);
     }
-    .rm-node-large .rm-icon svg.lucide { width: 30px; height: 30px; }
+
+    .rm-node-large .rm-icon svg.lucide {
+      width: 30px;
+      height: 30px;
+    }
+
     .rm-node-large:hover .rm-icon {
       box-shadow:
         0 6px 22px rgba(154, 42, 26, 0.6),
-        inset 0 -6px 16px rgba(0,0,0,0.4),
-        inset 0 4px 10px rgba(255,255,255,0.28);
+        inset 0 -6px 16px rgba(0, 0, 0, 0.4),
+        inset 0 4px 10px rgba(255, 255, 255, 0.28);
     }
 
     .rm-node:hover {
@@ -2214,7 +2235,9 @@
     }
 
     /* ─── CV-IGNORE ─────────────────────────────────────────────────── */
-    .cv-ignore { /* shows on website, skipped by cv.js */ }
+    .cv-ignore {
+      /* shows on website, skipped by cv.js */
+    }
 
     /* ─── FULL STORY ────────────────────────────────────────────────── */
     .exp-story-toggle {
@@ -2588,9 +2611,13 @@
               <span class="tech-tag">Media Monitoring</span><span class="tech-tag">Newsletter Production</span>
               <span class="tech-tag">RFP Writing</span><span class="tech-tag">Media Analysis</span>
             </div>
-                        <p class="client-chips-label">Key Clients</p>
+            <p class="client-chips-label">Key Clients</p>
             <div class="client-chips">
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=neom.com&sz=64" alt="NEOM" loading="lazy" onerror="this.style.display='none'"/>NEOM</div><div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=zain.com&sz=64" alt="Zain KSA" loading="lazy" onerror="this.style.display='none'"/>Zain KSA</div><div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=kfca.com.sa&sz=64" alt="King Fahd CA" loading="lazy" onerror="this.style.display='none'"/>King Fahd CA</div><div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=misk.org.sa&sz=64" alt="Misk Arts" loading="lazy" onerror="this.style.display='none'"/>Misk Arts</div><div class="client-chip">KAARAN</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=neom.com&sz=64" alt="NEOM" loading="lazy" onerror="this.style.display='none'" />NEOM</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=zain.com&sz=64" alt="Zain KSA" loading="lazy" onerror="this.style.display='none'" />Zain KSA</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=kfca.com.sa&sz=64" alt="King Fahd CA" loading="lazy" onerror="this.style.display='none'" />King Fahd CA</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=misk.org.sa&sz=64" alt="Misk Arts" loading="lazy" onerror="this.style.display='none'" />Misk Arts</div>
+              <div class="client-chip"><img src="https://karrda.gov.sa/vite.ico" alt="KARDA" loading="lazy" onerror="this.style.display='none'" />KARDA</div>
             </div>
           </div>
         </div>
@@ -2618,7 +2645,7 @@
             </div>
             <p class="exp-summary">Managed a diverse portfolio of 20+ retainer and project-based clients across 8+ industries, delivering consistent media intelligence that shaped PR strategies for some of Egypt's most recognised brands.</p>
             <ul class="exp-bullets">
-              <li>Managed ongoing media monitoring retainers across Real Estate (City Edge, Palm Hills, Mountain View, Hyde Park), Telecom (Vodafone Egypt), Medical (MSD), and NGO sectors (Egypt Food Bank, Baheya Foundation)</li>
+              <li>Managed ongoing media monitoring retainers across Real Estate (City Edge, Palm Hills, Mountain View, Hyde Park), Telecom (Vodafone Egypt), Medical (MSD), and NGO sectors (Egyptian Food Bank, Baheya Foundation)</li>
               <li>Delivered project-based monitoring for major cultural events including Al-Gouna Festival, Al-Alamein Festival, and the Cairo International Film Festival</li>
               <li>Monitored media coverage for international brands including Pfizer, British Petroleum Egypt, and Oppo across Egyptian and regional media</li>
               <li>Developed comprehensive Media Monitoring Briefs defining search keywords, competitor lists, and intelligence parameters for each account</li>
@@ -2631,22 +2658,22 @@
             </div>
             <p class="client-chips-label">Clients Served</p>
             <div class="client-chips">
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=vodafone.com&sz=64" alt="Vodafone" loading="lazy" onerror="this.style.display='none'"/>Vodafone</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=pfizer.com&sz=64" alt="Pfizer" loading="lazy" onerror="this.style.display='none'"/>Pfizer</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=bp.com&sz=64" alt="BP Egypt" loading="lazy" onerror="this.style.display='none'"/>BP Egypt</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=oppo.com&sz=64" alt="Oppo" loading="lazy" onerror="this.style.display='none'"/>Oppo</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=msd.com&sz=64" alt="MSD" loading="lazy" onerror="this.style.display='none'"/>MSD</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=palmhills.net&sz=64" alt="Palm Hills" loading="lazy" onerror="this.style.display='none'"/>Palm Hills</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=cityedgedevelopments.com&sz=64" alt="City Edge" loading="lazy" onerror="this.style.display='none'"/>City Edge</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=tatweermisr.com&sz=64" alt="Tatweer Misr" loading="lazy" onerror="this.style.display='none'"/>Tatweer Misr</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=mvi.com.eg&sz=64" alt="Mountain View" loading="lazy" onerror="this.style.display='none'"/>Mountain View</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=egyftb.org&sz=64" alt="Egypt Food Bank" loading="lazy" onerror="this.style.display='none'"/>Egypt Food Bank</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=baheya.org&sz=64" alt="Baheya" loading="lazy" onerror="this.style.display='none'"/>Baheya</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=magdiyacoub.org&sz=64" alt="Magdi Yacoub" loading="lazy" onerror="this.style.display='none'"/>Magdi Yacoub</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=elgouna.com&sz=64" alt="El Gouna Fest" loading="lazy" onerror="this.style.display='none'"/>El Gouna Fest</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=cairofilmfest.org&sz=64" alt="Cairo Film Fest" loading="lazy" onerror="this.style.display='none'"/>Cairo Film Fest</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=ontv.net.eg&sz=64" alt="ON TV" loading="lazy" onerror="this.style.display='none'"/>ON TV</div>
-              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=wadidegla.com&sz=64" alt="Wadi Degla" loading="lazy" onerror="this.style.display='none'"/>Wadi Degla</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=vodafone.com&sz=64" alt="Vodafone" loading="lazy" onerror="this.style.display='none'" />Vodafone</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=pfizer.com&sz=64" alt="Pfizer" loading="lazy" onerror="this.style.display='none'" />Pfizer</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=bp.com&sz=64" alt="BP Egypt" loading="lazy" onerror="this.style.display='none'" />BP Egypt</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=oppo.com&sz=64" alt="Oppo" loading="lazy" onerror="this.style.display='none'" />Oppo</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=msd.com&sz=64" alt="MSD" loading="lazy" onerror="this.style.display='none'" />MSD</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=palmhills.net&sz=64" alt="Palm Hills" loading="lazy" onerror="this.style.display='none'" />Palm Hills</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=cityedgedevelopments.com&sz=64" alt="City Edge" loading="lazy" onerror="this.style.display='none'" />City Edge</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=tatweermisr.com&sz=64" alt="Tatweer Misr" loading="lazy" onerror="this.style.display='none'" />Tatweer Misr</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=mountainviewegypt.com&sz=64" alt="Mountain View" loading="lazy" onerror="this.style.display='none'" />Mountain View</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=efb.eg&sz=64" alt="Egyptian Food Bank" loading="lazy" onerror="this.style.display='none'" />EFB</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=baheya.org&sz=64" alt="Baheya" loading="lazy" onerror="this.style.display='none'" />Baheya</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=magdiyacoub.org&sz=64" alt="Magdi Yacoub" loading="lazy" onerror="this.style.display='none'" />Magdi Yacoub</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=elgouna.com&sz=64" alt="El Gouna Fest" loading="lazy" onerror="this.style.display='none'" />El Gouna Fest</div>
+              <div class="client-chip"><img src="https://www.ciff.org.eg/storage/branding/01KNZD4182W4ZYNRDSDSF3PHDQ.png" alt="Cairo Film Fest" loading="lazy" onerror="this.style.display='none'" />Cairo Film Fest</div>
+              <div class="client-chip"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/ON_logo.png/960px-ON_logo.png" alt="ON TV" loading="lazy" onerror="this.style.display='none'" />ON TV</div>
+              <div class="client-chip"><img src="https://www.google.com/s2/favicons?domain=wadidegla.com&sz=64" alt="Wadi Degla" loading="lazy" onerror="this.style.display='none'" />Wadi Degla</div>
             </div>
           </div>
         </div>
@@ -2708,50 +2735,58 @@
           </div>
 
         </div>
-        </div>
-
       </div>
 
-      <!-- Leadership Neural Network -->
-      <div class="leadership-roadmap fade-in">
-        <p class="section-label" style="text-align:center;margin-bottom:2rem;">Core Competencies</p>
-        <div class="rm-neural-wrap">
-          <svg class="rm-svg" aria-hidden="true"></svg>
-          <div class="rm-layer">
-            <div class="rm-node"><div class="rm-icon"><i data-lucide="newspaper"></i></div><span class="rm-label">Media Relations</span></div>
-            <div class="rm-node rm-node-minor"><div class="rm-icon"><i data-lucide="shield"></i></div><span class="rm-label">Crisis Comms</span></div>
+    </div>
+
+    <!-- Leadership Neural Network -->
+    <div class="leadership-roadmap fade-in">
+      <p class="section-label" style="text-align:center;margin-bottom:2rem;">Core Competencies</p>
+      <div class="rm-neural-wrap">
+        <svg class="rm-svg" aria-hidden="true"></svg>
+        <div class="rm-layer">
+          <div class="rm-node">
+            <div class="rm-icon"><i data-lucide="newspaper"></i></div><span class="rm-label">Media Relations</span>
           </div>
-          <div class="rm-layer">
-            <div class="rm-node rm-node-large">
-              <div class="rm-icon"><i data-lucide="users"></i></div><span class="rm-label">Client Management</span>
-            </div>
-            <div class="rm-node rm-node-large">
-              <div class="rm-icon"><i data-lucide="search"></i></div><span class="rm-label">Brand Monitoring</span>
-            </div>
-            <div class="rm-node">
-              <div class="rm-icon"><i data-lucide="handshake"></i></div><span class="rm-label">Stakeholder Comms</span>
-            </div>
-            <div class="rm-node rm-node-large">
-              <div class="rm-icon"><i data-lucide="bar-chart-2"></i></div><span class="rm-label">Campaign Analysis</span>
-            </div>
+          <div class="rm-node rm-node-minor">
+            <div class="rm-icon"><i data-lucide="shield"></i></div><span class="rm-label">Crisis Comms</span>
           </div>
-          <div class="rm-layer">
-            <div class="rm-node rm-node-large">
-              <div class="rm-icon"><i data-lucide="file-text"></i></div><span class="rm-label">Report Writing</span>
-            </div>
-            <div class="rm-node rm-node-large">
-              <div class="rm-icon"><i data-lucide="lightbulb"></i></div><span class="rm-label">Content Strategy</span>
-            </div>
-            <div class="rm-node">
-              <div class="rm-icon"><i data-lucide="briefcase"></i></div><span class="rm-label">Project Management</span>
-            </div>
+        </div>
+        <div class="rm-layer">
+          <div class="rm-node rm-node-large">
+            <div class="rm-icon"><i data-lucide="users"></i></div><span class="rm-label">Client Management</span>
           </div>
-          <div class="rm-layer">
-            <div class="rm-node rm-node-minor"><div class="rm-icon"><i data-lucide="globe"></i></div><span class="rm-label">Cross-Industry</span></div>
-            <div class="rm-node"><div class="rm-icon"><i data-lucide="target"></i></div><span class="rm-label">Competitive Intel</span></div>
+          <div class="rm-node rm-node-large">
+            <div class="rm-icon"><i data-lucide="search"></i></div><span class="rm-label">Brand Monitoring</span>
+          </div>
+          <div class="rm-node">
+            <div class="rm-icon"><i data-lucide="handshake"></i></div><span class="rm-label">Stakeholder Comms</span>
+          </div>
+          <div class="rm-node rm-node-large">
+            <div class="rm-icon"><i data-lucide="bar-chart-2"></i></div><span class="rm-label">Campaign Analysis</span>
+          </div>
+        </div>
+        <div class="rm-layer">
+          <div class="rm-node rm-node-large">
+            <div class="rm-icon"><i data-lucide="file-text"></i></div><span class="rm-label">Report Writing</span>
+          </div>
+          <div class="rm-node rm-node-large">
+            <div class="rm-icon"><i data-lucide="lightbulb"></i></div><span class="rm-label">Content Strategy</span>
+          </div>
+          <div class="rm-node">
+            <div class="rm-icon"><i data-lucide="briefcase"></i></div><span class="rm-label">Project Management</span>
+          </div>
+        </div>
+        <div class="rm-layer">
+          <div class="rm-node rm-node-minor">
+            <div class="rm-icon"><i data-lucide="globe"></i></div><span class="rm-label">Cross-Industry</span>
+          </div>
+          <div class="rm-node">
+            <div class="rm-icon"><i data-lucide="target"></i></div><span class="rm-label">Competitive Intel</span>
           </div>
         </div>
       </div>
+    </div>
 
     </div>
   </section>
@@ -3225,7 +3260,7 @@
       var phantomCfg = [
         [[0.35, -2]],                      /* between L0-L1: one node */
         [[0.28, 3], [0.72, -3]],           /* between L1-L2: two nodes */
-        [[0.65,  2]],                      /* between L2-L3: one node */
+        [[0.65, 2]],                      /* between L2-L3: one node */
       ];
 
       /* full mesh between every adjacent layer pair */
@@ -3252,7 +3287,7 @@
           var px = wW * cfg[0], py = midY + cfg[1];
           /* faint connections to both adjacent layers */
           fromL.forEach(function (n) { svg.appendChild(faintLine(center(n), { x: px, y: py })); });
-          toL.forEach(function (n)   { svg.appendChild(faintLine({ x: px, y: py }, center(n))); });
+          toL.forEach(function (n) { svg.appendChild(faintLine({ x: px, y: py }, center(n))); });
           /* draw the phantom node on top */
           svg.appendChild(innerCircle(px, py, 4));
         });
@@ -3264,16 +3299,16 @@
       var belowY = layerBottom(botL) + 52;
 
       var outerAbove = [
-        { x: wW * 0.1,  y: aboveY + 12 },
-        { x: wW * 0.38, y: aboveY - 8  },
-        { x: wW * 0.62, y: aboveY + 6  },
-        { x: wW * 0.9,  y: aboveY - 10 },
+        { x: wW * 0.1, y: aboveY + 12 },
+        { x: wW * 0.38, y: aboveY - 8 },
+        { x: wW * 0.62, y: aboveY + 6 },
+        { x: wW * 0.9, y: aboveY - 10 },
       ];
       var outerBelow = [
-        { x: wW * 0.1,  y: belowY - 10 },
-        { x: wW * 0.38, y: belowY + 8  },
-        { x: wW * 0.62, y: belowY - 6  },
-        { x: wW * 0.9,  y: belowY + 12 },
+        { x: wW * 0.1, y: belowY - 10 },
+        { x: wW * 0.38, y: belowY + 8 },
+        { x: wW * 0.62, y: belowY - 6 },
+        { x: wW * 0.9, y: belowY + 12 },
       ];
 
       outerAbove.forEach(function (pt) {
@@ -3291,7 +3326,7 @@
       layers.forEach(function (layer) {
         layer.forEach(function (n) {
           var r = n.getBoundingClientRect();
-          if (r.left  - wr.left < leftX)  leftX  = r.left  - wr.left;
+          if (r.left - wr.left < leftX) leftX = r.left - wr.left;
           if (r.right - wr.left > rightX) rightX = r.right - wr.left;
         });
       });
@@ -3299,9 +3334,9 @@
 
       /* 3 scattered phantoms per side — Y at arbitrary fractions, X offset varied */
       var sidePhantoms = [
-        { lx: leftX  - 55, rx: rightX + 60, yf: 0.14 },
-        { lx: leftX  - 30, rx: rightX + 38, yf: 0.50 },
-        { lx: leftX  - 62, rx: rightX + 52, yf: 0.82 },
+        { lx: leftX - 55, rx: rightX + 60, yf: 0.14 },
+        { lx: leftX - 30, rx: rightX + 38, yf: 0.50 },
+        { lx: leftX - 62, rx: rightX + 52, yf: 0.82 },
       ];
       /* slight Y scatter within each row */
       var sideYJitter = [8, -12, 6];
@@ -3331,7 +3366,7 @@
           var prev = sidePhantoms[si - 1];
           var prevPY = netTop + netH * prev.yf + sideYJitter[si - 1];
           svg.appendChild(faintLine({ x: prev.lx, y: prevPY }, lPt));
-          svg.appendChild(faintLine({ x: prev.rx, y: prevPY + ((si-1) % 2 === 0 ? 14 : -18) }, rPt));
+          svg.appendChild(faintLine({ x: prev.rx, y: prevPY + ((si - 1) % 2 === 0 ? 14 : -18) }, rPt));
         }
 
         svg.appendChild(innerCircle(lPt.x, lPt.y, 4));
