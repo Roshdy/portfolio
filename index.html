@@ -41,7 +41,7 @@
   "jobTitle": "Unity Development Lead",
   "url": "https://magedfarid.netlify.app",
   "email": "magedf.90@gmail.com",
-  "telephone": "+20100000000",
+  "telephone": "+201003017781",
   "image": "https://magedfarid.netlify.app/profile.png",
   "address": {
     "@type": "PostalAddress",
@@ -159,12 +159,14 @@
     }
 
     .btn-cv:hover {
-      background: rgba(255,69,0,.12);
+      background: rgba(255, 69, 0, .12);
       box-shadow: inset 0 0 0 1.5px var(--accent2);
       color: var(--accent2) !important;
     }
 
-    .btn-cv svg { flex-shrink: 0; }
+    .btn-cv svg {
+      flex-shrink: 0;
+    }
 
     /* ─── RESET ─────────────────────────────────────────────────────── */
     *,
@@ -290,18 +292,23 @@
     /* ─── TOP NAV ───────────────────────────────────────────────────── */
     #topnav {
       position: fixed;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
       background: var(--nav-bg);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(255,69,0,.15);
+      border-bottom: 1px solid rgba(255, 69, 0, .15);
       transition: background .3s, box-shadow .3s;
     }
+
     #topnav::after {
       content: '';
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       height: 1px;
       background: linear-gradient(90deg, transparent 0%, var(--accent) 30%, var(--accent2) 70%, transparent 100%);
       opacity: .6;
@@ -336,11 +343,12 @@
       color: #fff;
       flex-shrink: 0;
       clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-      box-shadow: 0 0 16px var(--accent-glow), 0 0 32px rgba(255,69,0,.2);
+      box-shadow: 0 0 16px var(--accent-glow), 0 0 32px rgba(255, 69, 0, .2);
       transition: box-shadow .3s, transform .2s;
     }
+
     .nav-logo:hover {
-      box-shadow: 0 0 24px var(--accent-glow), 0 0 48px rgba(255,179,0,.3);
+      box-shadow: 0 0 24px var(--accent-glow), 0 0 48px rgba(255, 179, 0, .3);
       transform: scale(1.08) rotate(10deg);
     }
 
@@ -366,7 +374,7 @@
     .nav-links a:hover,
     .nav-links a.active {
       color: var(--accent);
-      background: rgba(255,69,0,.1);
+      background: rgba(255, 69, 0, .1);
       text-shadow: 0 0 8px var(--accent-glow);
     }
 
@@ -394,7 +402,7 @@
     }
 
     #theme-toggle:hover {
-      background: rgba(255,69,0,.12);
+      background: rgba(255, 69, 0, .12);
       box-shadow: inset 0 0 0 1.5px var(--accent2);
       color: var(--accent2);
     }
@@ -599,7 +607,7 @@
       margin-bottom: .3rem;
       font-family: 'Orbitron', 'Rajdhani', sans-serif;
       letter-spacing: -.01em;
-      gap: 0.15em; 
+      gap: 0.15em;
       display: flex;
     }
 
@@ -681,8 +689,8 @@
     }
 
     .badge {
-      background: rgba(255,69,0,.08);
-      border: 1px solid rgba(255,69,0,.3);
+      background: rgba(255, 69, 0, .08);
+      border: 1px solid rgba(255, 69, 0, .3);
       color: var(--text2);
       font-size: .68rem;
       font-weight: 600;
@@ -700,7 +708,7 @@
     }
 
     .badge:hover {
-      background: rgba(255,69,0,.15);
+      background: rgba(255, 69, 0, .15);
       border-color: var(--accent);
       color: var(--accent);
     }
@@ -793,8 +801,8 @@
 
 
     .stat-card {
-      background: rgba(255,69,0,.05);
-      border: 1px solid rgba(255,69,0,.25);
+      background: rgba(255, 69, 0, .05);
+      border: 1px solid rgba(255, 69, 0, .25);
       border-radius: 4px;
       padding: 1rem .75rem;
       text-align: center;
@@ -802,10 +810,13 @@
       position: relative;
       overflow: hidden;
     }
+
     .stat-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
+      top: 0;
+      left: 0;
+      right: 0;
       height: 2px;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
     }
@@ -941,41 +952,55 @@
 
 
     /* ─── GAME UI CORNER BRACKETS ──────────────────────────────────── */
-    .exp-card, .project-card, .cert-card, .edu-card, .achievement-card, .stat-card {
+    .exp-card,
+    .project-card,
+    .cert-card,
+    .edu-card,
+    .achievement-card,
+    .stat-card {
       position: relative;
     }
-    .exp-card::before, .project-card::before, .edu-card::before {
+
+    .exp-card::before,
+    .project-card::before,
+    .edu-card::before {
       content: '';
       position: absolute;
-      top: 6px; left: 6px;
-      width: 14px; height: 14px;
+      top: 6px;
+      left: 6px;
+      width: 14px;
+      height: 14px;
       border-top: 2px solid var(--accent);
       border-left: 2px solid var(--accent);
       opacity: .7;
       pointer-events: none;
     }
-    .exp-card::after, .project-card::after, .edu-card::after {
+
+    .exp-card::after,
+    .project-card::after,
+    .edu-card::after {
       content: '';
       position: absolute;
-      bottom: 6px; right: 6px;
-      width: 14px; height: 14px;
+      bottom: 6px;
+      right: 6px;
+      width: 14px;
+      height: 14px;
       border-bottom: 2px solid var(--accent2);
       border-right: 2px solid var(--accent2);
       opacity: .7;
       pointer-events: none;
     }
+
     /* ─── SCANLINE OVERLAY ─────────────────────────────────────────── */
     #hero::after {
       content: '';
       position: absolute;
       inset: 0;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(255,69,0,.018) 2px,
-        rgba(255,69,0,.018) 4px
-      );
+      background: repeating-linear-gradient(0deg,
+          transparent,
+          transparent 2px,
+          rgba(255, 69, 0, .018) 2px,
+          rgba(255, 69, 0, .018) 4px);
       pointer-events: none;
       z-index: 1;
     }
@@ -983,44 +1008,94 @@
 
     /* ── Game settings panel ────────────────────────────────────────── */
     .gm-section-title {
-      display: flex; align-items: center; gap: .75rem;
-      margin-bottom: .6rem; font-size: .58rem; letter-spacing: .35em;
-      color: var(--accent2); font-family: 'Orbitron', sans-serif;
-    }
-    .gm-line { flex: 1; height: 1px; background: rgba(255,179,0,.28); }
-    .gm-row {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: .42rem .5rem; border-bottom: 1px solid rgba(255,255,255,.04);
-      transition: background .15s;
-    }
-    .gm-row:hover { background: rgba(255,69,0,.07); }
-    .gm-key {
-      font-size: .58rem; letter-spacing: .14em; color: var(--text2);
-      text-transform: uppercase; font-family: 'Orbitron', sans-serif;
-    }
-    .gm-value-box {
-      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
-      padding: .18rem .7rem; font-size: .6rem; letter-spacing: .1em;
-      color: var(--text); min-width: 90px; text-align: center;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: .6rem;
+      font-size: .58rem;
+      letter-spacing: .35em;
+      color: var(--accent2);
       font-family: 'Orbitron', sans-serif;
     }
+
+    .gm-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(255, 179, 0, .28);
+    }
+
+    .gm-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .42rem .5rem;
+      border-bottom: 1px solid rgba(255, 255, 255, .04);
+      transition: background .15s;
+    }
+
+    .gm-row:hover {
+      background: rgba(255, 69, 0, .07);
+    }
+
+    .gm-key {
+      font-size: .58rem;
+      letter-spacing: .14em;
+      color: var(--text2);
+      text-transform: uppercase;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .gm-value-box {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .1);
+      padding: .18rem .7rem;
+      font-size: .6rem;
+      letter-spacing: .1em;
+      color: var(--text);
+      min-width: 90px;
+      text-align: center;
+      font-family: 'Orbitron', sans-serif;
+    }
+
     .gm-value-box.hot {
-      background: rgba(255,69,0,.18); border-color: rgba(255,69,0,.5);
-      color: var(--accent); box-shadow: 0 0 10px rgba(255,69,0,.25);
+      background: rgba(255, 69, 0, .18);
+      border-color: rgba(255, 69, 0, .5);
+      color: var(--accent);
+      box-shadow: 0 0 10px rgba(255, 69, 0, .25);
     }
+
     .gm-value-box.gold {
-      background: rgba(255,179,0,.15); border-color: rgba(255,179,0,.45);
-      color: var(--accent2); box-shadow: 0 0 8px rgba(255,179,0,.2);
+      background: rgba(255, 179, 0, .15);
+      border-color: rgba(255, 179, 0, .45);
+      color: var(--accent2);
+      box-shadow: 0 0 8px rgba(255, 179, 0, .2);
     }
+
     .gm-xp-row {
-      display: flex; align-items: center; gap: .6rem; padding: .55rem .5rem 0;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      padding: .55rem .5rem 0;
     }
-    .gm-xp-bar { flex: 1; height: 4px; background: rgba(255,69,0,.15); border: 1px solid rgba(255,69,0,.2); }
+
+    .gm-xp-bar {
+      flex: 1;
+      height: 4px;
+      background: rgba(255, 69, 0, .15);
+      border: 1px solid rgba(255, 69, 0, .2);
+    }
+
     .gm-xp-fill {
-      height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2));
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
       animation: gm-load 1.8s ease forwards;
     }
-    @keyframes gm-load { from { width: 0 } }
+
+    @keyframes gm-load {
+      from {
+        width: 0
+      }
+    }
 
     /* ─── SECTION DIVIDER ───────────────────────────────────────────── */
     .section-divider {
@@ -1144,8 +1219,8 @@
     }
 
     .exp-card {
-      background: rgba(26,16,8,.95);
-      border: 1px solid rgba(255,69,0,.18);
+      background: rgba(26, 16, 8, .95);
+      border: 1px solid rgba(255, 69, 0, .18);
       border-radius: 4px;
       padding: 1.5rem;
       transition: border-color .3s, box-shadow .3s, transform .3s;
@@ -1153,8 +1228,8 @@
     }
 
     .exp-card:hover {
-      border-color: rgba(255,69,0,.5);
-      box-shadow: 0 0 24px rgba(255,69,0,.12), inset 0 0 40px rgba(255,69,0,.04);
+      border-color: rgba(255, 69, 0, .5);
+      box-shadow: 0 0 24px rgba(255, 69, 0, .12), inset 0 0 40px rgba(255, 69, 0, .04);
       transform: translateX(3px);
     }
 
@@ -1171,8 +1246,8 @@
       width: 52px;
       height: 52px;
       background: var(--bg3);
-      border: 1px solid rgba(255,179,0,.3);
-      box-shadow: 0 0 10px rgba(255,179,0,.1);
+      border: 1px solid rgba(255, 179, 0, .3);
+      box-shadow: 0 0 10px rgba(255, 179, 0, .1);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1185,7 +1260,7 @@
 
     .exp-card:hover .exp-logo {
       transform: scale(1.08) rotate(15deg);
-      box-shadow: 0 0 18px rgba(255,179,0,.25);
+      box-shadow: 0 0 18px rgba(255, 179, 0, .25);
     }
 
     .exp-logo img {
@@ -1239,9 +1314,9 @@
     }
 
     .exp-period span {
-      background: rgba(255,69,0,.06);
+      background: rgba(255, 69, 0, .06);
       padding: .15rem .55rem;
-      border: 1px solid rgba(255,69,0,.2);
+      border: 1px solid rgba(255, 69, 0, .2);
       border-radius: 2px;
       color: var(--text2);
     }
@@ -1327,9 +1402,9 @@
       font-size: .62rem;
       font-family: 'Orbitron', 'JetBrains Mono', monospace;
       letter-spacing: .04em;
-      background: rgba(255,69,0,.07);
+      background: rgba(255, 69, 0, .07);
       color: var(--accent2);
-      border: 1px solid rgba(255,179,0,.25);
+      border: 1px solid rgba(255, 179, 0, .25);
       padding: .55rem .6rem .45rem;
       border-radius: 3px;
       transition: background .2s, transform .2s, box-shadow .2s;
@@ -1359,9 +1434,9 @@
     }
 
     .tech-tag:hover {
-      background: rgba(255,179,0,.14);
+      background: rgba(255, 179, 0, .14);
       border-color: var(--accent2);
-      box-shadow: 0 0 8px rgba(255,179,0,.2);
+      box-shadow: 0 0 8px rgba(255, 179, 0, .2);
       transform: translateY(-2px);
     }
 
@@ -1568,7 +1643,7 @@
       border-color: var(--accent);
       background: rgba(255, 69, 0, .14);
       color: var(--accent);
-      box-shadow: 0 0 10px rgba(255,69,0,.18);
+      box-shadow: 0 0 10px rgba(255, 69, 0, .18);
       transform: translateY(-2px);
     }
 
@@ -1621,7 +1696,11 @@
       padding: .25rem 0;
     }
 
-    .skill-bar-header { display: contents; } /* dissolve into flex row */
+    .skill-bar-header {
+      display: contents;
+    }
+
+    /* dissolve into flex row */
 
     .skill-bar-header span:first-child {
       font-family: 'Orbitron', sans-serif;
@@ -1650,8 +1729,8 @@
       flex: 1;
       order: 2;
       height: 34px;
-      background: rgba(255,69,0,.15);
-      border: 1px solid rgba(255,69,0,.2);
+      background: rgba(255, 69, 0, .15);
+      border: 1px solid rgba(255, 69, 0, .2);
       border-radius: 0;
       overflow: hidden;
     }
@@ -1815,8 +1894,8 @@
     }
 
     .edu-card {
-      background: rgba(26,16,8,.95);
-      border: 1px solid rgba(255,69,0,.18);
+      background: rgba(26, 16, 8, .95);
+      border: 1px solid rgba(255, 69, 0, .18);
       border-radius: 4px;
       padding: 1.5rem;
       display: flex;
@@ -1826,8 +1905,8 @@
     }
 
     .edu-card:hover {
-      border-color: rgba(255,69,0,.5);
-      box-shadow: 0 0 20px rgba(255,69,0,.1);
+      border-color: rgba(255, 69, 0, .5);
+      box-shadow: 0 0 20px rgba(255, 69, 0, .1);
       transform: translateY(-3px);
     }
 
@@ -1882,8 +1961,8 @@
     }
 
     .lang-card {
-      background: rgba(26,16,8,.95);
-      border: 1px solid rgba(255,69,0,.18);
+      background: rgba(26, 16, 8, .95);
+      border: 1px solid rgba(255, 69, 0, .18);
       border-top: 2px solid transparent;
       border-image: linear-gradient(90deg, var(--accent), var(--accent2)) 1 0 0 0;
       border-radius: 4px;
@@ -1894,8 +1973,8 @@
     }
 
     .lang-card:hover {
-      border-color: rgba(255,179,0,.5);
-      box-shadow: 0 0 16px rgba(255,179,0,.1);
+      border-color: rgba(255, 179, 0, .5);
+      box-shadow: 0 0 16px rgba(255, 179, 0, .1);
       transform: translateY(-3px);
     }
 
@@ -1955,8 +2034,8 @@
     }
 
     .contact-item {
-      background: rgba(26,16,8,.95);
-      border: 1px solid rgba(255,69,0,.18);
+      background: rgba(26, 16, 8, .95);
+      border: 1px solid rgba(255, 69, 0, .18);
       border-top: 2px solid transparent;
       border-image: linear-gradient(90deg, var(--accent), var(--accent2)) 1 0 0 0;
       border-radius: 4px;
@@ -2010,7 +2089,10 @@
       text-transform: uppercase;
       color: var(--text2);
     }
-    .contact-item a:hover { color: var(--accent); }
+
+    .contact-item a:hover {
+      color: var(--accent);
+    }
 
     .contact-cta {
       font-size: 1rem;
@@ -2635,7 +2717,9 @@
 
             <div class="gm-xp-row">
               <span class="gm-key">EXP</span>
-              <div class="gm-xp-bar"><div class="gm-xp-fill" style="width:98%"></div></div>
+              <div class="gm-xp-bar">
+                <div class="gm-xp-fill" style="width:98%"></div>
+              </div>
               <span class="gm-key" style="color:var(--accent2);">13 YRS</span>
             </div>
           </div>
@@ -2666,7 +2750,7 @@
             <div class="exp-header">
               <div style="display:flex;align-items:flex-start;gap:1rem;flex:1">
                 <div class="exp-logo" title="Flyy LLC">
-                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='52' height='52' rx='10' fill='%230a1628'/%3E%3Ctext x='26' y='35' text-anchor='middle' font-family='Inter,sans-serif' font-weight='900' font-size='14' fill='%234a9eff'%3EPL%3C/text%3E%3C/svg%3E" alt="Flyy LLC logo" loading="lazy" />
+                  <img src="./img/flyy.png" alt="Flyy LLC logo" loading="lazy" />
                   <span class="logo-fallback"><i data-lucide="building-2"></i></span>
                 </div>
                 <div class="exp-meta">
@@ -2689,7 +2773,7 @@
               <li>Delivered full Arabic RTL localisation across the entire application, expanding accessibility to Arabic-speaking markets</li>
             </ul>
             <div class="exp-tech">
-              <span class="tech-tag">Unity3D</span><span class="tech-tag">C#</span><span class="tech-tag">Geolocation</span><span class="tech-tag">Figma</span><span class="tech-tag">iOS</span><span class="tech-tag">Android</span><span class="tech-tag">RTL Localisation</span>
+              <span class="tech-tag">Unity3D</span><span class="tech-tag">C#</span><span class="tech-tag">Figma</span><span class="tech-tag">iOS</span><span class="tech-tag">Android</span>
             </div>
           </div>
         </div>
@@ -2700,7 +2784,7 @@
             <div class="exp-header">
               <div style="display:flex;align-items:flex-start;gap:1rem;flex:1">
                 <div class="exp-logo" title="MAU Games">
-                  <img src="./img/maugames.png" alt="MAU Games logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                  <img src="./img/mau.jpg" alt="MAU Games logo" loading="lazy" class="logo-invert-dark" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" />
                   <span class="logo-fallback"><i data-lucide="building-2"></i></span>
                 </div>
                 <div class="exp-meta">
@@ -2723,7 +2807,7 @@
               <li>Developed a playable advertisement to support user acquisition and drive marketing campaign engagement</li>
             </ul>
             <div class="exp-tech">
-              <span class="tech-tag">Unity3D</span><span class="tech-tag">C#</span><span class="tech-tag">SmartFox</span><span class="tech-tag">Dependency Injection</span><span class="tech-tag">Agile Scrum</span><span class="tech-tag">Figma</span><span class="tech-tag">iOS</span><span class="tech-tag">Android</span>
+              <span class="tech-tag">Unity3D</span><span class="tech-tag">C#</span><span class="tech-tag">SmartFox</span><span class="tech-tag">Figma</span><span class="tech-tag">iOS</span><span class="tech-tag">Android</span>
             </div>
           </div>
         </div>
@@ -2734,7 +2818,7 @@
             <div class="exp-header">
               <div style="display:flex;align-items:flex-start;gap:1rem;flex:1">
                 <div class="exp-logo" title="Streaming Creativity">
-                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='52' height='52' rx='10' fill='%230d1f0d'/%3E%3Ctext x='26' y='35' text-anchor='middle' font-family='Inter,sans-serif' font-weight='900' font-size='14' fill='%234aff6e'%3ESC%3C/text%3E%3C/svg%3E" alt="Streaming Creativity logo" loading="lazy" />
+                  <img src="./img/sc.png" alt="Streaming Creativity logo" loading="lazy" />
                   <span class="logo-fallback"><i data-lucide="building-2"></i></span>
                 </div>
                 <div class="exp-meta">
@@ -2758,7 +2842,7 @@
               <li>Established Git-based version control standards including branching workflows, code review processes, and backup procedures across the team</li>
             </ul>
             <div class="exp-tech">
-              <span class="tech-tag">Unity3D</span><span class="tech-tag">C#</span><span class="tech-tag">Entitas</span><span class="tech-tag">ECS</span><span class="tech-tag">GameSparks</span><span class="tech-tag">JavaScript</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Python</span><span class="tech-tag">QGis</span><span class="tech-tag">Git</span><span class="tech-tag">iOS</span><span class="tech-tag">Android</span><span class="tech-tag">Mac</span><span class="tech-tag">Linux</span><span class="tech-tag">Windows</span>
+              <span class="tech-tag">Unity3D</span><span class="tech-tag">C#</span><span class="tech-tag">Entitas (ECS)</span><span class="tech-tag">GameSparks</span><span class="tech-tag">JavaScript</span><span class="tech-tag">MongoDB</span><span class="tech-tag">Python</span><span class="tech-tag">QGis</span><span class="tech-tag">Git</span><span class="tech-tag">iOS</span><span class="tech-tag">Android</span><span class="tech-tag">Mac</span><span class="tech-tag">Linux</span><span class="tech-tag">Windows</span>
             </div>
           </div>
         </div>
@@ -2769,7 +2853,7 @@
             <div class="exp-header">
               <div style="display:flex;align-items:flex-start;gap:1rem;flex:1">
                 <div class="exp-logo" title="Streaming Creativity">
-                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='52' height='52' rx='10' fill='%230d1f0d'/%3E%3Ctext x='26' y='35' text-anchor='middle' font-family='Inter,sans-serif' font-weight='900' font-size='14' fill='%234aff6e'%3ESC%3C/text%3E%3C/svg%3E" alt="Streaming Creativity logo" loading="lazy" />
+                  <img src="./img/sc.png" alt="Streaming Creativity logo" loading="lazy" />
                   <span class="logo-fallback"><i data-lucide="building-2"></i></span>
                 </div>
                 <div class="exp-meta">
@@ -2805,7 +2889,7 @@
             <div class="exp-header">
               <div style="display:flex;align-items:flex-start;gap:1rem;flex:1">
                 <div class="exp-logo" title="Streaming Creativity">
-                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='52' height='52' rx='10' fill='%230d1f0d'/%3E%3Ctext x='26' y='35' text-anchor='middle' font-family='Inter,sans-serif' font-weight='900' font-size='14' fill='%234aff6e'%3ESC%3C/text%3E%3C/svg%3E" alt="Streaming Creativity logo" loading="lazy" />
+                  <img src="./img/sc.png" alt="Streaming Creativity logo" loading="lazy" />
                   <span class="logo-fallback"><i data-lucide="building-2"></i></span>
                 </div>
                 <div class="exp-meta">
@@ -2857,7 +2941,7 @@
             <ul class="exp-bullets">
               <li>Developed the native Android application using Java and Android Studio</li>
               <li>Developed the native iOS application using Objective-C and Xcode</li>
-              <li>Built and maintained the PHP/SQL backend API serving both mobile platforms</li>
+              <li>Built and maintained the PHP/MySQL backend API serving both mobile platforms</li>
               <li>Led the UX/UI design of the application and developed the product website</li>
               <li>Provided 12 months of post-launch maintenance and technical support</li>
             </ul>
@@ -2973,7 +3057,7 @@
               <span class="skill-chip">MySQL</span>
               <span class="skill-chip">GameSparks</span>
               <span class="skill-chip">PHP</span>
-              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">SQL Server</span>
             </div>
           </div>
 
@@ -3109,9 +3193,21 @@
             <div class="edu-info">
               <h4>B.Sc. in Computer Science</h4>
               <div class="edu-school">Misr International University (MIU)</div>
-              <p><i data-lucide="calendar"></i> 2011 · <i data-lucide="map-pin"></i> Cairo, Egypt</p>
+              <p><i data-lucide="calendar"></i> 2007 - 2011 · <i data-lucide="map-pin"></i> Cairo, Egypt</p>
               <p style="margin-top:.4rem;">GPA: 3.23 / 4.0</p>
               <p style="margin-top:.3rem;font-size:.8rem;color:var(--accent2);">Graduation Project: Vehicle monitoring system — Android, Java, MySQL, C++, EasyPIC SDK.</p>
+            </div>
+          </div>
+          <div class="edu-card">
+            <div class="edu-icon">
+              <img src="./img/dartarbiah.jpg" alt="Dar El Tarbiah logo" loading="lazy" onerror="this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'" />
+              <span class="logo-fallback"><i data-lucide="school"></i></span>
+            </div>
+            <div class="edu-info">
+              <h4>High School — IGCSE</h4>
+              <div class="edu-school">Dar El Tarbiah</div>
+              <p><i data-lucide="calendar"></i> 2004 – 2007 · <i data-lucide="map-pin"></i> Cairo, Egypt</p>
+              <p style="margin-top:.4rem;">Grade: Very Good</p>
             </div>
           </div>
         </div>
@@ -3201,10 +3297,10 @@
           <h4>Email</h4>
           <span>magedf.90@gmail.com</span>
         </a>
-        <a class="contact-item" href="mailto:magedf.90@gmail.com">
+        <a class="contact-item" href="tel:+201003017781">
           <div class="contact-icon"><i data-lucide="phone"></i></div>
           <h4>Phone</h4>
-          <span>+20 100 000 0000</span>
+          <span>+20 100 301 7781</span>
         </a>
         <a class="contact-item" href="https://www.linkedin.com/in/maged-farid-82768128" target="_blank" rel="noopener">
           <div class="contact-icon"><img src="https://api.iconify.design/mdi/linkedin.svg?color=%23ffffff" width="22" height="22" alt="LinkedIn" /></div>

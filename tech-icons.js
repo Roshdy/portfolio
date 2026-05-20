@@ -7,14 +7,14 @@ const TECH_ICONS = {
   /* ── Platforms ──────────────────────────────────────────────────── */
   'iOS':            'devicon-apple-original colored',
   'Mac':            'devicon-apple-original colored',
+  'macOS':            'devicon-apple-original colored',
   'Linux':          'devicon-linux-plain colored',
   'Windows':        'devicon-windows8-original colored',
   'Git':            'devicon-git-plain colored',
 
   /* ── Unity ecosystem ─────────────────────────────────────────────── */
-  'Entitas':        'devicon-unity-original colored',
   'ECS':            'devicon-unity-original colored',
-  'Unity Profiler': 'devicon-unity-original colored',
+  'Unity Profiler': { img: 'https://www.google.com/s2/favicons?domain=unity.com&sz=64' },
 
   /* ── Game / XR tools ────────────────────────────────────────────── */
   'Oculus SDK':     { img: 'https://www.google.com/s2/favicons?domain=meta.com&sz=64' },
@@ -23,12 +23,15 @@ const TECH_ICONS = {
   'GameSparks':     { img: 'https://www.google.com/s2/favicons?domain=gamesparks.com&sz=64' },
   'QGis':           { img: 'https://www.google.com/s2/favicons?domain=qgis.org&sz=64' },
   'XML':            { img: 'https://api.iconify.design/vscode-icons/file-type-xml.svg' },
+  'Monodevelop':    { img: 'https://www.google.com/s2/favicons?domain=monodevelop.com&sz=64' },
+  'Adobe Flash':    { img: 'https://www.google.com/s2/favicons?domain=adobe.com&sz=64' },
+  'Panda.js':       { img: 'https://www.google.com/s2/favicons?domain=panda-css.com&sz=64' },
 
 
   /* ── Game Engines ────────────────────────────────────────────────── */
-  'Unity3D':        'devicon-unity-original colored',
-  'Entitas (ECS)':  'devicon-unity-original colored',
+  'Unity3D':        { img: 'https://www.google.com/s2/favicons?domain=unity.com&sz=64' },
   'SmartFox':       { img: 'https://www.google.com/s2/favicons?domain=smartfoxserver.com&sz=64' },
+  'Entitas (ECS)':       { img: './img/Entitas.png' },
 
   /* ── Extra Languages ─────────────────────────────────────────────── */
   'C++':            'devicon-cplusplus-plain colored',
@@ -50,6 +53,7 @@ const TECH_ICONS = {
   'Python':         'devicon-python-plain colored',
   'PHP':            'devicon-php-plain colored',
   'VB':             { img: 'https://img.icons8.com/plasticine/48/microsoft-visual-basic-6.png' },
+  'Visual Basic':             { img: 'https://img.icons8.com/plasticine/48/microsoft-visual-basic-6.png' },
   'VB Script':      { img: 'https://img.icons8.com/plasticine/48/microsoft-visual-basic-6.png' },
 
   /* ── Frontend ───────────────────────────────────────────────────── */
