@@ -10,3 +10,4 @@ Last updated: 2026-04-28
 | project_cv_improvements.md | project | ATS and content improvements applied from Jobgether CV review |
 | feedback_linter_conflict.md | feedback | VS Code formatter/linter auto-reformats index.html, causing Edit tool conflicts |
 | feedback_narrative_tone.md | feedback | Never frame experience as conflict with leadership; initiative framing only, no antagonists |
+- [maged_gamification.md](maged_gamification.md) — Full UI gamification plan for Maged Farid's portfolio (gaming developer theme)

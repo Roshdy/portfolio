@@ -4,6 +4,23 @@
 //   { img: url }  → Direct image URL
 
 const TECH_ICONS = {
+  /* ── Game Engines ────────────────────────────────────────────────── */
+  'Unity3D':        'devicon-unity-original colored',
+  'Entitas (ECS)':  'devicon-unity-original colored',
+  'SmartFox':       { img: 'https://www.google.com/s2/favicons?domain=smartfoxserver.com&sz=64' },
+
+  /* ── Extra Languages ─────────────────────────────────────────────── */
+  'C++':            'devicon-cplusplus-plain colored',
+  'Objective-C':    'devicon-objectivec-plain colored',
+
+  /* ── Mobile & Tools ──────────────────────────────────────────────── */
+  'Android':        'devicon-android-plain colored',
+  'Android Studio': 'devicon-androidstudio-plain colored',
+  'Arduino':        'devicon-arduino-plain colored',
+  'OpenCV':         'devicon-opencv-plain colored',
+  'Xamarin':        'devicon-xamarin-original colored',
+  'Xamarin SDK':    'devicon-xamarin-original colored',
+
 
   /* ── Languages ──────────────────────────────────────────────────── */
   'C#':             'devicon-csharp-plain colored',
