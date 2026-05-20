@@ -29,8 +29,8 @@
   <meta name="twitter:image" content="https://magedfarid.netlify.app/profile.png" />
 
   <!-- Favicon (SVG inline — no file needed) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23FF4500'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Nunito,sans-serif' font-weight='900' font-size='38' fill='white'%3EMF%3C/text%3E%3C/svg%3E" />
-  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23FF4500'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Nunito,sans-serif' font-weight='900' font-size='38' fill='white'%3EMF%3C/text%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23FF4500'/%3E%3Cstop offset='1' stop-color='%23FFB300'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon points='50,2 98,26 98,74 50,98 2,74 2,26' fill='url(%23g)'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Rajdhani,sans-serif' font-weight='900' font-size='38' fill='white'%3EMF%3C/text%3E%3C/svg%3E" />
+  <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23FF4500'/%3E%3Cstop offset='1' stop-color='%23FFB300'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon points='50,2 98,26 98,74 50,98 2,74 2,26' fill='url(%23g)'/%3E%3Ctext x='50' y='68' text-anchor='middle' font-family='Rajdhani,sans-serif' font-weight='900' font-size='38' fill='white'%3EMF%3C/text%3E%3C/svg%3E" />
 
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
@@ -57,7 +57,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Nunito:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <style>
     /* ─── CSS VARIABLES ─────────────────────────────────────────────── */
@@ -139,31 +139,32 @@
 
     /* ─── CV DOWNLOAD BUTTON ─────────────────────────────────────────── */
     .btn-cv {
-      background: var(--bg3);
-      border: 1.5px solid var(--card-border);
-      color: var(--text) !important;
-      border-radius: 8px;
-      padding: .42rem .85rem;
-      font-size: .82rem;
+      background: transparent;
+      color: var(--accent) !important;
+      clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+      font-family: 'Orbitron', sans-serif;
       font-weight: 600;
+      font-size: .65rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: .42rem .85rem;
+      border: none;
+      box-shadow: inset 0 0 0 1.5px var(--accent);
       display: flex;
       align-items: center;
       gap: .35rem;
-      transition: border-color .2s, background .2s, transform .2s;
+      transition: box-shadow .2s, background .2s, color .2s;
       white-space: nowrap;
       cursor: pointer;
     }
 
     .btn-cv:hover {
-      border-color: var(--accent2);
-      background: var(--bg2);
+      background: rgba(255,69,0,.12);
+      box-shadow: inset 0 0 0 1.5px var(--accent2);
       color: var(--accent2) !important;
-      transform: translateY(-1px);
     }
 
-    .btn-cv svg {
-      flex-shrink: 0;
-    }
+    .btn-cv svg { flex-shrink: 0; }
 
     /* ─── RESET ─────────────────────────────────────────────────────── */
     *,
@@ -180,10 +181,11 @@
     }
 
     body {
-      font-family: 'Nunito', sans-serif;
+      font-family: 'Rajdhani', sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      letter-spacing: .02em;
       overflow-x: hidden;
       transition: background .3s, color .3s;
     }
@@ -261,7 +263,7 @@
       font-weight: 800;
       line-height: 1.1;
       margin-bottom: 1rem;
-      font-family: 'Orbitron', 'Nunito', sans-serif;
+      font-family: 'Orbitron', 'Rajdhani', sans-serif;
       letter-spacing: .04em;
     }
 
@@ -321,14 +323,25 @@
     }
 
     .nav-logo {
-      font-weight: 800;
-      font-size: 1.1rem;
-      letter-spacing: -.02em;
-      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      font-size: .8rem;
+      letter-spacing: .05em;
+      color: #fff;
+      flex-shrink: 0;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      box-shadow: 0 0 16px var(--accent-glow), 0 0 32px rgba(255,69,0,.2);
+      transition: box-shadow .3s, transform .2s;
     }
-
-    .nav-logo span {
-      color: var(--accent)
+    .nav-logo:hover {
+      box-shadow: 0 0 24px var(--accent-glow), 0 0 48px rgba(255,179,0,.3);
+      transform: scale(1.08) rotate(10deg);
     }
 
     .nav-links {
@@ -369,19 +382,21 @@
     }
 
     #theme-toggle {
-      background: var(--bg3);
-      border: 1px solid var(--card-border);
-      color: var(--text);
+      background: transparent;
+      border: none;
+      box-shadow: inset 0 0 0 1.5px var(--accent);
+      clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+      color: var(--accent);
       cursor: pointer;
-      border-radius: 8px;
       padding: .45rem .6rem;
       font-size: 1rem;
-      transition: background .2s, transform .2s;
+      transition: box-shadow .2s, background .2s;
     }
 
     #theme-toggle:hover {
-      background: var(--bg2);
-      transform: scale(1.1)
+      background: rgba(255,69,0,.12);
+      box-shadow: inset 0 0 0 1.5px var(--accent2);
+      color: var(--accent2);
     }
 
     .btn-hire {
@@ -582,14 +597,22 @@
       font-weight: 900;
       line-height: 1;
       margin-bottom: .3rem;
-      font-family: 'Orbitron', 'Nunito', sans-serif;
+      font-family: 'Orbitron', 'Rajdhani', sans-serif;
       letter-spacing: -.01em;
+      gap: 0.15em; 
+      display: flex;
+    }
+
+    .hero-name span {
+      display: inline-block;
+      transition: transform .3s;
     }
 
     .hero-title {
       font-size: clamp(1.1rem, 3vw, 1.6rem);
       color: var(--accent);
       font-weight: 600;
+      margin: 0.8rem 0
     }
 
     .hero-summary {
@@ -658,14 +681,17 @@
     }
 
     .badge {
-      background: var(--bg3);
-      border: 1px solid var(--card-border);
+      background: rgba(255,69,0,.08);
+      border: 1px solid rgba(255,69,0,.3);
       color: var(--text2);
-      font-size: .78rem;
-      font-weight: 500;
-      padding: .35rem .75rem;
-      border-radius: 20px;
-      transition: border-color .2s, color .2s;
+      font-size: .68rem;
+      font-weight: 600;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .08em;
+      padding: .3rem .75rem;
+      clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
+      transition: border-color .2s, color .2s, background .2s;
+      text-transform: uppercase;
     }
 
     .badge.title {
@@ -674,8 +700,9 @@
     }
 
     .badge:hover {
+      background: rgba(255,69,0,.15);
       border-color: var(--accent);
-      color: var(--accent)
+      color: var(--accent);
     }
 
     /* hero right — code card */
@@ -766,12 +793,21 @@
 
 
     .stat-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
-      padding: 1.25rem;
+      background: rgba(255,69,0,.05);
+      border: 1px solid rgba(255,69,0,.25);
+      border-radius: 4px;
+      padding: 1rem .75rem;
       text-align: center;
-      transition: border-color .3s, transform .3s;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
     }
 
     .stat-card:hover {
@@ -789,9 +825,12 @@
     }
 
     .stat-label {
-      font-size: .78rem;
+      font-size: .58rem;
       color: var(--text2);
-      margin-top: .2rem
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-top: .2rem;
     }
 
     @media(max-width:768px) {
@@ -941,6 +980,48 @@
       z-index: 1;
     }
 
+
+    /* ── Game settings panel ────────────────────────────────────────── */
+    .gm-section-title {
+      display: flex; align-items: center; gap: .75rem;
+      margin-bottom: .6rem; font-size: .58rem; letter-spacing: .35em;
+      color: var(--accent2); font-family: 'Orbitron', sans-serif;
+    }
+    .gm-line { flex: 1; height: 1px; background: rgba(255,179,0,.28); }
+    .gm-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: .42rem .5rem; border-bottom: 1px solid rgba(255,255,255,.04);
+      transition: background .15s;
+    }
+    .gm-row:hover { background: rgba(255,69,0,.07); }
+    .gm-key {
+      font-size: .58rem; letter-spacing: .14em; color: var(--text2);
+      text-transform: uppercase; font-family: 'Orbitron', sans-serif;
+    }
+    .gm-value-box {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      padding: .18rem .7rem; font-size: .6rem; letter-spacing: .1em;
+      color: var(--text); min-width: 90px; text-align: center;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .gm-value-box.hot {
+      background: rgba(255,69,0,.18); border-color: rgba(255,69,0,.5);
+      color: var(--accent); box-shadow: 0 0 10px rgba(255,69,0,.25);
+    }
+    .gm-value-box.gold {
+      background: rgba(255,179,0,.15); border-color: rgba(255,179,0,.45);
+      color: var(--accent2); box-shadow: 0 0 8px rgba(255,179,0,.2);
+    }
+    .gm-xp-row {
+      display: flex; align-items: center; gap: .6rem; padding: .55rem .5rem 0;
+    }
+    .gm-xp-bar { flex: 1; height: 4px; background: rgba(255,69,0,.15); border: 1px solid rgba(255,69,0,.2); }
+    .gm-xp-fill {
+      height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2));
+      animation: gm-load 1.8s ease forwards;
+    }
+    @keyframes gm-load { from { width: 0 } }
+
     /* ─── SECTION DIVIDER ───────────────────────────────────────────── */
     .section-divider {
       border: none;
@@ -1063,17 +1144,18 @@
     }
 
     .exp-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
+      background: rgba(26,16,8,.95);
+      border: 1px solid rgba(255,69,0,.18);
+      border-radius: 4px;
       padding: 1.5rem;
       transition: border-color .3s, box-shadow .3s, transform .3s;
+      position: relative;
     }
 
     .exp-card:hover {
-      border-color: var(--accent);
-      box-shadow: 0 8px 30px var(--accent-glow);
-      transform: translateX(4px);
+      border-color: rgba(255,69,0,.5);
+      box-shadow: 0 0 24px rgba(255,69,0,.12), inset 0 0 40px rgba(255,69,0,.04);
+      transform: translateX(3px);
     }
 
     .exp-header {
@@ -1088,27 +1170,28 @@
     .exp-logo {
       width: 52px;
       height: 52px;
-      border-radius: 12px;
       background: var(--bg3);
-      border: 1px solid var(--card-border);
+      border: 1px solid rgba(255,179,0,.3);
+      box-shadow: 0 0 10px rgba(255,179,0,.1);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
       flex-shrink: 0;
       overflow: hidden;
-      transition: transform .3s;
+      transition: transform .3s, box-shadow .3s;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
     }
 
     .exp-card:hover .exp-logo {
-      transform: scale(1.05) rotate(-3deg)
+      transform: scale(1.08) rotate(15deg);
+      box-shadow: 0 0 18px rgba(255,179,0,.25);
     }
 
     .exp-logo img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      border-radius: 10px
     }
 
     .logo-fallback {
@@ -1130,9 +1213,11 @@
     }
 
     .exp-role {
-      font-size: 1rem;
+      font-size: .85rem;
       font-weight: 700;
-      margin-bottom: .2rem
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .04em;
+      margin-bottom: .3rem;
     }
 
     .exp-company {
@@ -1143,7 +1228,9 @@
     }
 
     .exp-period {
-      font-size: .78rem;
+      font-size: .65rem;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .08em;
       color: var(--text3);
       display: flex;
       align-items: center;
@@ -1152,19 +1239,23 @@
     }
 
     .exp-period span {
-      background: var(--bg3);
-      padding: .15rem .5rem;
-      border-radius: 4px;
-      border: 1px solid var(--card-border);
+      background: rgba(255,69,0,.06);
+      padding: .15rem .55rem;
+      border: 1px solid rgba(255,69,0,.2);
+      border-radius: 2px;
+      color: var(--text2);
     }
 
     .exp-badge {
-      font-size: .72rem;
+      font-size: .6rem;
       font-weight: 700;
-      padding: .3rem .7rem;
-      border-radius: 20px;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .1em;
+      padding: .28rem .75rem;
+      clip-path: polygon(6px 0%, 100% 0%, calc(100% - 6px) 100%, 0% 100%);
       white-space: nowrap;
       flex-shrink: 0;
+      text-transform: uppercase;
     }
 
     .badge-lead {
@@ -1233,14 +1324,15 @@
     }
 
     .tech-tag {
-      font-size: .68rem;
-      font-family: 'JetBrains Mono', monospace;
-      background: var(--bg3);
+      font-size: .62rem;
+      font-family: 'Orbitron', 'JetBrains Mono', monospace;
+      letter-spacing: .04em;
+      background: rgba(255,69,0,.07);
       color: var(--accent2);
-      border: 1px solid rgba(255, 179, 0, .2);
+      border: 1px solid rgba(255,179,0,.25);
       padding: .55rem .6rem .45rem;
-      border-radius: 8px;
-      transition: background .2s, transform .2s;
+      border-radius: 3px;
+      transition: background .2s, transform .2s, box-shadow .2s;
       display: inline-flex;
       flex-direction: column;
       align-items: center;
@@ -1267,8 +1359,10 @@
     }
 
     .tech-tag:hover {
-      background: rgba(255, 179, 0, .12);
-      transform: translateY(-1px)
+      background: rgba(255,179,0,.14);
+      border-color: var(--accent2);
+      box-shadow: 0 0 8px rgba(255,179,0,.2);
+      transform: translateY(-2px);
     }
 
     /* ─── PROJECTS ──────────────────────────────────────────────────── */
@@ -1458,9 +1552,9 @@
       font-size: .75rem;
       font-weight: 500;
       padding: .6rem .75rem .5rem;
-      border-radius: 8px;
+      clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
       cursor: default;
-      transition: border-color .2s, background .2s, transform .2s, color .2s;
+      transition: border-color .2s, background .2s, transform .2s, color .2s, box-shadow .2s;
       display: inline-flex;
       flex-direction: column;
       align-items: center;
@@ -1472,8 +1566,9 @@
 
     .skill-chip:hover {
       border-color: var(--accent);
-      background: rgba(255, 69, 0, .12);
+      background: rgba(255, 69, 0, .14);
       color: var(--accent);
+      box-shadow: 0 0 10px rgba(255,69,0,.18);
       transform: translateY(-2px);
     }
 
@@ -1518,33 +1613,51 @@
       gap: 1rem
     }
 
-    .skill-bar-header {
+    /* skill-bar-item styled like gm-xp-row: label | bar | % inline */
+    .skill-bar-item {
       display: flex;
-      justify-content: space-between;
-      font-size: .85rem;
-      margin-bottom: .4rem;
+      align-items: center;
+      gap: .6rem;
+      padding: .25rem 0;
     }
 
+    .skill-bar-header { display: contents; } /* dissolve into flex row */
+
     .skill-bar-header span:first-child {
-      font-weight: 600
+      font-family: 'Orbitron', sans-serif;
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--text2);
+      white-space: nowrap;
+      width: 50%;
+      flex-shrink: 0;
+      order: 1;
     }
 
     .skill-bar-header span:last-child {
+      font-family: 'Orbitron', sans-serif;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .06em;
       color: var(--accent2);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: .8rem
+      white-space: nowrap;
+      order: 3;
     }
 
     .skill-bar-track {
-      height: 6px;
-      background: var(--bg3);
-      border-radius: 3px;
+      flex: 1;
+      order: 2;
+      height: 34px;
+      background: rgba(255,69,0,.15);
+      border: 1px solid rgba(255,69,0,.2);
+      border-radius: 0;
       overflow: hidden;
     }
 
     .skill-bar-fill {
       height: 100%;
-      border-radius: 3px;
       width: 0%;
       background: linear-gradient(90deg, var(--accent), var(--accent2));
       transition: width 1.2s cubic-bezier(.4, 0, .2, 1);
@@ -1702,9 +1815,9 @@
     }
 
     .edu-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 14px;
+      background: rgba(26,16,8,.95);
+      border: 1px solid rgba(255,69,0,.18);
+      border-radius: 4px;
       padding: 1.5rem;
       display: flex;
       gap: 1rem;
@@ -1713,40 +1826,46 @@
     }
 
     .edu-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px)
+      border-color: rgba(255,69,0,.5);
+      box-shadow: 0 0 20px rgba(255,69,0,.1);
+      transform: translateY(-3px);
     }
 
     .edu-icon {
       width: 48px;
       height: 48px;
-      border-radius: 12px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
       flex-shrink: 0;
-      background: white;
+      background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.4rem;
       overflow: hidden;
+      box-shadow: 0 0 10px var(--accent-glow);
     }
 
     .edu-icon img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      border-radius: 10px;
     }
 
     .edu-info h4 {
-      font-size: .95rem;
+      font-size: .78rem;
       font-weight: 700;
-      margin-bottom: .15rem
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .04em;
+      margin-bottom: .2rem;
     }
 
     .edu-info .edu-school {
-      font-size: .85rem;
+      font-size: .68rem;
       color: var(--accent);
       font-weight: 600;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .06em;
+      text-transform: uppercase;
       margin-bottom: .2rem
     }
 
@@ -1763,30 +1882,39 @@
     }
 
     .lang-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
+      background: rgba(26,16,8,.95);
+      border: 1px solid rgba(255,69,0,.18);
+      border-top: 2px solid transparent;
+      border-image: linear-gradient(90deg, var(--accent), var(--accent2)) 1 0 0 0;
+      border-radius: 4px;
       padding: 1.25rem 1.75rem;
       text-align: center;
       min-width: 140px;
-      transition: border-color .3s, transform .3s;
+      transition: border-color .3s, transform .3s, box-shadow .3s;
     }
 
     .lang-card:hover {
-      border-color: var(--accent2);
-      transform: translateY(-3px)
+      border-color: rgba(255,179,0,.5);
+      box-shadow: 0 0 16px rgba(255,179,0,.1);
+      transform: translateY(-3px);
     }
 
     .lang-name {
-      font-size: 1rem;
+      font-size: .75rem;
       font-weight: 700;
-      margin-bottom: .25rem
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .3rem;
     }
 
     .lang-level {
-      font-size: .8rem;
-      color: var(--text2);
-      margin-bottom: .75rem
+      font-size: .6rem;
+      color: var(--accent2);
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: .75rem;
     }
 
     .lang-dots {
@@ -1827,9 +1955,11 @@
     }
 
     .contact-item {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 12px;
+      background: rgba(26,16,8,.95);
+      border: 1px solid rgba(255,69,0,.18);
+      border-top: 2px solid transparent;
+      border-image: linear-gradient(90deg, var(--accent), var(--accent2)) 1 0 0 0;
+      border-radius: 4px;
       padding: 1rem 1.25rem;
       display: flex;
       flex-direction: row;
@@ -1855,12 +1985,14 @@
     .contact-icon {
       width: 44px;
       height: 44px;
-      border-radius: 10px;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 1.25rem;
+      flex-shrink: 0;
+      box-shadow: 0 0 12px var(--accent-glow);
     }
 
     .contact-item h4 {
@@ -1871,9 +2003,14 @@
 
     .contact-item a,
     .contact-item span {
-      font-size: .88rem;
-      font-weight: 500
+      font-size: .65rem;
+      font-weight: 600;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--text2);
     }
+    .contact-item a:hover { color: var(--accent); }
 
     .contact-cta {
       font-size: 1rem;
@@ -2134,7 +2271,7 @@
     .rm-icon {
       width: 56px;
       height: 56px;
-      border-radius: 50%;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
       background:
         radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.45) 0%, transparent 55%),
         radial-gradient(circle at 70% 75%, rgba(0, 0, 0, 0.25) 0%, transparent 50%),
@@ -2166,12 +2303,15 @@
     }
 
     .rm-label {
-      font-size: .8rem;
-      font-weight: 600;
+      font-size: .58rem;
+      font-weight: 700;
+      font-family: 'Orbitron', sans-serif;
+      letter-spacing: .06em;
+      text-transform: uppercase;
       color: var(--text2);
       text-align: center;
       max-width: 90px;
-      line-height: 1.35;
+      line-height: 1.4;
       transition: color .3s;
     }
 
@@ -2424,7 +2564,7 @@
               <img src="./profile.png" alt="Maged Farid" loading="eager" onerror="this.style.display='none'" />
             </div>
           </div>
-          <h1 class="hero-name">Maged<br><span class="gradient-text">Farid</span></h1>
+          <h1 class="hero-name"><span>Maged</span><span class="gradient-text">Farid</span></h1>
           <p class="hero-title">Unity Development Lead</p>
           <span class="badge title"><i data-lucide="map-pin"></i> Cairo, Egypt</span>
           <p class="hero-summary">
@@ -2462,71 +2602,41 @@
             <div class="hero-photo-initials">MF</div>
           </div>
           <div class="hero-card">
-            <div class="card-dots">
-              <span></span><span></span><span></span>
+            <div class="gm-section-title">
+              <div class="gm-line"></div>
+              <span>DEVELOPER</span>
+              <div class="gm-line"></div>
             </div>
-            <pre><code><span class="code-comment">// maged.config.cs</span>
 
-<span class="code-key">public class</span> Developer {
-  <span class="code-key">string</span> Name = <span class="code-str">"Maged Farid"</span>;
-  <span class="code-key">string</span> Role = <span class="code-str">"Unity Dev Lead"</span>;
-  <span class="code-key">int</span>    Exp  = <span class="code-num">13</span>;   <span class="code-comment">// years</span>
-  <span class="code-key">string</span>[] Stack = {
-    <span class="code-str">"Unity3D"</span>, <span class="code-str">"C#"</span>,
-    <span class="code-str">"ECS"</span>, <span class="code-str">"SmartFox"</span>
-  };
-  <span class="code-key">bool</span> Open = <span class="code-key">true</span>; <span class="code-comment">// to roles</span>
-}<span class="typing-cursor"></span></code></pre>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <hr class="section-divider" />
-
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <!-- ABOUT -->
-  <!-- ═══════════════════════════════════════════════════════════════ -->
-  <section id="about">
-    <div class="container">
-      <div class="about-grid">
-        <div class="fade-in">
-          <p class="section-label">About Me</p>
-          <h2 class="section-title">Shipping games that <span class="gradient-text">Amaze!</span></h2>
-          <div class="about-body">
-            <p style="color:var(--text2);line-height:1.8;margin-bottom:1.5rem;">
-              I'm a Unity Development Lead with 13+ years building games, AR/VR experiences, and interactive applications across mobile, desktop, and beyond. I've progressed from junior developer to lead architect, building scalable game systems and steering teams toward technical excellence at every stage.
-            </p>
-            <p style="color:var(--text2);line-height:1.8;">
-              From an ESA-partnered geospatial game to a multiplayer card title serving tens of thousands of daily players, I've delivered products that matter. Based in Cairo, I'm open to opportunities that challenge me to push game technology further.
-            </p>
-          </div>
-        </div>
-        <div class="fade-in">
-          <p class="section-label" style="margin-bottom:1rem;">Key Achievements</p>
-          <div class="achievements-list">
-            <div class="achievement-card">
-              <div class="achievement-icon"><i data-lucide="globe"></i></div>
-              <div class="achievement-text">
-                <h4>ESA Partnership</h4>
-                <p>Designed and shipped Cerberus with the European Space Agency across iOS, Android, Mac, Linux, and Windows.</p>
-              </div>
+            <div class="gm-row">
+              <span class="gm-key">SPECIALITY</span>
+              <div class="gm-value-box gold">UNITY3D</div>
             </div>
-            <div class="achievement-card">
-              <div class="achievement-icon"><i data-lucide="zap"></i></div>
-              <div class="achievement-text">
-                <h4>Infrastructure Impact</h4>
-                <p>Refactored 70% of iBaloot's game infrastructure using Dependency Injection, improving scalability and long-term maintainability.</p>
-              </div>
+            <div class="gm-row">
+              <span class="gm-key">LANGUAGE</span>
+              <div class="gm-value-box">C# / JAVA</div>
             </div>
-            <div class="achievement-card">
-              <div class="achievement-icon"><i data-lucide="users"></i></div>
-              <div class="achievement-text">
-                <h4>Team Multiplier</h4>
-                <p>Led cross-functional teams of 3–5 engineers across 3 studios, consistently delivering on time using Agile Scrum.</p>
-              </div>
+            <div class="gm-row">
+              <span class="gm-key">ARCHITECTURE</span>
+              <div class="gm-value-box">ECS / DI</div>
+            </div>
+            <div class="gm-row">
+              <span class="gm-key">PLATFORMS</span>
+              <div class="gm-value-box">5 TARGETS</div>
+            </div>
+            <div class="gm-row">
+              <span class="gm-key">MULTIPLAYER</span>
+              <div class="gm-value-box">SMARTFOX</div>
+            </div>
+            <div class="gm-row">
+              <span class="gm-key">STATUS</span>
+              <div class="gm-value-box hot">OPEN TO WORK</div>
+            </div>
+
+            <div class="gm-xp-row">
+              <span class="gm-key">EXP</span>
+              <div class="gm-xp-bar"><div class="gm-xp-fill" style="width:98%"></div></div>
+              <span class="gm-key" style="color:var(--accent2);">13 YRS</span>
             </div>
           </div>
         </div>
@@ -2549,19 +2659,19 @@
 
       <div class="timeline">
 
-        <!-- Phly LLC -->
+        <!-- Flyy LLC -->
         <div class="timeline-item fade-in">
           <div class="timeline-dot"></div>
           <div class="exp-card">
             <div class="exp-header">
               <div style="display:flex;align-items:flex-start;gap:1rem;flex:1">
-                <div class="exp-logo" title="Phly LLC">
-                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='52' height='52' rx='10' fill='%230a1628'/%3E%3Ctext x='26' y='35' text-anchor='middle' font-family='Inter,sans-serif' font-weight='900' font-size='14' fill='%234a9eff'%3EPL%3C/text%3E%3C/svg%3E" alt="Phly LLC logo" loading="lazy" />
+                <div class="exp-logo" title="Flyy LLC">
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 52 52'%3E%3Crect width='52' height='52' rx='10' fill='%230a1628'/%3E%3Ctext x='26' y='35' text-anchor='middle' font-family='Inter,sans-serif' font-weight='900' font-size='14' fill='%234a9eff'%3EPL%3C/text%3E%3C/svg%3E" alt="Flyy LLC logo" loading="lazy" />
                   <span class="logo-fallback"><i data-lucide="building-2"></i></span>
                 </div>
                 <div class="exp-meta">
                   <div class="exp-role">Senior Unity Developer</div>
-                  <div class="exp-company">Phly LLC</div>
+                  <div class="exp-company">Flyy LLC</div>
                   <div class="exp-period">
                     <span><i data-lucide="calendar"></i> 05/2021 – Present</span>
                     <span><i data-lucide="map-pin"></i> Remote</span>
@@ -2888,7 +2998,7 @@
             </div>
           </div>
           <div class="skill-bar-item">
-            <div class="skill-bar-header"><span>Mobile (iOS / Android)</span><span>90%</span></div>
+            <div class="skill-bar-header"><span>Mobile { iOS / Android }</span><span>90%</span></div>
             <div class="skill-bar-track">
               <div class="skill-bar-fill" data-width="90"></div>
             </div>
@@ -3119,7 +3229,7 @@
 
   <!-- ─── FOOTER ─────────────────────────────────────────────────── -->
   <footer>
-    <p>Built with <i data-lucide="heart"></i> · <span>Roshdy Kamel</span> © 2026 · Lead Software Engineer</p>
+    <p>Built with <i data-lucide="heart"></i> · <a href="https://roshdydev.netlify.app" target="_blank" rel="noopener"><span>Roshdy Kamel</span></a> © 2026 · Lead Software Engineer</p>
   </footer>
 
   <!-- ═══════════════════════════════════════════════════════════════ -->

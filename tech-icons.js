@@ -4,6 +4,27 @@
 //   { img: url }  → Direct image URL
 
 const TECH_ICONS = {
+  /* ── Platforms ──────────────────────────────────────────────────── */
+  'iOS':            'devicon-apple-original colored',
+  'Mac':            'devicon-apple-original colored',
+  'Linux':          'devicon-linux-plain colored',
+  'Windows':        'devicon-windows8-original colored',
+  'Git':            'devicon-git-plain colored',
+
+  /* ── Unity ecosystem ─────────────────────────────────────────────── */
+  'Entitas':        'devicon-unity-original colored',
+  'ECS':            'devicon-unity-original colored',
+  'Unity Profiler': 'devicon-unity-original colored',
+
+  /* ── Game / XR tools ────────────────────────────────────────────── */
+  'Oculus SDK':     { img: 'https://www.google.com/s2/favicons?domain=meta.com&sz=64' },
+  'Samsung Gear VR':{ img: 'https://www.google.com/s2/favicons?domain=samsung.com&sz=64' },
+  'Vuforia AR SDK': { img: 'https://www.google.com/s2/favicons?domain=ptc.com&sz=64' },
+  'GameSparks':     { img: 'https://www.google.com/s2/favicons?domain=gamesparks.com&sz=64' },
+  'QGis':           { img: 'https://www.google.com/s2/favicons?domain=qgis.org&sz=64' },
+  'XML':            { img: 'https://api.iconify.design/vscode-icons/file-type-xml.svg' },
+
+
   /* ── Game Engines ────────────────────────────────────────────────── */
   'Unity3D':        'devicon-unity-original colored',
   'Entitas (ECS)':  'devicon-unity-original colored',
