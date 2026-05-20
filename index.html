@@ -627,6 +627,7 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 36px var(--accent-glow);
       filter: brightness(1.12);
+      color: #cfcfcf;
     }
 
     .btn-secondary {
@@ -1881,23 +1882,9 @@
     }
 
     .btn-large {
-      display: inline-flex;
-      align-items: center;
-      gap: .5rem;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff;
       padding: 1rem 2.5rem;
-      border-radius: 12px;
       font-weight: 700;
       font-size: 1rem;
-      transition: transform .2s, box-shadow .2s;
-      box-shadow: 0 6px 28px var(--accent-glow);
-    }
-
-    .btn-large:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 36px var(--accent-glow);
-      color: #fff
     }
 
     @media(max-width:768px) {
@@ -3123,7 +3110,7 @@
 
       <div class="fade-in">
         <p class="contact-cta">Ready to build something great?</p>
-        <a href="mailto:magedf.90@gmail.com" class="btn-large">
+        <a href="mailto:magedf.90@gmail.com" class="btn-large btn-primary">
           <i data-lucide="send"></i> Send Me a Message
         </a>
       </div>
