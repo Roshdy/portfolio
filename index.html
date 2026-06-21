@@ -42,12 +42,20 @@
   "url": "https://roshdydev.netlify.app",
   "email": "roshdy89@gmail.com",
   "telephone": "+966562406698",
+  "mobile": "+201127848830",
   "image": "https://roshdydev.netlify.app/profile.png",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Riyadh",
-    "addressCountry": "SA"
-  },
+  "address": [
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Riyadh",
+      "addressCountry": "SA"
+    },
+    {
+      "@type": "PostalAddress",
+      "addressLocality": "Cairo",
+      "addressCountry": "EG"
+    }
+  ],
   "sameAs": [
     "https://www.linkedin.com/in/roshdy-kamel"
   ],
@@ -2340,6 +2348,7 @@
           <h1 class="hero-name">M. Roshdy<br><span class="gradient-text">Kamel</span></h1>
           <p class="hero-title">Lead Software Engineer</p>
           <span class="badge title"><i data-lucide="map-pin"></i> Riyadh, KSA</span>
+          <span class="badge title"><i data-lucide="map-pin"></i> Cairo, EG</span>
           <p class="hero-summary">
             Lead Software Engineer / Tech Lead / Technical Project Manager with 15+ years of experience delivering fintech, trading,
             and enterprise platforms across C#/.NET, React, Node.js, microservices, AWS, Oracle, and MongoDB. Proven record of rescuing
@@ -2386,9 +2395,8 @@
 <span class="code-key">const</span> engineer = {
   name:     <span class="code-str">"M. Roshdy Kamel"</span>,
   role:     <span class="code-str">"Lead Software Engineer"</span>,
-  exp:      <span class="code-num">15</span>,          <span class="code-comment">// years</span>
-  location: <span class="code-str">"Riyadh, KSA"</span>,
-
+  exp:      <span class="code-num">15</span>, <span class="code-comment">// years</span>
+  location: [ <span class="code-str">"Riyadh, KSA"</span>, <span class="code-str">"Cairo, EG"</span> ],
   stack: [
     <span class="code-str">"React"</span>, <span class="code-str">"React-Native"</span>,
     <span class="code-str">"Node.js"</span>, <span class="code-str">"C#/.NET"</span>,
@@ -2397,7 +2405,7 @@
 
   superpower: <span class="code-str">"Building products that scale"</span>,
 
-  open: <span class="code-key">true</span> <span class="code-comment">// to new roles</span>
+  available: <span class="code-key">true</span> <span class="code-comment">// to new roles|projects</span>
 };<span class="typing-cursor"></span></code></pre>
           </div>
         </div>
@@ -3303,6 +3311,11 @@
           <h4>Phone</h4>
           <span>+966 562 406 698</span>
         </a>
+        <a class="contact-item" href="tel:+201127848830">
+          <div class="contact-icon"><i data-lucide="phone"></i></div>
+          <h4>Phone</h4>
+          <span>+20 112 784 8830</span>
+        </a>
         <a class="contact-item" href="https://www.linkedin.com/in/roshdy-kamel" target="_blank" rel="noopener">
           <div class="contact-icon"><img src="https://api.iconify.design/mdi/linkedin.svg?color=%23ffffff" width="22" height="22" alt="LinkedIn" /></div>
           <h4>LinkedIn</h4>
@@ -3312,6 +3325,11 @@
           <div class="contact-icon"><i data-lucide="map-pin"></i></div>
           <h4>Location</h4>
           <span>Riyadh, Saudi Arabia</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+          <h4>Location</h4>
+          <span>Cairo, Egypt</span>
         </div>
       </div>
 
