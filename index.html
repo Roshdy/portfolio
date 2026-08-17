@@ -1184,6 +1184,12 @@
       transform: translateY(-1px)
     }
 
+    @media(max-width:768px) {
+      .tech-tag {
+        flex: 1 0 auto;
+      }
+    }
+
     /* ─── PROJECTS ──────────────────────────────────────────────────── */
     .projects-grid {
       display: grid;
@@ -1463,6 +1469,12 @@
       transition: width 1.2s cubic-bezier(.4, 0, .2, 1);
     }
 
+    @media(max-width:768px) {
+      .skill-chip {
+        flex: 1 1 20%
+      }
+    }
+
     /* ─── CERTIFICATIONS ────────────────────────────────────────────── */
     .certs-grid {
       display: grid;
@@ -1539,6 +1551,12 @@
       font-size: .75rem;
       color: var(--text2) !important;
       margin-top: .4rem
+    }
+
+    @media(max-width:768px) {
+      .certs-grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
     }
 
     /* ─── WORK SAMPLES ──────────────────────────────────────────────── */
@@ -1668,6 +1686,12 @@
       color: var(--text2)
     }
 
+    @media(max-width:768px) {
+      .edu-grid {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+
     /* ─── LANGUAGES ─────────────────────────────────────────────────── */
     .lang-grid {
       display: grid;
@@ -1720,6 +1744,12 @@
     .lang-dot.filled {
       background: linear-gradient(135deg, var(--accent), var(--accent2));
       border-color: transparent;
+    }
+
+    @media(max-width:768px) {
+      .lang-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
     }
 
     /* ─── CONTACT ───────────────────────────────────────────────────── */
@@ -2009,40 +2039,49 @@
       width: 50px;
       height: 50px;
       background:
-        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.45) 0%, transparent 55%),
-        radial-gradient(circle at 70% 75%, rgba(0,0,0,0.25) 0%, transparent 50%),
-        linear-gradient(135deg,#ffcf63, #939423);
+        radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.45) 0%, transparent 55%),
+        radial-gradient(circle at 70% 75%, rgba(0, 0, 0, 0.25) 0%, transparent 50%),
+        linear-gradient(135deg, #ffcf63, #939423);
       box-shadow:
         0 4px 14px rgba(255, 207, 99, 0.45),
-        inset 0 -5px 14px rgba(0,0,0,0.35),
-        inset 0 3px 8px rgba(255,255,255,0.22);
+        inset 0 -5px 14px rgba(0, 0, 0, 0.35),
+        inset 0 3px 8px rgba(255, 255, 255, 0.22);
     }
+
     .rm-node-minor:hover .rm-icon {
       box-shadow:
         0 6px 20px rgba(255, 207, 99, 0.6),
-        inset 0 -6px 16px rgba(0,0,0,0.4),
-        inset 0 4px 10px rgba(255,255,255,0.28);
+        inset 0 -6px 16px rgba(0, 0, 0, 0.4),
+        inset 0 4px 10px rgba(255, 255, 255, 0.28);
     }
 
-    .rm-node-large { min-width: 90px; }
+    .rm-node-large {
+      min-width: 90px;
+    }
+
     .rm-node-large .rm-icon {
       width: 65px;
       height: 65px;
       background:
-        radial-gradient(circle at 35% 30%, rgba(255,255,255,0.45) 0%, transparent 55%),
-        radial-gradient(circle at 70% 75%, rgba(0,0,0,0.25) 0%, transparent 50%),
+        radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.45) 0%, transparent 55%),
+        radial-gradient(circle at 70% 75%, rgba(0, 0, 0, 0.25) 0%, transparent 50%),
         linear-gradient(135deg, #ff5252, #ff8c42);
       box-shadow:
         0 4px 14px rgba(255, 82, 82, 0.45),
-        inset 0 -5px 14px rgba(0,0,0,0.35),
-        inset 0 3px 8px rgba(255,255,255,0.22);
+        inset 0 -5px 14px rgba(0, 0, 0, 0.35),
+        inset 0 3px 8px rgba(255, 255, 255, 0.22);
     }
-    .rm-node-large .rm-icon svg.lucide { width: 30px; height: 30px; }
+
+    .rm-node-large .rm-icon svg.lucide {
+      width: 30px;
+      height: 30px;
+    }
+
     .rm-node-large:hover .rm-icon {
       box-shadow:
         0 6px 22px rgba(255, 82, 82, 0.6),
-        inset 0 -6px 16px rgba(0,0,0,0.4),
-        inset 0 4px 10px rgba(255,255,255,0.28);
+        inset 0 -6px 16px rgba(0, 0, 0, 0.4),
+        inset 0 4px 10px rgba(255, 255, 255, 0.28);
     }
 
     .rm-node:hover {
@@ -3140,7 +3179,7 @@
               <p><i data-lucide="calendar"></i> 2007 – 2011 · <i data-lucide="map-pin"></i> Cairo, Egypt</p>
               <p style="margin-top:.4rem;">GPA: 3.25 — Very Good.</p>
               <p style="margin-top:.4rem;">Excellent in Graduation Project.</p>
-              <p style="margin-top:.3rem;font-size:.8rem;color:var(--accent2);">Graduation Project: Smart Vehicle Monitoring System (SVMS) — Android app controlling GPS/GSM microcontroller.</p>
+              <p style="margin-top:.3rem;font-size:.8rem;color:var(--accent2);">Graduation Project: Smart Vehicle Monitoring System (SVMS) — Android app controlling GPS/GSM microcontroller installed in any vehicle.</p>
             </div>
           </div>
           <div class="edu-card">
@@ -3199,17 +3238,6 @@
           </a>
           <div class="cert-card">
             <div class="project-logo">
-              <img src="https://logo.clearbit.com/php.net" onerror="this.onerror=function(){this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'};this.src='https://www.google.com/s2/favicons?domain=php.net&sz=64'" alt="PHP logo" loading="lazy" />
-              <span class="logo-fallback"><i data-lucide="code-2"></i></span>
-            </div>
-            <div class="cert-info">
-              <h4>PHP Programming</h4>
-              <p>Training / Course</p>
-              <p class="cert-date"><i data-lucide="calendar"></i> August 2009</p>
-            </div>
-          </div>
-          <div class="cert-card">
-            <div class="project-logo">
               <img src="./img/ethical.jpg" onerror="this.onerror=function(){this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'};" alt="VIBO logo" loading="lazy" />
               <span class="logo-fallback"><i data-lucide="shield-check"></i></span>
             </div>
@@ -3217,6 +3245,17 @@
               <h4>Ethical Hacking</h4>
               <p>Training / Course</p>
               <p class="cert-date"><i data-lucide="calendar"></i> August 2012</p>
+            </div>
+          </div>
+          <div class="cert-card">
+            <div class="project-logo">
+              <img src="https://logo.clearbit.com/php.net" onerror="this.onerror=function(){this.onerror=null;this.style.display='none';this.nextElementSibling.style.display='flex'};this.src='https://www.google.com/s2/favicons?domain=php.net&sz=64'" alt="PHP logo" loading="lazy" />
+              <span class="logo-fallback"><i data-lucide="code-2"></i></span>
+            </div>
+            <div class="cert-info">
+              <h4>PHP Programming</h4>
+              <p>Training / Course</p>
+              <p class="cert-date"><i data-lucide="calendar"></i> August 2009</p>
             </div>
           </div>
         </div>
@@ -3244,7 +3283,7 @@
               <div class="lang-dot filled"></div>
               <div class="lang-dot filled"></div>
               <div class="lang-dot filled"></div>
-              <div class="lang-dot"></div>
+              <div class="lang-dot filled"></div>
             </div>
           </div>
         </div>
@@ -3658,7 +3697,7 @@
       var phantomCfg = [
         [[0.35, -2]],                      /* between L0-L1: one node */
         [[0.28, 3], [0.72, -3]],           /* between L1-L2: two nodes */
-        [[0.65,  2]],                      /* between L2-L3: one node */
+        [[0.65, 2]],                      /* between L2-L3: one node */
       ];
 
       /* full mesh between every adjacent layer pair */
@@ -3685,7 +3724,7 @@
           var px = wW * cfg[0], py = midY + cfg[1];
           /* faint connections to both adjacent layers */
           fromL.forEach(function (n) { svg.appendChild(faintLine(center(n), { x: px, y: py })); });
-          toL.forEach(function (n)   { svg.appendChild(faintLine({ x: px, y: py }, center(n))); });
+          toL.forEach(function (n) { svg.appendChild(faintLine({ x: px, y: py }, center(n))); });
           /* draw the phantom node on top */
           svg.appendChild(innerCircle(px, py, 4));
         });
@@ -3697,16 +3736,16 @@
       var belowY = layerBottom(botL) + 52;
 
       var outerAbove = [
-        { x: wW * 0.1,  y: aboveY + 12 },
-        { x: wW * 0.38, y: aboveY - 8  },
-        { x: wW * 0.62, y: aboveY + 6  },
-        { x: wW * 0.9,  y: aboveY - 10 },
+        { x: wW * 0.1, y: aboveY + 12 },
+        { x: wW * 0.38, y: aboveY - 8 },
+        { x: wW * 0.62, y: aboveY + 6 },
+        { x: wW * 0.9, y: aboveY - 10 },
       ];
       var outerBelow = [
-        { x: wW * 0.1,  y: belowY - 10 },
-        { x: wW * 0.38, y: belowY + 8  },
-        { x: wW * 0.62, y: belowY - 6  },
-        { x: wW * 0.9,  y: belowY + 12 },
+        { x: wW * 0.1, y: belowY - 10 },
+        { x: wW * 0.38, y: belowY + 8 },
+        { x: wW * 0.62, y: belowY - 6 },
+        { x: wW * 0.9, y: belowY + 12 },
       ];
 
       outerAbove.forEach(function (pt) {
@@ -3724,7 +3763,7 @@
       layers.forEach(function (layer) {
         layer.forEach(function (n) {
           var r = n.getBoundingClientRect();
-          if (r.left  - wr.left < leftX)  leftX  = r.left  - wr.left;
+          if (r.left - wr.left < leftX) leftX = r.left - wr.left;
           if (r.right - wr.left > rightX) rightX = r.right - wr.left;
         });
       });
@@ -3732,9 +3771,9 @@
 
       /* 3 scattered phantoms per side — Y at arbitrary fractions, X offset varied */
       var sidePhantoms = [
-        { lx: leftX  - 55, rx: rightX + 60, yf: 0.14 },
-        { lx: leftX  - 30, rx: rightX + 38, yf: 0.50 },
-        { lx: leftX  - 62, rx: rightX + 52, yf: 0.82 },
+        { lx: leftX - 55, rx: rightX + 60, yf: 0.14 },
+        { lx: leftX - 30, rx: rightX + 38, yf: 0.50 },
+        { lx: leftX - 62, rx: rightX + 52, yf: 0.82 },
       ];
       /* slight Y scatter within each row */
       var sideYJitter = [8, -12, 6];
@@ -3764,7 +3803,7 @@
           var prev = sidePhantoms[si - 1];
           var prevPY = netTop + netH * prev.yf + sideYJitter[si - 1];
           svg.appendChild(faintLine({ x: prev.lx, y: prevPY }, lPt));
-          svg.appendChild(faintLine({ x: prev.rx, y: prevPY + ((si-1) % 2 === 0 ? 14 : -18) }, rPt));
+          svg.appendChild(faintLine({ x: prev.rx, y: prevPY + ((si - 1) % 2 === 0 ? 14 : -18) }, rPt));
         }
 
         svg.appendChild(innerCircle(lPt.x, lPt.y, 4));
